@@ -340,18 +340,6 @@ CONFIGURATIONS: list[Configuration] = [
         decider=_a1_decider("jev"),
     ),
     Configuration(
-        name="a1-tev",
-        description=(
-            "A1 cascade with TevDecider (Together Tev1, one letter-only call per question; "
-            "log-probabilities when exposed, else hard 0 or 1), replay extractor past the "
-            "gate. Needs TOGETHER_API_KEY. Live run cut Oct 4 for simplicity (see SPEC.md); "
-            "the backend stays implemented and tested on recorded responses."
-        ),
-        extractor=_replay_extractor,
-        ranker=_fixed_ranker,
-        decider=_a1_decider("tev"),
-    ),
-    Configuration(
         name="a1-llm",
         description=(
             "A1 cascade with LLMDecider (structured output on the model named by "

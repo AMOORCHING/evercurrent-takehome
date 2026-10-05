@@ -10,7 +10,6 @@ few points are noise.
 | Silo recall | llm | 100.0% (12 of 12) |
 | Silo recall | a1-passthrough | 100.0% (12 of 12) |
 | Silo recall | a1-jev | 91.7% (11 of 12) |
-| Silo recall | a1-tev | not run: set TOGETHER_API_KEY |
 | Silo recall | a1-llm | 100.0% (12 of 12) |
 | Silo recall | a1-jev-llm | 91.7% (11 of 12) |
 | Silo recall | a2-calibrated | 100.0% (12 of 12) |
@@ -20,7 +19,6 @@ few points are noise.
 | Digest precision | llm | 95.1% (39 of 41) |
 | Digest precision | a1-passthrough | 100.0% (43 of 43) |
 | Digest precision | a1-jev | 100.0% (31 of 31) |
-| Digest precision | a1-tev | not run: set TOGETHER_API_KEY |
 | Digest precision | a1-llm | 100.0% (38 of 38) |
 | Digest precision | a1-jev-llm | 100.0% (29 of 29) |
 | Digest precision | a2-calibrated | 100.0% (43 of 43) |
@@ -30,7 +28,6 @@ few points are noise.
 | Extractor accuracy | llm | 95.0% (114 of 120) |
 | Extractor accuracy | a1-passthrough | 100.0% (120 of 120) |
 | Extractor accuracy | a1-jev | 91.7% (110 of 120) |
-| Extractor accuracy | a1-tev | not run: set TOGETHER_API_KEY |
 | Extractor accuracy | a1-llm | 96.7% (116 of 120) |
 | Extractor accuracy | a1-jev-llm | 90.0% (108 of 120) |
 | Extractor accuracy | a2-calibrated | 100.0% (120 of 120) |
@@ -40,7 +37,6 @@ few points are noise.
 | Decider accuracy: changes_state | llm | not run: no decider |
 | Decider accuracy: changes_state | a1-passthrough | 29.2% (35 of 120) |
 | Decider accuracy: changes_state | a1-jev | 88.3% (106 of 120) |
-| Decider accuracy: changes_state | a1-tev | not run: set TOGETHER_API_KEY |
 | Decider accuracy: changes_state | a1-llm | 95.0% (114 of 120) |
 | Decider accuracy: changes_state | a1-jev-llm | 90.0% (108 of 120) |
 | Decider accuracy: changes_state | a2-calibrated | not run: no decider |
@@ -50,7 +46,6 @@ few points are noise.
 | Decider accuracy: change_type | llm | not run: no decider |
 | Decider accuracy: change_type | a1-passthrough | n/a (0 of 0) |
 | Decider accuracy: change_type | a1-jev | 42.9% (15 of 35) |
-| Decider accuracy: change_type | a1-tev | not run: set TOGETHER_API_KEY |
 | Decider accuracy: change_type | a1-llm | 88.6% (31 of 35) |
 | Decider accuracy: change_type | a1-jev-llm | 65.7% (23 of 35) |
 | Decider accuracy: change_type | a2-calibrated | not run: no decider |
@@ -60,7 +55,6 @@ few points are noise.
 | Decider accuracy: contradicts | llm | not run: no decider |
 | Decider accuracy: contradicts | a1-passthrough | 96.7% (116 of 120) |
 | Decider accuracy: contradicts | a1-jev | 89.2% (107 of 120) |
-| Decider accuracy: contradicts | a1-tev | not run: set TOGETHER_API_KEY |
 | Decider accuracy: contradicts | a1-llm | 76.7% (92 of 120) |
 | Decider accuracy: contradicts | a1-jev-llm | 85.8% (103 of 120) |
 | Decider accuracy: contradicts | a2-calibrated | not run: no decider |
@@ -70,7 +64,6 @@ few points are noise.
 | Decider accuracy: risk | llm | not run: no decider |
 | Decider accuracy: risk | a1-passthrough | not run: gold has no risk labels |
 | Decider accuracy: risk | a1-jev | not run: gold has no risk labels |
-| Decider accuracy: risk | a1-tev | not run: set TOGETHER_API_KEY |
 | Decider accuracy: risk | a1-llm | not run: gold has no risk labels |
 | Decider accuracy: risk | a1-jev-llm | not run: gold has no risk labels |
 | Decider accuracy: risk | a2-calibrated | not run: no decider |
@@ -80,7 +73,6 @@ few points are noise.
 | Calibration error | llm | not run: no decider |
 | Calibration error | a1-passthrough | 73.8% before, 40.4% after (T=20.00, fit 40, eval 80) |
 | Calibration error | a1-jev | 10.4% before, 13.0% after (T=1.15, fit 40, eval 80) |
-| Calibration error | a1-tev | not run: set TOGETHER_API_KEY |
 | Calibration error | a1-llm | 2.8% before, 3.8% after (T=1.27, fit 40, eval 80) |
 | Calibration error | a1-jev-llm | 3.1% before, 7.4% after (T=1.25, fit 40, eval 80) |
 | Calibration error | a2-calibrated | not run: no decider |
@@ -90,7 +82,6 @@ few points are noise.
 | Escalation rate | llm | not run: no decider |
 | Escalation rate | a1-passthrough | 0.0% (0 of 120) |
 | Escalation rate | a1-jev | 25.0% (30 of 120) |
-| Escalation rate | a1-tev | not run: set TOGETHER_API_KEY |
 | Escalation rate | a1-llm | 2.5% (3 of 120) |
 | Escalation rate | a1-jev-llm | 24.2% (29 of 120) |
 | Escalation rate | a2-calibrated | not run: no decider |
@@ -100,7 +91,6 @@ few points are noise.
 | Decider latency (median) | llm | not run: no decider |
 | Decider latency (median) | a1-passthrough | 0 ms |
 | Decider latency (median) | a1-jev | 174 ms |
-| Decider latency (median) | a1-tev | not run: set TOGETHER_API_KEY |
 | Decider latency (median) | a1-llm | 3070 ms |
 | Decider latency (median) | a1-jev-llm | 184 ms |
 | Decider latency (median) | a2-calibrated | not run: no decider |
@@ -110,7 +100,6 @@ few points are noise.
 | Cost per digest | llm | not run: no decider |
 | Cost per digest | a1-passthrough | $0.0000 |
 | Cost per digest | a1-jev | $0.0022 |
-| Cost per digest | a1-tev | not run: set TOGETHER_API_KEY |
 | Cost per digest | a1-llm | $0.0149 |
 | Cost per digest | a1-jev-llm | $0.0075 |
 | Cost per digest | a2-calibrated | not run: no decider |
@@ -137,7 +126,6 @@ few points are noise.
 - **llm**: LLMExtractor on gpt-6-sol, core fan-out, fixed-weight ranker, top five.
 - **a1-passthrough**: A1 baseline: replay extractor behind the cascade with PassThroughDecider, so every thread goes to the extractor.
 - **a1-jev**: A1 cascade with JevDecider (TypeSafe jev-latest, all four questions in one call), replay extractor past the gate. Needs JEV_API_KEY.
-- **a1-tev**: A1 cascade with TevDecider (Together Tev1, one letter-only call per question; log-probabilities when exposed, else hard 0 or 1), replay extractor past the gate. Needs TOGETHER_API_KEY. Live run cut Oct 4 for simplicity (see SPEC.md); the backend stays implemented and tested on recorded responses.
 - **a1-llm**: A1 cascade with LLMDecider (structured output on the model named by DIGEST_DECIDER_MODEL), replay extractor past the gate. Needs DIGEST_DECIDER_MODEL and OPENAI_API_KEY.
 - **a1-jev-llm**: A1 two-stage cascade, added after the first eval round (EXPERIMENTS.md): jev gates every thread, the 0.2-0.8 middle band is re-decided by the LLM decider, and that answer is final. Replay extractor past the gate. Needs JEV_API_KEY, DIGEST_DECIDER_MODEL and OPENAI_API_KEY.
 - **a2-calibrated**: A2: replay extractor, calibrated ranker. Each section keeps every item whose confidence clears its cost-ratio threshold (10:1 needs-you, 3:1 affects-you, 1:1 FYI) instead of a top-five cut; no decider, so temperature stays 1.0.

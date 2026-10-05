@@ -18,7 +18,6 @@ from digest.attach.deciders import (
     DECIDER_MODEL_ENV,
     DECIDERS,
     JEV_KEY_ENV,
-    TOGETHER_KEY_ENV,
     Cascade,
     DeciderUnavailable,
     build_decider,
@@ -64,7 +63,7 @@ def ingest(
     decider: Annotated[
         str,
         typer.Option(help=f"Decider backend gating the extractor: {', '.join(DECIDERS)}. "
-                     f"jev reads {JEV_KEY_ENV}, tev reads {TOGETHER_KEY_ENV}, llm reads "
+                     f"jev reads {JEV_KEY_ENV}, llm reads "
                      f"{DECIDER_MODEL_ENV} and {API_KEY_ENV}."),
     ] = "passthrough",
     escalate_to: Annotated[

@@ -1,12 +1,11 @@
 """A1 cascade: backends parse recorded responses; routing gates the extractor; eval compares backends.
 
 No test makes a network call: every backend takes a transport, and these tests pass one that
-returns responses recorded from the TypeSafe, Together and OpenAI response shapes.
+returns responses recorded from the TypeSafe and OpenAI response shapes.
 """
 
 import json
 import logging
-import math
 from pathlib import Path
 
 import pytest
@@ -18,7 +17,6 @@ from digest.attach.deciders import (
     JevDecider,
     LLMDecider,
     PassThroughDecider,
-    TevDecider,
     build_decider,
     route,
 )
@@ -73,21 +71,6 @@ JEV_RESPONSE = {
 }
 
 
-def _tev_response(letter: str, top_logprobs: dict[str, float] | None) -> dict:
-    """Recorded from Together's chat.completions shape; Tev1 answers with one letter."""
-    logprobs = None
-    if top_logprobs is not None:
-        logprobs = {"content": [{
-            "token": letter,
-            "logprob": top_logprobs[letter],
-            "top_logprobs": [{"token": t, "logprob": lp} for t, lp in top_logprobs.items()],
-        }]}
-    return {
-        "choices": [{"message": {"content": letter}, "logprobs": logprobs}],
-        "usage": {"prompt_tokens": 800, "completion_tokens": 1},
-    }
-
-
 LLM_ANSWERS = {
     "changes_state": 0.9,
     "change_type": {"status_change": 0.05, "deadline_change": 0.05, "owner_change": 0.05,
@@ -131,7 +114,6 @@ def test_unknown_backend_is_a_clear_error():
 
 @pytest.mark.parametrize("name, message", [
     ("jev", "set JEV_API_KEY"),
-    ("tev", "set TOGETHER_API_KEY"),
     ("llm", "set DIGEST_DECIDER_MODEL and OPENAI_API_KEY"),
 ])
 def test_missing_key_is_a_clear_error(name, message):
@@ -162,35 +144,6 @@ def test_jev_asks_all_four_questions_in_one_call():
     assert decision.contradicts == 0.12
     assert decision.risk == 0.41
     assert decider.spent_usd == pytest.approx((1000 * 0.30 + 20 * 1.20) / 1e6)
-
-
-def test_tev_reads_logprobs_when_exposed_and_is_hard_otherwise():
-    responses = [
-        _tev_response("A", {"A": -0.105360516, "B": -2.302585093}),  # changes_state: yes at ~0.9
-        _tev_response("D", None),                                    # change_type: no logprobs
-        _tev_response("B", {"A": -3.0, "B": -0.05}),                 # contradicts: no
-        _tev_response("A", None),                                    # risk: no logprobs
-    ]
-    decider = TevDecider(EXPORT, lambda body: responses.pop(0))
-    decision = decider.decide(SIGNAL, CTX)
-
-    assert decision.changes_state == pytest.approx(0.9, abs=1e-6)
-    assert decision.change_type == {
-        "status_change": 0.0, "deadline_change": 0.0, "owner_change": 0.0,
-        "value_change": 1.0, "none": 0.0,
-    }
-    yes, no = math.exp(-3.0), math.exp(-0.05)
-    assert decision.contradicts == pytest.approx(yes / (yes + no))
-    assert decision.risk == 1.0
-    assert decider.spent_usd == pytest.approx(4 * (800 * 0.10 + 1 * 0.10) / 1e6)
-
-
-def test_tev_prose_answer_raises():
-    prose = {"choices": [{"message": {"content": "Sure, happy to help!"}, "logprobs": None}],
-             "usage": {"prompt_tokens": 1, "completion_tokens": 8}}
-    decider = TevDecider(EXPORT, lambda body: prose)
-    with pytest.raises(ValueError, match="not a listed letter"):
-        decider.decide(SIGNAL, CTX)
 
 
 def test_llm_decider_parses_structured_output():
@@ -257,10 +210,9 @@ def test_cascade_routes_drop_escalate_extract_and_records(caplog):
 
 
 def test_eval_backends_not_run_without_keys():
-    backends = [c for c in CONFIGURATIONS if c.name in ("a1-jev", "a1-tev", "a1-llm", "a1-jev-llm")]
+    backends = [c for c in CONFIGURATIONS if c.name in ("a1-jev", "a1-llm", "a1-jev-llm")]
     rows = {(r.metric, r.configuration): r.value for r in evaluate(DATA, backends, METRICS[:1])}
     assert rows[("Silo recall", "a1-jev")] == NotRun("set JEV_API_KEY")
-    assert rows[("Silo recall", "a1-tev")] == NotRun("set TOGETHER_API_KEY")
     assert rows[("Silo recall", "a1-llm")] == NotRun("set DIGEST_DECIDER_MODEL and OPENAI_API_KEY")
     assert rows[("Silo recall", "a1-jev-llm")] == NotRun("set JEV_API_KEY")
 

@@ -184,15 +184,9 @@ Reading it honestly:
 ## The cut ledger: what "measured gain or cut" removed (Oct 4–5)
 
 Spec rule 3 says every attachment must show a measured gain in the table or be cut.
-Applied honestly, the rule produced one cut for scope, one cut for time, and one
-downgrade — recorded here so the reasoning survives the deadline:
+Applied honestly, the rule produced one cut and one downgrade — recorded here so
+the reasoning survives the deadline:
 
-- **Tev live run — cut (Oct 4, scope).** A third API account would have bought a
-  comparison the jev and LLM backends already make between them: a cheap
-  letter-only classifier against a structured-output model. `TevDecider` stays
-  implemented behind the Decider seam with recorded-response tests (both the
-  log-probability and hard-0/1 paths), so the cut cost a results row, not code,
-  and the two-backend minimum in the spec still holds.
 - **A6 feedback loop — cut (Oct 5, time).** First in the spec's cut order, and the
   Monday list reached it last. The consequence is stated rather than hidden: with
   no loop, "focus changes over time" rests entirely on the project graph changing

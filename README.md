@@ -17,7 +17,7 @@ flowchart LR
     seed[/"graph_seed.json<br>seeded project graph"/] --> pgraph
 
     subgraph ingest ["digest ingest"]
-        assemble["assemble<br>threads to signals"] --> decide["decide<br>core: passthrough<br>A1: jev / tev / llm cascade"]
+        assemble["assemble<br>threads to signals"] --> decide["decide<br>core: passthrough<br>A1: jev / llm cascade"]
         decide -->|"changes_state &ge; 0.8,<br>or escalated"| extract["extract<br>replay or LLM"]
         decide -->|"&le; 0.2"| dropped["dropped"]
         extract --> apply["apply<br>A4 --aliases resolves<br>surface names first"]
@@ -69,7 +69,6 @@ hits/total; `–` means the metric does not apply to that configuration.
 | llm | 12/12 | 39/41 | 114/120 | – | – | – | – |
 | a1-passthrough | 12/12 | 43/43 | 120/120 | 35/120 | 0/120 | 0 ms | $0.0000 |
 | a1-jev | 11/12 | 31/31 | 110/120 | 106/120 | 30/120 | 174 ms | $0.0022 |
-| a1-tev | not run: no TOGETHER_API_KEY | | | | | | |
 | a1-llm | 12/12 | 38/38 | 116/120 | 114/120 | 3/120 | 3070 ms | $0.0149 |
 | a1-jev-llm | 11/12 | 29/29 | 108/120 | 108/120 | 29/120 | 184 ms | $0.0075 |
 | a2-calibrated | 12/12 | 43/43 | 120/120 | – | – | – | – |
@@ -96,7 +95,7 @@ the live extractor drops `--replay` and needs `DIGEST_EXTRACTOR_MODEL` and
 
 | # | Attachment | Enable with | Needs |
 | --- | --- | --- | --- |
-| A1 | Classifier cascade | `digest ingest … --decider jev\|tev\|llm`, optionally `--escalate-to llm` for the two-stage cascade | `JEV_API_KEY` for jev; `TOGETHER_API_KEY` for tev; `DIGEST_DECIDER_MODEL` + `OPENAI_API_KEY` for llm |
+| A1 | Classifier cascade | `digest ingest … --decider jev\|llm`, optionally `--escalate-to llm` for the two-stage cascade | `JEV_API_KEY` for jev; `DIGEST_DECIDER_MODEL` + `OPENAI_API_KEY` for llm |
 | A2 | Calibrated thresholds | `digest run … --ranker calibrated` | nothing |
 | A3 | Stage-aware focus | `digest run … --phase` | `data/phase_weights.yaml` (in the repo) |
 | A4 | Entity aliases | `digest ingest … --aliases` | alias rows in `data/graph_seed.json`; only does real work under the live extractor, since replay already emits canonical IDs |
@@ -123,12 +122,9 @@ rather than failing the eval.
   is assumed to exist.** EverCurrent's product already captures tasks, stages,
   handoffs and requirement links; this prototype consumes that graph and keeps it
   current from Slack — it does not build it from scratch.
-- **Dollar figures are not real prices.** Neither TypeSafe nor Together had
-  published pricing when this was written; cost per digest uses the placeholder
-  estimates in `digest/attach/deciders.py`.
-- **TevDecider never ran live.** The live comparison was cut on Oct 4 (see the
-  amendment in SPEC.md); the backend is implemented and tested on recorded
-  responses, so its results row reads "not run".
+- **Dollar figures are not real prices.** TypeSafe had not published jev pricing
+  when this was written; cost per digest uses the placeholder estimates in
+  `digest/attach/deciders.py`.
 - **A3 barely matters on this dataset, and the table cannot show what it does.**
   Replay confidences are all 1.0 and no inbox holds more than three items, so the
   top-five cut never drops anything and a3-phase matches core on every membership

@@ -1,13 +1,10 @@
-"""A1 classifier cascade: three `Decider` backends and the routing that gates the extractor.
+"""A1 classifier cascade: the `Decider` backends and the routing that gates the extractor.
 
 Backends, selected by `--decider` and built by `build_decider`:
 
 - `passthrough` (default): `PassThroughDecider`, every thread goes to the extractor.
 - `jev`: TypeSafe's judgment API (`POST /v1/systemone`), one call for all four questions,
   native probabilities. Key from JEV_API_KEY.
-- `tev`: Together's hosted Tev1, a letter-only decision model, one call per question.
-  Probabilities come from option log-probabilities when the endpoint exposes them, else
-  hard 0 or 1. Key from TOGETHER_API_KEY.
 - `llm`: structured output from the model named by DIGEST_DECIDER_MODEL through the OpenAI
   Responses API. Key from OPENAI_API_KEY.
 
@@ -15,16 +12,15 @@ Routing: `changes_state` at or above 0.8 goes to the extractor; at or below 0.2 
 the middle goes to the extractor and is logged as escalated. `Cascade` applies the routing
 around any `Extractor` and records decisions, routes and latencies for `digest eval`.
 
-Prices are USD per million tokens. Neither TypeSafe nor Together published Tev1 or jev
-pricing when this was written (Oct 2026); those constants are placeholder estimates, and the
-llm price assumes a mid-tier model. Revisit before quoting dollars in the writeup.
+Prices are USD per million tokens. TypeSafe had not published jev pricing when this was
+written (Oct 2026); that constant is a placeholder estimate, and the llm price assumes a
+mid-tier model. Revisit before quoting dollars in the writeup.
 """
 
 from __future__ import annotations
 
 import json
 import logging
-import math
 import os
 import sqlite3
 import time
@@ -41,7 +37,6 @@ from digest.models import Decider, Decision, Delta, Extractor, GraphSlice, Signa
 log = logging.getLogger(__name__)
 
 JEV_KEY_ENV = "JEV_API_KEY"
-TOGETHER_KEY_ENV = "TOGETHER_API_KEY"
 DECIDER_MODEL_ENV = "DIGEST_DECIDER_MODEL"
 
 EXTRACT_AT = 0.8
@@ -211,72 +206,6 @@ class JevDecider(_ModelDecider):
             contradicts=answers["contradicts"].noul or 0.0,
             risk=answers["risk"].noul or 0.0,
         )
-
-
-class TevDecider(_ModelDecider):
-    """One letter-only chat call per question. Tev1 returns a letter; probabilities come from
-    option log-probabilities when the endpoint exposes them, and are hard 0 or 1 otherwise."""
-
-    URL = "https://api.together.xyz/v1/chat/completions"
-    MODEL = "together/Tev1-4B-experimental"
-    PRICE_IN, PRICE_OUT = 0.10, 0.10  # placeholder estimate, see module docstring
-    SYSTEM = (
-        "Evaluate the supplied decision task. Select exactly one listed option. "
-        "Return only its letter, with no explanation."
-    )
-    YES_NO = {"A": "yes", "B": "no"}
-
-    @classmethod
-    def from_env(cls, export: SlackExport) -> TevDecider:
-        key = _require(TOGETHER_KEY_ENV)[TOGETHER_KEY_ENV]
-        return cls(export, _http_post(cls.URL, key))
-
-    def decide(self, signal: Signal, ctx: GraphSlice) -> Decision:
-        state = self._state(signal, ctx)
-        changes_state = self._yes(state, CHANGES_STATE_Q)
-        letters = dict(zip("ABCDE", CHANGE_TYPE_CRITERIA))
-        by_letter = self._ask(state, CHANGE_TYPE_Q, {k: CHANGE_TYPE_CRITERIA[v] for k, v in letters.items()})
-        return Decision(
-            changes_state=changes_state,
-            change_type={letters[k]: p for k, p in by_letter.items()},
-            contradicts=self._yes(state, CONTRADICTS_Q),
-            risk=self._yes(state, RISK_Q),
-        )
-
-    def _yes(self, state: str, question: str) -> float:
-        return self._ask(state, question, self.YES_NO)["A"]
-
-    def _ask(self, state: str, question: str, options: dict[str, str]) -> dict[str, float]:
-        """Option probabilities for one question, keyed by letter."""
-        body = {
-            "model": self.MODEL,
-            "messages": [
-                {"role": "system", "content": self.SYSTEM},
-                {
-                    "role": "user",
-                    "content": json.dumps({"state": state, "question": question, "options": options}),
-                },
-            ],
-            "temperature": 0,
-            "max_tokens": 8,
-            "logprobs": True,
-            "top_logprobs": 5,
-        }
-        data = self._transport(body)
-        self._charge(data.get("usage"))
-        chosen = data["choices"][0]["message"]["content"].strip()[:1].upper()
-        if chosen not in options:
-            raise ValueError(f"Tev1 returned {data['choices'][0]['message']['content']!r}, not a listed letter")
-        found = {
-            letter: math.exp(top["logprob"])
-            for item in ((data["choices"][0].get("logprobs") or {}).get("content") or [])[:1]
-            for top in item.get("top_logprobs") or []
-            if (letter := top["token"].strip().upper()) in options
-        }
-        total = sum(found.values())
-        if total <= 0:
-            return {letter: 1.0 if letter == chosen else 0.0 for letter in options}
-        return {letter: found.get(letter, 0.0) / total for letter in options}
 
 
 class _LLMTypeProbs(BaseModel):
@@ -467,7 +396,6 @@ def save_decisions(conn: sqlite3.Connection, cascade: Cascade, backend: str) -> 
 DECIDERS: dict[str, Callable[[SlackExport], Decider]] = {
     "passthrough": lambda export: PassThroughDecider(),
     "jev": JevDecider.from_env,
-    "tev": TevDecider.from_env,
     "llm": LLMDecider.from_env,
 }
 
