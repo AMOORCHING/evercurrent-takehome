@@ -140,14 +140,3 @@ $0.0055, and a1-llm is unchanged. The gate ends up costing about 1/70th of the
 all-LLM decider per digest, and the whole three-round evaluation came to about
 $6.44. Earlier sections keep their original figures, since those are what was
 known at the time.
-
-## Why A3 stayed
-
-The spec has a rule that every attachment must show a measured gain or be cut.
-Read strictly, that would cut A3: it shows no membership gain, and its ordering
-effect touches 2 of 33 digests. It stayed for two reasons. The build order names
-A1 through A3 as the minimum feature set, and the mechanism itself is tested,
-since stage distance and gate proximity demonstrably flip a ranking when a gate
-passes. So the claim is scoped down to a working mechanism on a dataset too
-shallow to reward it. Deeper inboxes and an ordering metric, such as the rank of
-the gold item, would settle the question properly.
