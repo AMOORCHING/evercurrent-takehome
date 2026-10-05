@@ -1,13 +1,12 @@
 # Daily Digest
 
-This is a prototype of one question: which state changes in a hardware team's Slack
+This prototype answers one question: which state changes in a hardware team's Slack
 should reach which person each day, and why. A small core over SQLite turns a Slack
-export plus a seeded project graph into per-person digests, running fully offline in
-replay mode (gold labels stand in for model calls), and five attachments each add
-one opinionated capability behind a flag.
-This file covers running it, the measured results, and the limits — rationale for
-decisions made along the way is in [DESIGN.md](DESIGN.md) and
-[EXPERIMENTS.md](EXPERIMENTS.md).
+export and a seeded project graph into per-person digests, and it runs fully offline
+in replay mode, where gold labels stand in for model calls. Five attachments each
+add one capability behind a flag. This file covers how to run it, the measured
+results, and the limits; the reasoning behind design decisions is in
+[DESIGN.md](DESIGN.md) and [EXPERIMENTS.md](EXPERIMENTS.md).
 
 ## How it works
 
@@ -26,12 +25,12 @@ flowchart LR
     render --> out[/"one person's digest<br>for one day"/]
 ```
 
-The left half is `digest ingest`; the right half is `digest run` for one person and
-date. The project graph is written by apply and read by fan-out — that is how a
-change in one team's thread reaches an owner who never saw the thread. Each
-attachment swaps exactly one step behind a flag: A1 the yes/no decision, A2 and A3
-the ranking, A4 name resolution inside apply, A5 the rendering. Remove any of them
-and the core path is untouched.
+The left half is `digest ingest` and the right half is `digest run` for one person
+on one date. The apply step writes the project graph and fan-out reads it, which is
+how a change in one team's thread reaches an owner who never saw the thread. Each
+attachment swaps out exactly one step behind a flag: A1 replaces the yes/no
+decision, A2 and A3 replace the ranking, A4 adds name resolution inside apply, and
+A5 rewrites the rendering. The core path works the same with all of them turned off.
 
 ## Quickstart
 
@@ -43,9 +42,9 @@ From a fresh clone, with no API keys, this prints a guided walkthrough:
 
 - a planted cross-team thread, and the digests of the two affected owners who
   never appear in that thread;
-- one user's stage-aware (`--phase`) digests on day 5 and day 7, either side of a
-  phase gate — plus the same day ranked with and without `--phase`, and a live
-  count of how many digests `--phase` reorders;
+- one user's stage-aware (`--phase`) digests on day 5 and day 7, on either side of
+  a phase gate, plus the same day ranked with and without `--phase` and a count of
+  how many digests `--phase` reorders;
 - an `explain` trace from one digest item back to the decider call that let its
   thread through;
 - the results table.
@@ -77,18 +76,19 @@ digest items that match a gold label for that person.
 | a4-aliases | 12/12 | 41/43 | 115/120 | – | – | – | – |
 
 All 12 planted cross-team changes reach the affected person in every core-path
-configuration, and recall holds through a live extractor: the `llm` row is 12/12
-at 39/41 precision. The jev gate is ~18× faster and ~70× cheaper per digest than
-the LLM decider (billed prices on both sides), at the cost of one missed case and
-a 30/120 unsure band; the two-stage jev→llm cascade resolves that band at a third
-of the LLM decider's cost. The whole evaluation cost about $6.44 in model spend.
+configuration, and recall holds up with a live extractor in the loop: the `llm` row
+comes in at 12/12 with 39/41 precision. The jev gate is about 18× faster and 70×
+cheaper per digest than the LLM decider at billed prices, though it misses one case
+and leaves 30 of 120 threads in the unsure band. The two-stage jev→llm cascade
+resolves that band for about a third of what the LLM decider costs. The whole
+evaluation came to about $6.44 in model spend.
 
 ## Enabling the attachments
 
-Each attachment encodes one opinion behind one core seam (A1 the decider, A2 and
-A3 the ranker, A4 `apply`, A5 the renderer); these are the switches. Replay ingest
-(`digest ingest data/slack.json --replay`) needs no keys; the live extractor drops
-`--replay` and needs `DIGEST_EXTRACTOR_MODEL` and `OPENAI_API_KEY`.
+Each attachment plugs into one core seam: A1 the decider, A2 and A3 the ranker, A4
+apply, A5 the renderer. Replay ingest (`digest ingest data/slack.json --replay`)
+needs no keys; the live extractor drops `--replay` and needs
+`DIGEST_EXTRACTOR_MODEL` and `OPENAI_API_KEY`.
 
 | # | Attachment | Enable with | Needs |
 | --- | --- | --- | --- |
@@ -107,17 +107,19 @@ rather than failing the eval.
 - The dataset is synthetic: ~120 threads over ten working days, model-generated
   from a scenario and hand-edited. Counts sit beside percentages, and single-count
   gaps are treated as noise.
-- Gold's affected lists come from the fan-out rules themselves, so the core row
-  proves the pipeline; the live `llm` row is the real test of the idea (12/12 at
-  39/41).
-- A3's measurable effect here is ordering: no inbox holds more than three items,
-  so membership metrics can't move, and `--phase` reorders 2 of 33 digests. The
-  demo shows one day under both rankers; the gate flip is pinned in
-  `tests/test_phase.py`. Deeper live inboxes are where it would pay off.
-- Dollar figures are derived from billed spend on both backends (EXPERIMENTS.md
-  has the derivations).
+- Gold's affected lists are generated by the same fan-out rules the core uses, so
+  the core row mostly checks that the pipeline works end to end. The live `llm`
+  row is the more meaningful number (12/12 at 39/41), since a real extractor has
+  to recover the right changes first.
+- A3 can only change ordering on this dataset. No inbox holds more than three
+  items, so the top-five cut never drops anything, and `--phase` ends up
+  reordering 2 of 33 digests. The demo shows one of those days under both rankers,
+  and the gate flip is covered by a unit test in `tests/test_phase.py`. It would
+  matter more on real inboxes with more than five items a day.
+- Dollar figures are derived from billed spend on both backends; EXPERIMENTS.md
+  has the derivations.
 - Temperature scaling helped only the uncalibrated baseline; jev and the LLM
   decider were already close to calibrated.
-- The digest covers task and requirement changes on an existing project graph.
-  The risk question is asked but unscored, and nothing yet learns from use —
-  per-user feedback thresholds are the natural next attachment.
+- The digest covers task and requirement changes on an existing project graph. The
+  risk question is asked but unscored, and nothing learns from use yet; a feedback
+  loop that adjusts per-user thresholds would be the natural next attachment.

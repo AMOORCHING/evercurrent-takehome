@@ -5,13 +5,13 @@ definitions and the full table are in results.md (regenerate with `digest eval`)
 
 Terms:
 
-- **Gate accuracy** — how often the decider's `changes_state` answer agrees with
+- **Gate accuracy**: how often the decider's `changes_state` answer agrees with
   the gold label for whether a thread changes state.
-- **Silo recall** — how many of the 12 planted cross-team changes reach the
+- **Silo recall**: how many of the 12 planted cross-team changes reach the
   affected person's digest.
-- **ECE** (calibration error) — the gap between stated confidence and actual hit
-  rate; 0% means "when it says 80%, it is right 80% of the time".
-- **Unsure band** — threads the decider scores between 0.2 and 0.8. results.md
+- **ECE** (calibration error): the gap between stated confidence and actual hit
+  rate. 0% means that when the decider says 80%, it is right 80% of the time.
+- **Unsure band**: threads the decider scores between 0.2 and 0.8. results.md
   reports the share of these as "escalation rate".
 
 ## Setup
@@ -36,30 +36,34 @@ the digest section thresholds from cost ratios: 1/11 for "needs you", 1/4 for
 
 What it showed:
 
-1. Only `changes_state` matters for routing. The other answers aren't wired in,
-   and the extractor re-derives the change type anyway.
+1. Routing only uses `changes_state`. The other answers aren't wired in, and the
+   extractor re-derives the change type anyway.
 2. jev is a cheap, decent gate (87.5% at 178 ms), but it puts a quarter of all
-   threads in the unsure band — and each of those paid for a full extraction.
-3. The fixed 0.2 drop threshold contradicts A2's own cost model (a 10:1 miss cost
-   implies dropping below ~0.09). jev's one missed cross-team case was dropped
-   below 0.2, and a drop at ingest can't be recovered later.
-4. Calibration wasn't the problem: jev (9.4% ECE) and the LLM decider (1.7%) were
-   already close. The lever is the threshold, not the temperature.
+   threads in the unsure band, and each of those paid for a full extraction.
+3. The fixed 0.2 drop threshold is inconsistent with A2's own cost model, which
+   prices a "needs you" miss at 10:1 and so implies dropping only below about
+   0.09. jev's one missed cross-team case was dropped below 0.2, and a drop at
+   ingest can't be recovered later.
+4. Calibration wasn't the problem, since jev (9.4% ECE) and the LLM decider
+   (1.7%) were already close. The more promising fix is the drop threshold itself.
 
 ## Second-stage escalation
 
-Options: re-decide the unsure band with the LLM decider (estimated ~$0.006 per
-digest against $0.0146 for the LLM on everything); derive the drop threshold from
-the cost ratio (the only fix for the missed case); or no gate at all (fine at 120
-threads, pointless at real volume). Training a custom classifier on 120 threads
-was rejected.
+Three options were considered: re-decide the unsure band with the LLM decider
+(estimated around $0.006 per digest, against $0.0146 for running the LLM on
+everything); derive the drop threshold from the cost ratio, which is the only fix
+for the missed case; or drop the gate entirely, which works fine at 120 threads
+but defeats the purpose at real volume. Training a custom classifier on 120
+threads was rejected.
 
-The first was built: `Cascade` takes an optional second-stage decider that
-re-decides the unsure band, and its answer is final — drop or extract. Confident
-answers never pay for the second call, and if the second call fails the thread
-extracts. Exposed as `digest ingest --escalate-to llm` and the `a1-jev-llm`
-configuration. Known limit: this cannot rescue a confident first-stage drop, so
-jev's missed case stays missed; the threshold fix remains open.
+The first option was built. `Cascade` takes an optional second-stage decider that
+re-decides the unsure band; it either drops the thread or sends it to the
+extractor, and that answer is final. Confident first-stage answers never pay for
+the second call, and if the second call fails, the thread goes to the extractor.
+This is exposed as `digest ingest --escalate-to llm` and the `a1-jev-llm`
+configuration. One known limit: escalation only touches the unsure band, so it
+can't rescue a thread the first stage confidently dropped. jev's missed case stays
+missed, and the threshold fix is still open.
 
 ## Round 2
 
@@ -78,19 +82,21 @@ drift a thread or two between runs; single-count gaps are noise.
 | Cost per digest | $0.0022 | $0.0074 | $0.0147 |
 
 - The band now carries LLM answers, so the hybrid's ECE improved to 5.1% from
-  jev's 9.7% and change-type accuracy rose twenty points. Latency barely moved:
-  only the band pays the 2.8-second call.
-- Cost landed at $0.0074 against the ~$0.006 estimate — half the all-LLM cost.
-- The tradeoff is real: the second stage sometimes drops an escalated thread that
-  holds a real change (29 digest items against 31), and silo recall stays 11 of
-  12 as predicted.
+  jev's 9.7% and change-type accuracy rose twenty points. Latency barely moved,
+  since only the band pays the 2.8-second call.
+- Cost landed at $0.0074 against the estimate of around $0.006, about half of
+  what the all-LLM decider costs.
+- There is a cost to the second opinion: it sometimes drops an escalated thread
+  that holds a real change (29 digest items against 31), and silo recall stays at
+  11 of 12, as predicted.
 
 ## Round 3
 
-The first full run hung 71 minutes on one dead connection: the decider calls had a
-60-second timeout, the extractor's client had none. Fix: a 120-second extractor
-timeout, and a failed call is treated like a malformed response — log, skip the
-thread, retry next ingest. The rerun took 11 minutes.
+The first full run hung for 71 minutes on one dead connection. The decider calls
+had a 60-second timeout, but the extractor's client had none. The fix was a
+120-second timeout on the extractor's client, plus treating a failed call like a
+malformed response: log it, skip the thread, and retry on the next ingest. The
+rerun took 11 minutes.
 
 A4, the live extractor with and without alias resolution:
 
@@ -101,45 +107,47 @@ A4, the live extractor with and without alias resolution:
 | Extractor accuracy | 95.0% (114 of 120) | 95.8% (115 of 120) |
 
 - A4's gain is one or two counts, inside the noise rule, across separate
-  nondeterministic runs. Its value is a safety net for loosely named parts (the
-  four gold alias threads pass under their surface names in
-  tests/test_aliases.py), not a percentage swing.
-- The unresolved-names list came back empty: the extractor prompt lists task IDs,
+  nondeterministic runs. It is better understood as a safety net for loosely
+  named parts; the four gold alias threads pass under their surface names in
+  tests/test_aliases.py.
+- The unresolved-names list came back empty. The extractor prompt lists task IDs,
   so the model rarely invents a free-text name.
-- A3 can only reorder. Replay confidences are 1.0 and no inbox holds more than
-  three items, so membership metrics can't move. Ranking every real inbox both
-  ways, `--phase` changes the order in 2 of 33 digests — both Tom's, the one user
-  owning stages in both products. No real inbox mixes items from both sides of a
-  gate, so the gate flip is shown by a unit test with constructed items, and the
-  demo compares the same day under both rankers.
+- A3 can only reorder on this dataset, since replay confidences are 1.0 and no
+  inbox holds more than three items. Ranking every real inbox both ways,
+  `--phase` changes the order in 2 of 33 digests, both belonging to Tom, the one
+  user who owns stages in both products. No real inbox mixes items from both
+  sides of a gate, so the gate flip is shown by a unit test with constructed
+  items, and the demo compares the same day under both rankers instead.
 - The decider numbers reproduced round 2 within a thread or two.
 
 ## Pricing
 
-Both backends' dollar figures started as estimates and ended derived from billed
-spend.
+Both backends' prices started as estimates and are now derived from billed spend.
 
-jev: TypeSafe's dashboard reports spend — $0.0056 per 120-thread pass, exactly one
-tenth of the estimate — so the constants moved to $0.03 in / $0.12 out per Mtok.
-The dashboard gives token totals, not separate input and output prices, so the 1:4
-ratio is assumed.
+jev: TypeSafe's dashboard reports billed spend, which came to $0.0056 per
+120-thread pass, exactly one tenth of the estimate, so the constants moved to
+$0.03 in / $0.12 out per Mtok. The dashboard only gives token totals, so the 1:4
+input-to-output ratio is assumed.
 
 llm (gpt-6-sol): the usage and cost APIs give two billed days of tokens and
-dollars — two equations, two unknowns — giving $2.12 in / $11.63 out per Mtok,
-which reproduces both bills to the cent and lands within ~15% of the earlier
-estimate. These are effective rates with the cache discount blended in.
+dollars, which is two equations in two unknowns. Solving them gives $2.12 in /
+$11.63 out per Mtok, which reproduces both bills to the cent and lands within
+about 15% of the earlier estimate. These are effective rates, with the cache
+discount blended in.
 
-Re-derived: a1-jev costs $0.0002 per digest (pure jev spend, exact), a1-jev-llm
-about $0.0055, a1-llm unchanged. The gate costs about 1/70th of the all-LLM
-decider per digest, and the whole three-round evaluation cost about $6.44. Earlier
-sections keep their original figures — they are what was known at the time.
+With the measured rates, a1-jev comes to $0.0002 per digest, a1-jev-llm to about
+$0.0055, and a1-llm is unchanged. The gate ends up costing about 1/70th of the
+all-LLM decider per digest, and the whole three-round evaluation came to about
+$6.44. Earlier sections keep their original figures, since those are what was
+known at the time.
 
 ## Why A3 stayed
 
-The spec's rule: every attachment shows a measured gain or is cut. Strictly read,
-that cuts A3 — no membership gain, and its ordering effect touches 2 of 33
-digests. It stayed because the build order names A1–A3 as the minimum feature set
-and the mechanism is tested: stage distance and gate proximity flip a ranking when
-a gate passes. The claim is scoped to match — a working mechanism this dataset is
-too shallow to reward. Deeper inboxes and an ordering metric (rank of the gold
-item) would settle it.
+The spec has a rule that every attachment must show a measured gain or be cut.
+Read strictly, that would cut A3: it shows no membership gain, and its ordering
+effect touches 2 of 33 digests. It stayed for two reasons. The build order names
+A1 through A3 as the minimum feature set, and the mechanism itself is tested,
+since stage distance and gate proximity demonstrably flip a ranking when a gate
+passes. So the claim is scoped down to a working mechanism on a dataset too
+shallow to reward it. Deeper inboxes and an ordering metric, such as the rank of
+the gold item, would settle the question properly.
