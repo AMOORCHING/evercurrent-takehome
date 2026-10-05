@@ -137,7 +137,7 @@ def calibrate(pairs_by_thread: Mapping[str, Pair]) -> Calibration:
 
 # --- Calibrated ranker -----------------------------------------------------------------
 
-# Cost of missing an item relative to wrongly including one, per digest section (SPEC A2).
+# Cost of missing an item relative to wrongly including one, per digest section (A2).
 COST_OF_MISS: dict[str, float] = {
     "needs you": 10.0,
     "changes that affect you": 3.0,

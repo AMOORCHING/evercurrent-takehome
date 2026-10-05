@@ -2,7 +2,7 @@
 
 This file records the design changes made from measurement rather than from the spec —
 the largest being the two-stage escalation added to the A1 cascade on Oct 4, 2026.
-SPEC.md carries the dated amendments; this is the longer story — what the code looked
+The working spec carries the dated amendments; this is the longer story — what the code looked
 like, what the numbers said, the tradeoffs weighed, and what was done. It ends with
 the cut ledger: what the spec's "measured gain or cut" rule removed or downgraded,
 and why. Metric definitions and the full table live in results.md (regenerate with

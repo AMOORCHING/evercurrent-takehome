@@ -4,8 +4,7 @@ This is a prototype of one question: which state changes in a hardware team's Sl
 should reach which person each day, and why. A small core over SQLite turns a Slack
 export plus a seeded project graph into per-person digests, running fully offline in
 replay mode, and five attachments each add one opinionated capability behind a flag.
-The approach, schema, dataset and evaluation are specified in [SPEC.md](SPEC.md);
-this file covers running it, the measured results, and the limits — rationale for
+This file covers running it, the measured results, and the limits — rationale for
 decisions made along the way is in [DESIGN.md](DESIGN.md) and
 [EXPERIMENTS.md](EXPERIMENTS.md).
 
@@ -89,8 +88,8 @@ inherits jev's missed case.
 
 ## Enabling the attachments
 
-Attachment opinions and seams are in [SPEC.md](SPEC.md#attachments); these are the
-switches. Replay ingest (`digest ingest data/slack.json --replay`) needs no keys;
+Each attachment encodes one opinion behind one core seam (A1 the decider, A2/A3
+the ranker, A4 `apply`, A5 the renderer); these are the switches. Replay ingest (`digest ingest data/slack.json --replay`) needs no keys;
 the live extractor drops `--replay` and needs `DIGEST_EXTRACTOR_MODEL` and
 `OPENAI_API_KEY`.
 
