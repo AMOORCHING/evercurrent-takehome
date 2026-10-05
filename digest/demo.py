@@ -102,9 +102,9 @@ def _silo_section(conn: sqlite3.Connection, export: SlackExport, case: GoldThrea
         "",
         *(f"> {names.get(m.user, m.user)}: {m.text}" for m in threads(export)[case.thread]),
         "",
-        f"Gold plants {len(case.deltas)} state change(s) here. The affected owners -",
-        f"{', '.join(affected)} - never appear in the thread, which is the silo the",
-        "digest exists to cross.",
+        f"Gold plants {len(case.deltas)} state change{'s' if len(case.deltas) != 1 else ''} "
+        f"here. The affected owners ({', '.join(affected)})",
+        "never appear in the thread, which is the silo the digest exists to cross.",
         "",
         f"## 2. Who the change reached on {date.isoformat()}",
         "",
@@ -145,13 +145,12 @@ def _phase_section(conn: sqlite3.Connection, data_dir: Path) -> list[str]:
 
     total, changed = _order_changes(conn, dates, core, ranker)
     lines += [
-        "To be clear about what A3 does and does not do here: a digest covers one day's",
-        "changes, so the day 5 and day 7 digests above hold different items under any",
-        "ranker - that difference is the data. What --phase adds is ordering within a",
-        f"day, and on this dataset it reorders {len(changed)} of {total} digests. The",
-        "gate flip itself - a passing gate demoting last phase's item below the new",
-        "phase's - needs one inbox holding items from both phases, which no real day",
-        "here produces; tests/test_phase.py pins that mechanism with constructed items.",
+        "A digest covers one day's changes, so the day 5 and day 7 digests above would",
+        "hold different items under any ranker. What --phase adds is ordering within a",
+        f"day, and on this dataset it reorders {len(changed)} of {total} digests. The gate flip,",
+        "where a passing gate demotes last phase's item below the new phase's, needs an",
+        "inbox holding items from both phases. No real day here produces one, so",
+        "tests/test_phase.py demonstrates it with constructed items.",
         "",
     ]
     comparison = next((c for c in changed if c[0] == user.id), changed[0] if changed else None)
