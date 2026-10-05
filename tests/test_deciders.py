@@ -163,7 +163,7 @@ def test_llm_decider_parses_structured_output():
     assert decision.change_type == LLM_ANSWERS["change_type"]
     assert decision.contradicts == 0.1
     assert decision.risk == 0.3
-    assert decider.spent_usd == pytest.approx((500 * 2.50 + 40 * 10.00) / 1e6)
+    assert decider.spent_usd == pytest.approx((500 * 2.12 + 40 * 11.63) / 1e6)
 
 
 class StubDecider:

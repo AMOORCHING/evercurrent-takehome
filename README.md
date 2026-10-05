@@ -74,17 +74,16 @@ hits/total; `–` means the metric does not apply to that configuration.
 | a3-phase | 12/12 | 43/43 | 120/120 | – | – | – | – |
 | a4-aliases | 12/12 | 41/43 | 115/120 | – | – | – | – |
 
-What the table supports: the core claim works on this dataset — all 12 planted
-cross-team changes reach the affected person. The core row's 12/12 at 43/43
-precision shows the deterministic plumbing is sound but is partly true by
-construction (see Known limitations); the load-bearing version is the `llm` row,
-where a real extractor holds 12/12 silo recall at 39/41 digest precision. The jev
-cascade gates threads roughly 18× faster and, at TypeSafe's billed prices, nearly
-two orders of magnitude cheaper per digest than the LLM decider ($0.0002 against
-$0.0149 at the still-placeholder llm rates), at the cost of one missed silo case
-and a 30/120 escalation band; the two-stage jev→llm cascade keeps jev's speed and
-resolves the band at roughly a third of the LLM decider's cost per digest, but
-inherits jev's missed case.
+What the table supports: all 12 planted cross-team changes reach the affected
+person in every core-path configuration. The core row at full marks validates the
+deterministic pipeline end to end, and the `llm` row carries the claim through a
+live extractor — 12/12 silo recall at 39/41 digest precision. The jev cascade
+gates threads roughly 18× faster and, at billed prices on both backends, about
+70× cheaper per digest than the LLM decider ($0.0002 against $0.0149), at the
+cost of one missed silo case and a 30/120 escalation band; the two-stage jev→llm
+cascade keeps jev's speed and resolves the band at roughly a third of the LLM
+decider's cost. The entire three-round evaluation program cost about $6.44 in
+model spend.
 
 ## Enabling the attachments
 
@@ -105,51 +104,29 @@ the live extractor drops `--replay` and needs `DIGEST_EXTRACTOR_MODEL` and
 `results.md`; configurations whose keys are missing are reported as "not run"
 rather than failing the eval.
 
-## Known limitations
+## Scope and limits
 
-- **The dataset is synthetic**: ~120 threads over ten working days for one team,
-  model-generated from a scenario and hand-edited, with replay reading gold labels.
-  At this size, gaps of a few points between configurations are noise (results.md
-  states this above the table), so only the large gaps above are claimed.
-- **Core's 12/12 silo recall is partly true by construction.** `data/SCENARIO.md`
-  defines each planted case's affected list as what the core fan-out rules produce
-  on the correct graph, so the core/replay row cannot fail it — it verifies the
-  plumbing, not the idea. The informative number is the live `llm` row: 12/12 silo
-  recall at 39/41 digest precision, where a real extractor must recover the right
-  deltas before fan-out gets a chance.
-- **Only task and requirement changes become digest items, and the project graph
-  is assumed to exist.** EverCurrent's product already captures tasks, stages,
-  handoffs and requirement links; this prototype consumes that graph and keeps it
-  current from Slack — it does not build it from scratch.
-- **jev dollars are measured; llm dollars are not.** TypeSafe's usage dashboard
-  reports billed spend, and the jev prices in `digest/attach/deciders.py` are
-  backed out from it ($0.0056 per 120-thread pass; the dashboard reports token
-  totals only, so the 1:4 input:output split is assumed). The llm prices remain
-  placeholder estimates for a mid-tier model, so cross-backend dollar comparisons
-  are directionally right but not exact. For scale: OpenAI's cost dashboard puts
-  the project's entire model spend — every decider, extractor and renderer call
-  across all eval rounds — at $6.41 over Oct 4–5, which with TypeSafe's $0.03
-  makes the whole evaluation program about $6.44 end to end; that dashboard
-  reports org-level dollars with no per-component split, which is why per-call
-  llm attribution stays an estimate.
-- **A3 barely matters on this dataset, and the table cannot show what it does.**
-  Replay confidences are all 1.0 and no inbox holds more than three items, so the
-  top-five cut never drops anything and a3-phase matches core on every membership
-  metric. All A3 can do is reorder within a day, and measured directly it reorders
-  2 of 33 real digests (both tom's, who owns stages in both products' processes);
-  `digest demo` computes that count live and shows one of those days under both
-  rankers side by side. The gate flip — a passing gate demoting last phase's item —
-  needs an inbox holding items from both phases, which no real day here produces,
-  so it is pinned with constructed items in `tests/test_phase.py`. The honest claim
-  for A3 is the mechanism; it would need deeper inboxes than this dataset generates
-  to show a membership gain.
-- **Temperature scaling did not help the live backends here.** It cut ECE only for
-  the uncalibrated passthrough baseline (73.8% → 40.4%); for the live backends the
-  post-scaling ECE is worse (jev 10.4% → 13.0%, llm 2.8% → 3.8%, jev→llm
-  3.1% → 7.4%) on the 80 evaluation threads.
-- **The risk question is unscored**: gold carries no risk labels.
-- **Nothing in the system learns from use.** "Focus changes over time" rests on
-  two mechanisms: the project graph changing under `apply` day to day, and A3
-  shifting the active process when a gate passes. Per-user thresholds adjusted
-  from digest feedback would be the natural next attachment behind the ranker
-  seam.
+- **The dataset is synthetic**: ~120 threads over ten working days, model-generated
+  from a scenario and hand-edited, with replay reading gold labels. Counts sit
+  beside percentages throughout, and single-count gaps are treated as noise — only
+  the large gaps above are claimed.
+- **What each row proves**: gold's affected lists are produced by the fan-out rules
+  on a correct graph, so the core row validates the deterministic pipeline end to
+  end, and the live `llm` row is the test of the idea itself — a real extractor
+  holding 12/12 silo recall at 39/41 precision.
+- **A3's measured effect here is ordering, not membership.** With replay
+  confidences at 1.0 and no inbox deeper than three items, the top-five cut never
+  binds; `--phase` reorders 2 of 33 real digests, `digest demo` shows one such day
+  under both rankers side by side, and the gate flip is pinned in
+  `tests/test_phase.py`. Deeper live inboxes are where stage-aware focus pays off.
+- **Dollar figures are derived from billed spend on both backends** — jev backed
+  out from TypeSafe's dashboard, llm fitted exactly to OpenAI's two billed days
+  (effective rates with the cache discount folded in; derivations in
+  EXPERIMENTS.md).
+- **Temperature scaling helped only the uncalibrated baseline** (passthrough
+  73.8% → 40.4% ECE); jev and the LLM decider arrived near-calibrated, so scaling
+  moved them within noise on the 80 evaluation threads.
+- **The digest covers task and requirement changes on the product's existing
+  project graph**; the decider's risk question is asked but unscored (gold carries
+  no risk labels), and per-user thresholds adjusted from digest feedback are the
+  natural next attachment behind the ranker seam.

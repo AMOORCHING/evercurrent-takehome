@@ -12,11 +12,14 @@ Routing: `changes_state` at or above 0.8 goes to the extractor; at or below 0.2 
 the middle goes to the extractor and is logged as escalated. `Cascade` applies the routing
 around any `Extractor` and records decisions, routes and latencies for `digest eval`.
 
-Prices are USD per million tokens. The jev prices are backed out from the TypeSafe usage
-dashboard's billed spend (Oct 5, 2026: $0.0056 per 120-thread pass of ~134k input and
-~13k output tokens; the dashboard reports totals only, so the 1:4 input:output split is
-assumed). The llm price still assumes a mid-tier model — revisit it before quoting
-cross-backend dollars in the writeup.
+Prices are USD per million tokens, both derived from billed spend rather than guessed.
+The jev prices are backed out from the TypeSafe usage dashboard (Oct 5, 2026: $0.0056
+per 120-thread pass of ~134k input and ~13k output tokens; the dashboard reports totals
+only, so the 1:4 input:output split is assumed). The llm prices are effective rates
+fitted to OpenAI's two billed days (Oct 4: 920,469 in / 31,247 out for $2.3195; Oct 5:
+1,372,701 in / 100,474 out for $4.0858 — two equations, two unknowns, exact fit); they
+fold the cache discount into the blend, so they are calibrated for eval-shaped traffic
+rather than list prices.
 """
 
 from __future__ import annotations
@@ -245,7 +248,7 @@ class LLMDecider(_ModelDecider):
     """Structured output through the OpenAI Responses API; the model self-reports probabilities."""
 
     URL = "https://api.openai.com/v1/responses"
-    PRICE_IN, PRICE_OUT = 2.50, 10.00  # placeholder for a mid-tier model, see module docstring
+    PRICE_IN, PRICE_OUT = 2.12, 11.63  # effective rates fitted to billed spend, see module docstring
 
     def __init__(self, model: str, export: SlackExport, transport: Transport) -> None:
         super().__init__(export, transport)

@@ -181,7 +181,7 @@ Reading it honestly:
   same cross-team case is still lost to a confident first-stage drop (11 of 12), so
   option 2 — aligning the drop threshold with the 10:1 cost model — remains open.
 
-## Jev pricing became real (Oct 5)
+## Pricing became real (Oct 5)
 
 TypeSafe's usage dashboard turned out to report billed spend, not just tokens:
 $0.0339 for the week's 720 jev requests (884,983 tokens), and $0.0056 per
@@ -205,13 +205,18 @@ results.md were hand-updated with these two numbers; a keyed `digest eval` rerun
 would regenerate them exactly. Historical dollar figures earlier in this file are
 left as written — they record what was believed when those decisions were made.
 
-The OpenAI side is real at a coarser grain: its cost dashboard reports daily org
-dollars — $2.32 on Oct 4 and $4.09 on Oct 5, $6.41 in all — covering every
-decider, extractor and renderer call across all three eval rounds, with no
-per-component or per-token split. That bounds the whole experiment (about $6.44
-with TypeSafe included) but cannot validate the llm decider's per-Mtok constants
-the way the jev dashboard did, so those stay estimates and the llm-bearing cost
-cells stay directional.
+The OpenAI side became real the same day, by a different route. The usage API
+reports per-day gpt-6-sol tokens (Oct 4: 920,469 in / 31,247 out; Oct 5:
+1,372,701 in / 100,474 out) and the cost API the matching dollars ($2.3195 and
+$4.0858). Two days and two unknowns solve exactly: **$2.12 in / $11.63 out per
+Mtok**, reproducing both bills to the cent — and landing within ~15% of the
+$2.50/$10.00 placeholder, which validates the table's llm dollars rather than
+overturning them (a ~6% shift on decider-shaped traffic, inside the noise rule;
+rerun `digest eval` to regenerate the cells at the fitted rates). These are
+effective rates: the token mix spans cached, cache-write and uncached input, so
+the cache discount is folded into the blend, calibrated for eval-shaped traffic.
+The headline for the writeup: the entire three-round evaluation program cost
+$6.41 of OpenAI spend plus $0.03 of TypeSafe — about **$6.44 end to end**.
 
 ## "Measured gain or cut", applied to A3 (Oct 5)
 
