@@ -1,0 +1,26 @@
+[project]
+name = "digest"
+version = "0.1.0"
+description = "Daily digest prototype: which signals reach which person each day, and why."
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "openai>=3.24.0",
+    "pydantic>=2.7",
+    "typer>=0.12",
+]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[project.scripts]
+digest = "digest.cli:app"
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["digest*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
