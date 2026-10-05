@@ -1,0 +1,123 @@
+{
+  "users": [
+    {"id": "maya",   "name": "Maya Chen",     "role": "mechanical_engineer", "team": "mechanical"},
+    {"id": "diego",  "name": "Diego Alvarez", "role": "mechanical_engineer", "team": "mechanical"},
+    {"id": "priya",  "name": "Priya Raman",   "role": "electrical_engineer", "team": "electrical"},
+    {"id": "sam",    "name": "Sam Okafor",    "role": "electrical_engineer", "team": "electrical"},
+    {"id": "lena",   "name": "Lena Fischer",  "role": "firmware_engineer",   "team": "firmware"},
+    {"id": "tom",    "name": "Tom Becker",    "role": "supply_chain_lead",   "team": "operations"},
+    {"id": "rachel", "name": "Rachel Kim",    "role": "engineering_manager", "team": "management"},
+    {"id": "omar",   "name": "Omar Haddad",   "role": "product_manager",     "team": "product"}
+  ],
+
+  "products": [
+    {"id": "gripper", "name": "RG-2 Robot Arm Gripper"},
+    {"id": "drive",   "name": "DU-1 Drive Unit"}
+  ],
+
+  "processes": [
+    {"id": "gripper-evt", "product_id": "gripper", "name": "EVT", "gate_date": "2026-03-09", "status": "active"},
+    {"id": "gripper-dvt", "product_id": "gripper", "name": "DVT", "gate_date": "2026-04-24", "status": "planned"},
+    {"id": "drive-dvt",   "product_id": "drive",   "name": "DVT", "gate_date": "2026-03-27", "status": "active"}
+  ],
+
+  "stages": [
+    {"id": "gripper-evt-1", "process_id": "gripper-evt", "name": "design validation",     "position": 1, "owner_id": "maya"},
+    {"id": "gripper-evt-2", "process_id": "gripper-evt", "name": "electrical bring-up",   "position": 2, "owner_id": "priya"},
+    {"id": "gripper-evt-3", "process_id": "gripper-evt", "name": "firmware integration",  "position": 3, "owner_id": "lena"},
+    {"id": "gripper-evt-4", "process_id": "gripper-evt", "name": "validating samples",    "position": 4, "owner_id": "rachel"},
+
+    {"id": "gripper-dvt-1", "process_id": "gripper-dvt", "name": "design freeze",         "position": 1, "owner_id": "maya"},
+    {"id": "gripper-dvt-2", "process_id": "gripper-dvt", "name": "sourcing",              "position": 2, "owner_id": "tom"},
+    {"id": "gripper-dvt-3", "process_id": "gripper-dvt", "name": "packaging design",      "position": 3, "owner_id": "omar"},
+    {"id": "gripper-dvt-4", "process_id": "gripper-dvt", "name": "validating samples",    "position": 4, "owner_id": "priya"},
+    {"id": "gripper-dvt-5", "process_id": "gripper-dvt", "name": "reliability testing",   "position": 5, "owner_id": "rachel"},
+
+    {"id": "drive-dvt-1",   "process_id": "drive-dvt",   "name": "design validation",     "position": 1, "owner_id": "diego"},
+    {"id": "drive-dvt-2",   "process_id": "drive-dvt",   "name": "sourcing",              "position": 2, "owner_id": "tom"},
+    {"id": "drive-dvt-3",   "process_id": "drive-dvt",   "name": "firmware integration",  "position": 3, "owner_id": "lena"},
+    {"id": "drive-dvt-4",   "process_id": "drive-dvt",   "name": "validating samples",    "position": 4, "owner_id": "sam"},
+    {"id": "drive-dvt-5",   "process_id": "drive-dvt",   "name": "gate review",           "position": 5, "owner_id": "rachel"}
+  ],
+
+  "requirements": [
+    {"id": "REQ-G01", "product_id": "gripper", "title": "Rated grip force",             "value": "40 N",      "owner_id": "maya"},
+    {"id": "REQ-G02", "product_id": "gripper", "title": "Gripper mass",                 "value": "<= 850 g",  "owner_id": "omar"},
+    {"id": "REQ-G03", "product_id": "gripper", "title": "Jaw finger material",          "value": "Al 7075-T6","owner_id": "maya"},
+    {"id": "REQ-G04", "product_id": "gripper", "title": "Actuator peak current",        "value": "<= 3.0 A",  "owner_id": "priya"},
+    {"id": "REQ-G05", "product_id": "gripper", "title": "Full close time",              "value": "<= 250 ms", "owner_id": "lena"},
+    {"id": "REQ-G06", "product_id": "gripper", "title": "Ingress protection",           "value": "IP54",      "owner_id": "maya"},
+    {"id": "REQ-D01", "product_id": "drive",   "title": "Motor continuous torque",      "value": "15 Nm",     "owner_id": "diego"},
+    {"id": "REQ-D02", "product_id": "drive",   "title": "Drive unit mass",              "value": "<= 4.2 kg", "owner_id": "diego"},
+    {"id": "REQ-D03", "product_id": "drive",   "title": "Motor winding temperature",    "value": "<= 105 C",  "owner_id": "sam"},
+    {"id": "REQ-D04", "product_id": "drive",   "title": "Output encoder resolution",    "value": "17 bit",    "owner_id": "lena"}
+  ],
+
+  "requirement_links": [
+    {"requirement_id": "REQ-D01", "affected_requirement_id": "REQ-D02", "note": "More torque means a larger motor frame and more mass."},
+    {"requirement_id": "REQ-D01", "affected_requirement_id": "REQ-D03", "note": "More continuous torque raises winding temperature."},
+    {"requirement_id": "REQ-D03", "affected_requirement_id": "REQ-D02", "note": "A tighter thermal limit needs a larger heatsink."},
+    {"requirement_id": "REQ-G01", "affected_requirement_id": "REQ-G04", "note": "Higher grip force needs more actuator current."},
+    {"requirement_id": "REQ-G01", "affected_requirement_id": "REQ-G02", "note": "Higher grip force needs stiffer, heavier fingers."},
+    {"requirement_id": "REQ-G03", "affected_requirement_id": "REQ-G02", "note": "Finger material density sets finger mass."},
+    {"requirement_id": "REQ-G04", "affected_requirement_id": "REQ-G05", "note": "A lower current limit slows closing."},
+    {"requirement_id": "REQ-G06", "affected_requirement_id": "REQ-G02", "note": "Seals and gaskets add mass."}
+  ],
+
+  "tasks": [
+    {"id": "T01", "title": "Finalize jaw finger CAD",                 "owner_id": "maya",   "assigner_id": "rachel", "product_id": "gripper", "stage_id": "gripper-evt-1", "requirement_id": "REQ-G03", "deadline": "2026-03-03", "status": "in_progress"},
+    {"id": "T02", "title": "FEA on jaw fingers at rated grip force",  "owner_id": "maya",   "assigner_id": "rachel", "product_id": "gripper", "stage_id": "gripper-evt-1", "requirement_id": "REQ-G01", "deadline": "2026-03-04", "status": "open"},
+    {"id": "T03", "title": "Machine EVT jaw fingers",                 "owner_id": "tom",    "assigner_id": "maya",   "product_id": "gripper", "stage_id": "gripper-evt-1", "requirement_id": "REQ-G03", "deadline": "2026-03-05", "status": "open"},
+    {"id": "T04", "title": "Bring up gripper motor driver board",     "owner_id": "priya",  "assigner_id": "rachel", "product_id": "gripper", "stage_id": "gripper-evt-2", "requirement_id": "REQ-G04", "deadline": "2026-03-04", "status": "in_progress"},
+    {"id": "T05", "title": "Tune gripper actuator current limit",     "owner_id": "priya",  "assigner_id": "rachel", "product_id": "gripper", "stage_id": "gripper-evt-2", "requirement_id": "REQ-G04", "deadline": "2026-03-05", "status": "open"},
+    {"id": "T06", "title": "Grip control loop firmware",              "owner_id": "lena",   "assigner_id": "rachel", "product_id": "gripper", "stage_id": "gripper-evt-3", "requirement_id": "REQ-G05", "deadline": "2026-03-05", "status": "in_progress"},
+    {"id": "T07", "title": "Characterize close time",                 "owner_id": "lena",   "assigner_id": "omar",   "product_id": "gripper", "stage_id": "gripper-evt-3", "requirement_id": "REQ-G05", "deadline": "2026-03-06", "status": "open"},
+    {"id": "T08", "title": "Validate ten EVT gripper samples",        "owner_id": "priya",  "assigner_id": "rachel", "product_id": "gripper", "stage_id": "gripper-evt-4", "requirement_id": "REQ-G01", "deadline": "2026-03-06", "status": "open"},
+    {"id": "T09", "title": "EVT gate review",                         "owner_id": "rachel", "assigner_id": "omar",   "product_id": "gripper", "stage_id": "gripper-evt-4", "requirement_id": null,      "deadline": "2026-03-09", "status": "open"},
+
+    {"id": "T10", "title": "Assemble DVT design freeze package",      "owner_id": "maya",   "assigner_id": "rachel", "product_id": "gripper", "stage_id": "gripper-dvt-1", "requirement_id": "REQ-G02", "deadline": "2026-03-11", "status": "open"},
+    {"id": "T11", "title": "Source DVT jaw finger stock",             "owner_id": "tom",    "assigner_id": "maya",   "product_id": "gripper", "stage_id": "gripper-dvt-2", "requirement_id": "REQ-G03", "deadline": "2026-03-12", "status": "open"},
+    {"id": "T12", "title": "Qualify second-source gripper motor",     "owner_id": "tom",    "assigner_id": "priya",  "product_id": "gripper", "stage_id": "gripper-dvt-2", "requirement_id": "REQ-G04", "deadline": "2026-03-13", "status": "open"},
+    {"id": "T13", "title": "Design gripper retail packaging",         "owner_id": "omar",   "assigner_id": "rachel", "product_id": "gripper", "stage_id": "gripper-dvt-3", "requirement_id": null,      "deadline": "2026-03-13", "status": "open"},
+    {"id": "T14", "title": "Write DVT sample validation plan",        "owner_id": "priya",  "assigner_id": "rachel", "product_id": "gripper", "stage_id": "gripper-dvt-4", "requirement_id": "REQ-G01", "deadline": "2026-03-13", "status": "open"},
+    {"id": "T15", "title": "Design wrist seal for ingress rating",    "owner_id": "maya",   "assigner_id": "omar",   "product_id": "gripper", "stage_id": "gripper-dvt-1", "requirement_id": "REQ-G06", "deadline": "2026-03-12", "status": "open"},
+    {"id": "T16", "title": "Write gripper reliability test plan",     "owner_id": "rachel", "assigner_id": "omar",   "product_id": "gripper", "stage_id": "gripper-dvt-5", "requirement_id": null,      "deadline": "2026-03-13", "status": "open"},
+
+    {"id": "T17", "title": "Size drive unit motor",                   "owner_id": "diego",  "assigner_id": "rachel", "product_id": "drive",   "stage_id": "drive-dvt-1",   "requirement_id": "REQ-D01", "deadline": "2026-03-04", "status": "in_progress"},
+    {"id": "T18", "title": "Drive housing thermal analysis",          "owner_id": "sam",    "assigner_id": "rachel", "product_id": "drive",   "stage_id": "drive-dvt-1",   "requirement_id": "REQ-D03", "deadline": "2026-03-06", "status": "open"},
+    {"id": "T19", "title": "Maintain drive unit mass budget",         "owner_id": "diego",  "assigner_id": "rachel", "product_id": "drive",   "stage_id": "drive-dvt-1",   "requirement_id": "REQ-D02", "deadline": "2026-03-05", "status": "open"},
+    {"id": "T20", "title": "Design motor driver power stage",         "owner_id": "sam",    "assigner_id": "rachel", "product_id": "drive",   "stage_id": "drive-dvt-1",   "requirement_id": "REQ-D03", "deadline": "2026-03-06", "status": "in_progress"},
+    {"id": "T21", "title": "Source DVT drive motors",                 "owner_id": "tom",    "assigner_id": "diego",  "product_id": "drive",   "stage_id": "drive-dvt-2",   "requirement_id": "REQ-D01", "deadline": "2026-03-10", "status": "open"},
+    {"id": "T22", "title": "Source DVT gearbox",                      "owner_id": "tom",    "assigner_id": "diego",  "product_id": "drive",   "stage_id": "drive-dvt-2",   "requirement_id": "REQ-D02", "deadline": "2026-03-11", "status": "open"},
+    {"id": "T23", "title": "Integrate drive encoder firmware",        "owner_id": "lena",   "assigner_id": "sam",    "product_id": "drive",   "stage_id": "drive-dvt-3",   "requirement_id": "REQ-D04", "deadline": "2026-03-11", "status": "open"},
+    {"id": "T24", "title": "Tune torque control loop",                "owner_id": "lena",   "assigner_id": "sam",    "product_id": "drive",   "stage_id": "drive-dvt-3",   "requirement_id": "REQ-D01", "deadline": "2026-03-12", "status": "open"},
+    {"id": "T25", "title": "Validate DVT drive samples",              "owner_id": "sam",    "assigner_id": "rachel", "product_id": "drive",   "stage_id": "drive-dvt-4",   "requirement_id": "REQ-D01", "deadline": "2026-03-13", "status": "open"}
+  ],
+
+  "handoffs": [
+    {"upstream_task_id": "T01", "downstream_task_id": "T03"},
+    {"upstream_task_id": "T02", "downstream_task_id": "T08"},
+    {"upstream_task_id": "T04", "downstream_task_id": "T05"},
+    {"upstream_task_id": "T05", "downstream_task_id": "T06"},
+    {"upstream_task_id": "T06", "downstream_task_id": "T07"},
+    {"upstream_task_id": "T08", "downstream_task_id": "T09"},
+    {"upstream_task_id": "T10", "downstream_task_id": "T11"},
+    {"upstream_task_id": "T15", "downstream_task_id": "T13"},
+    {"upstream_task_id": "T17", "downstream_task_id": "T21"},
+    {"upstream_task_id": "T17", "downstream_task_id": "T20"},
+    {"upstream_task_id": "T20", "downstream_task_id": "T24"},
+    {"upstream_task_id": "T23", "downstream_task_id": "T25"}
+  ],
+  "aliases": [
+    {"surface": "MDB",                "target_kind": "task", "target_id": "T04"},
+    {"surface": "MDB rev A",          "target_kind": "task", "target_id": "T04"},
+    {"surface": "motor driver board", "target_kind": "task", "target_id": "T04"},
+    {"surface": "fingertips",         "target_kind": "task", "target_id": "T03"},
+    {"surface": "jaw fingertips",     "target_kind": "task", "target_id": "T03"},
+    {"surface": "HD-20",              "target_kind": "task", "target_id": "T22"},
+    {"surface": "HD-20 gearbox",      "target_kind": "task", "target_id": "T22"},
+    {"surface": "AksIM",              "target_kind": "task", "target_id": "T23"},
+    {"surface": "AksIM encoder",      "target_kind": "task", "target_id": "T23"},
+    {"surface": "drive encoder",      "target_kind": "task", "target_id": "T23"}
+  ]
+}

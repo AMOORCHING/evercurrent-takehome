@@ -1,0 +1,5692 @@
+{
+  "team": {
+    "id": "T06JX3EVC",
+    "name": "Evercurrent Robotics",
+    "domain": "evercurrent-robotics"
+  },
+  "users": [
+    {
+      "id": "U06JX4M2C",
+      "name": "maya",
+      "real_name": "Maya Chen",
+      "profile": {
+        "real_name": "Maya Chen",
+        "display_name": "maya",
+        "title": "Mechanical Engineer"
+      },
+      "is_bot": false,
+      "deleted": false
+    },
+    {
+      "id": "U06JX4D7A",
+      "name": "diego",
+      "real_name": "Diego Alvarez",
+      "profile": {
+        "real_name": "Diego Alvarez",
+        "display_name": "diego",
+        "title": "Mechanical Engineer"
+      },
+      "is_bot": false,
+      "deleted": false
+    },
+    {
+      "id": "U06JX4P3R",
+      "name": "priya",
+      "real_name": "Priya Raman",
+      "profile": {
+        "real_name": "Priya Raman",
+        "display_name": "priya",
+        "title": "Electrical Engineer"
+      },
+      "is_bot": false,
+      "deleted": false
+    },
+    {
+      "id": "U06JX4S8O",
+      "name": "sam",
+      "real_name": "Sam Okafor",
+      "profile": {
+        "real_name": "Sam Okafor",
+        "display_name": "sam",
+        "title": "Electrical Engineer"
+      },
+      "is_bot": false,
+      "deleted": false
+    },
+    {
+      "id": "U06JX4L5F",
+      "name": "lena",
+      "real_name": "Lena Fischer",
+      "profile": {
+        "real_name": "Lena Fischer",
+        "display_name": "lena",
+        "title": "Firmware Engineer"
+      },
+      "is_bot": false,
+      "deleted": false
+    },
+    {
+      "id": "U06JX4T9B",
+      "name": "tom",
+      "real_name": "Tom Becker",
+      "profile": {
+        "real_name": "Tom Becker",
+        "display_name": "tom",
+        "title": "Supply Chain Lead"
+      },
+      "is_bot": false,
+      "deleted": false
+    },
+    {
+      "id": "U06JX4R1K",
+      "name": "rachel",
+      "real_name": "Rachel Kim",
+      "profile": {
+        "real_name": "Rachel Kim",
+        "display_name": "rachel",
+        "title": "Engineering Manager"
+      },
+      "is_bot": false,
+      "deleted": false
+    },
+    {
+      "id": "U06JX4O6H",
+      "name": "omar",
+      "real_name": "Omar Haddad",
+      "profile": {
+        "real_name": "Omar Haddad",
+        "display_name": "omar",
+        "title": "Product Manager"
+      },
+      "is_bot": false,
+      "deleted": false
+    }
+  ],
+  "channels": [
+    {
+      "id": "C06JX5A01",
+      "name": "general",
+      "created": 1767225600,
+      "is_archived": false,
+      "is_general": true,
+      "members": [
+        "U06JX4M2C",
+        "U06JX4D7A",
+        "U06JX4P3R",
+        "U06JX4S8O",
+        "U06JX4L5F",
+        "U06JX4T9B",
+        "U06JX4R1K",
+        "U06JX4O6H"
+      ],
+      "purpose": {
+        "value": "Company-wide announcements and everything else"
+      },
+      "topic": {
+        "value": ""
+      }
+    },
+    {
+      "id": "C06JX5A02",
+      "name": "gripper",
+      "created": 1767225600,
+      "is_archived": false,
+      "is_general": false,
+      "members": [
+        "U06JX4M2C",
+        "U06JX4D7A",
+        "U06JX4P3R",
+        "U06JX4S8O",
+        "U06JX4L5F",
+        "U06JX4T9B",
+        "U06JX4R1K",
+        "U06JX4O6H"
+      ],
+      "purpose": {
+        "value": "RG-2 robot arm gripper"
+      },
+      "topic": {
+        "value": ""
+      }
+    },
+    {
+      "id": "C06JX5A03",
+      "name": "drive-unit",
+      "created": 1767225600,
+      "is_archived": false,
+      "is_general": false,
+      "members": [
+        "U06JX4M2C",
+        "U06JX4D7A",
+        "U06JX4P3R",
+        "U06JX4S8O",
+        "U06JX4L5F",
+        "U06JX4T9B",
+        "U06JX4R1K",
+        "U06JX4O6H"
+      ],
+      "purpose": {
+        "value": "DU-1 drive unit"
+      },
+      "topic": {
+        "value": ""
+      }
+    },
+    {
+      "id": "C06JX5A04",
+      "name": "hw-electrical",
+      "created": 1767225600,
+      "is_archived": false,
+      "is_general": false,
+      "members": [
+        "U06JX4M2C",
+        "U06JX4D7A",
+        "U06JX4P3R",
+        "U06JX4S8O",
+        "U06JX4L5F",
+        "U06JX4T9B",
+        "U06JX4R1K",
+        "U06JX4O6H"
+      ],
+      "purpose": {
+        "value": "Boards, power, lab equipment"
+      },
+      "topic": {
+        "value": ""
+      }
+    },
+    {
+      "id": "C06JX5A05",
+      "name": "supply-chain",
+      "created": 1767225600,
+      "is_archived": false,
+      "is_general": false,
+      "members": [
+        "U06JX4M2C",
+        "U06JX4D7A",
+        "U06JX4P3R",
+        "U06JX4S8O",
+        "U06JX4L5F",
+        "U06JX4T9B",
+        "U06JX4R1K",
+        "U06JX4O6H"
+      ],
+      "purpose": {
+        "value": "Vendors, POs, lead times, shipping"
+      },
+      "topic": {
+        "value": ""
+      }
+    }
+  ],
+  "messages": {
+    "general": [
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "Morning all. Standup moves to 9:30 this week while the lab is being rewired. Same link.",
+        "ts": "1772440800.000001",
+        "thread_ts": "1772440800.000001",
+        "reply_count": 3,
+        "reply_users_count": 2,
+        "latest_reply": "1772441220.000004",
+        "reply_users": [
+          "U06JX4D7A",
+          "U06JX4R1K"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4D7A",
+            "ts": "1772440860.000002"
+          },
+          {
+            "user": "U06JX4R1K",
+            "ts": "1772441100.000003"
+          },
+          {
+            "user": "U06JX4D7A",
+            "ts": "1772441220.000004"
+          }
+        ],
+        "reactions": [
+          {
+            "name": "+1",
+            "users": [
+              "U06JX4O6H",
+              "U06JX4M2C",
+              "U06JX4L5F"
+            ],
+            "count": 3
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "does that include Thursday? I have the gearbox vendor call at 9:30 thu",
+        "ts": "1772440860.000002",
+        "thread_ts": "1772440800.000001",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "Thursday we'll do async, post in a thread",
+        "ts": "1772441100.000003",
+        "thread_ts": "1772440800.000001",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "perfect",
+        "ts": "1772441220.000004",
+        "thread_ts": "1772440800.000001",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "PIZZA IN THE KITCHEN IN 5 MIN!!! :pizza::pizza::pizza:",
+        "ts": "1772452800.000019",
+        "thread_ts": "1772452800.000019",
+        "reply_count": 14,
+        "reply_users_count": 8,
+        "latest_reply": "1772453640.000033",
+        "reply_users": [
+          "U06JX4D7A",
+          "U06JX4M2C",
+          "U06JX4L5F",
+          "U06JX4S8O",
+          "U06JX4R1K",
+          "U06JX4P3R",
+          "U06JX4O6H",
+          "U06JX4T9B"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4D7A",
+            "ts": "1772452860.000020"
+          },
+          {
+            "user": "U06JX4M2C",
+            "ts": "1772452920.000021"
+          },
+          {
+            "user": "U06JX4L5F",
+            "ts": "1772452980.000022"
+          },
+          {
+            "user": "U06JX4S8O",
+            "ts": "1772453040.000023"
+          },
+          {
+            "user": "U06JX4R1K",
+            "ts": "1772453100.000024"
+          },
+          {
+            "user": "U06JX4P3R",
+            "ts": "1772453160.000025"
+          },
+          {
+            "user": "U06JX4O6H",
+            "ts": "1772453220.000026"
+          },
+          {
+            "user": "U06JX4T9B",
+            "ts": "1772453280.000027"
+          },
+          {
+            "user": "U06JX4R1K",
+            "ts": "1772453340.000028"
+          },
+          {
+            "user": "U06JX4L5F",
+            "ts": "1772453400.000029"
+          },
+          {
+            "user": "U06JX4D7A",
+            "ts": "1772453460.000030"
+          },
+          {
+            "user": "U06JX4M2C",
+            "ts": "1772453520.000031"
+          },
+          {
+            "user": "U06JX4O6H",
+            "ts": "1772453580.000032"
+          },
+          {
+            "user": "U06JX4S8O",
+            "ts": "1772453640.000033"
+          }
+        ],
+        "reactions": [
+          {
+            "name": "pizza",
+            "users": [
+              "U06JX4M2C",
+              "U06JX4D7A",
+              "U06JX4P3R",
+              "U06JX4S8O",
+              "U06JX4L5F",
+              "U06JX4T9B",
+              "U06JX4O6H"
+            ],
+            "count": 7
+          },
+          {
+            "name": "heart",
+            "users": [
+              "U06JX4M2C",
+              "U06JX4L5F",
+              "U06JX4O6H"
+            ],
+            "count": 3
+          },
+          {
+            "name": "rotating_light",
+            "users": [
+              "U06JX4S8O",
+              "U06JX4D7A"
+            ],
+            "count": 2
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": ":pizza:",
+        "ts": "1772452860.000020",
+        "thread_ts": "1772452800.000019",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": ":heart_eyes:",
+        "ts": "1772452920.000021",
+        "thread_ts": "1772452800.000019",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "omw",
+        "ts": "1772452980.000022",
+        "thread_ts": "1772452800.000019",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "IS THERE PINEAPPLE",
+        "ts": "1772453040.000023",
+        "thread_ts": "1772452800.000019",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "there is ONE pineapple, it's mine",
+        "ts": "1772453100.000024",
+        "thread_ts": "1772452800.000019",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "save me a slice of the mushroom one!!",
+        "ts": "1772453160.000025",
+        "thread_ts": "1772452800.000019",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": ":runner::dash:",
+        "ts": "1772453220.000026",
+        "thread_ts": "1772452800.000019",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": "is there a vegan one?",
+        "ts": "1772453280.000027",
+        "thread_ts": "1772452800.000019",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "two margheritas on the left, no cheese on the far one",
+        "ts": "1772453340.000028",
+        "thread_ts": "1772452800.000019",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "rachel you are a legend",
+        "ts": "1772453400.000029",
+        "thread_ts": "1772452800.000019",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": ":raised_hands:",
+        "ts": "1772453460.000030",
+        "thread_ts": "1772452800.000019",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "the lab people are coming up too, hurry",
+        "ts": "1772453520.000031",
+        "thread_ts": "1772452800.000019",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": "all gone. sorry Sam",
+        "ts": "1772453580.000032",
+        "thread_ts": "1772452800.000019",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "noooo :sob:",
+        "ts": "1772453640.000033",
+        "thread_ts": "1772452800.000019",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": "Reminder that the Q2 roadmap review is next Thursday. Slides template is in the shared drive under /roadmap",
+        "ts": "1772468400.000044",
+        "thread_ts": "1772468400.000044",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1772468700.000046",
+        "reply_users": [
+          "U06JX4M2C",
+          "U06JX4O6H"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4M2C",
+            "ts": "1772468460.000045"
+          },
+          {
+            "user": "U06JX4O6H",
+            "ts": "1772468700.000046"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "is that the 30 min slot or the hour?",
+        "ts": "1772468460.000045",
+        "thread_ts": "1772468400.000044",
+        "parent_user_id": "U06JX4O6H"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": "hour, but gripper only needs 20 min of it",
+        "ts": "1772468700.000046",
+        "thread_ts": "1772468400.000044",
+        "parent_user_id": "U06JX4O6H"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "Async standup today, I'm at the dentist until 10. One line each please.",
+        "ts": "1772527500.000050",
+        "thread_ts": "1772527500.000050",
+        "reply_count": 7,
+        "reply_users_count": 7,
+        "latest_reply": "1772528880.000057",
+        "reply_users": [
+          "U06JX4M2C",
+          "U06JX4D7A",
+          "U06JX4P3R",
+          "U06JX4S8O",
+          "U06JX4L5F",
+          "U06JX4T9B",
+          "U06JX4O6H"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4M2C",
+            "ts": "1772527560.000051"
+          },
+          {
+            "user": "U06JX4D7A",
+            "ts": "1772527800.000052"
+          },
+          {
+            "user": "U06JX4P3R",
+            "ts": "1772527920.000053"
+          },
+          {
+            "user": "U06JX4S8O",
+            "ts": "1772528280.000054"
+          },
+          {
+            "user": "U06JX4L5F",
+            "ts": "1772528400.000055"
+          },
+          {
+            "user": "U06JX4T9B",
+            "ts": "1772528700.000056"
+          },
+          {
+            "user": "U06JX4O6H",
+            "ts": "1772528880.000057"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "finger CAD, plus the material question with Tom",
+        "ts": "1772527560.000051",
+        "thread_ts": "1772527500.000050",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "drive mass budget roll-up, motor sizing waiting on vendor curves",
+        "ts": "1772527800.000052",
+        "thread_ts": "1772527500.000050",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "driver board bring-up, chasing a hot spot near the gate driver",
+        "ts": "1772527920.000053",
+        "thread_ts": "1772527500.000050",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "power stage layout, setting up the thermal model",
+        "ts": "1772528280.000054",
+        "thread_ts": "1772527500.000050",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "drive encoder datasheet, gripper odds and ends",
+        "ts": "1772528400.000055",
+        "thread_ts": "1772527500.000050",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": "vendor quotes, finger stock",
+        "ts": "1772528700.000056",
+        "thread_ts": "1772527500.000050",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": "customer calls, packaging brief",
+        "ts": "1772528880.000057",
+        "thread_ts": "1772527500.000050",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": "Anyone have a contact at a thermoforming shop? Need quotes for retail packaging trays later this month",
+        "ts": "1772546400.000097",
+        "thread_ts": "1772546400.000097",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1772546700.000099",
+        "reply_users": [
+          "U06JX4T9B",
+          "U06JX4O6H"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4T9B",
+            "ts": "1772546460.000098"
+          },
+          {
+            "user": "U06JX4O6H",
+            "ts": "1772546700.000099"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": "I've used Pacific Thermo before, decent on small runs. I'll DM you their rep",
+        "ts": "1772546460.000098",
+        "thread_ts": "1772546400.000097",
+        "parent_user_id": "U06JX4O6H"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": "amazing, thanks",
+        "ts": "1772546700.000099",
+        "thread_ts": "1772546400.000097",
+        "parent_user_id": "U06JX4O6H"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "OOO Friday afternoon for my kid's school thing. Online in the morning.",
+        "ts": "1772613000.000110",
+        "reactions": [
+          {
+            "name": "+1",
+            "users": [
+              "U06JX4R1K"
+            ],
+            "count": 1
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "Reminder: EVT gate review is Monday the 9th, 10am, big conference room. Omar is sending the invite.",
+        "ts": "1772636400.000132",
+        "thread_ts": "1772636400.000132",
+        "reply_count": 3,
+        "reply_users_count": 3,
+        "latest_reply": "1772636820.000135",
+        "reply_users": [
+          "U06JX4O6H",
+          "U06JX4D7A",
+          "U06JX4R1K"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4O6H",
+            "ts": "1772636460.000133"
+          },
+          {
+            "user": "U06JX4D7A",
+            "ts": "1772636700.000134"
+          },
+          {
+            "user": "U06JX4R1K",
+            "ts": "1772636820.000135"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": "sent",
+        "ts": "1772636460.000133",
+        "thread_ts": "1772636400.000132",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "drive folks optional?",
+        "ts": "1772636700.000134",
+        "thread_ts": "1772636400.000132",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "optional, but come if you want to see the gripper do its thing",
+        "ts": "1772636820.000135",
+        "thread_ts": "1772636400.000132",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "Async standup (Thursday). One line each please.",
+        "ts": "1772700000.000141",
+        "thread_ts": "1772700000.000141",
+        "reply_count": 7,
+        "reply_users_count": 7,
+        "latest_reply": "1772701380.000148",
+        "reply_users": [
+          "U06JX4M2C",
+          "U06JX4D7A",
+          "U06JX4P3R",
+          "U06JX4S8O",
+          "U06JX4L5F",
+          "U06JX4T9B",
+          "U06JX4O6H"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4M2C",
+            "ts": "1772700060.000142"
+          },
+          {
+            "user": "U06JX4D7A",
+            "ts": "1772700300.000143"
+          },
+          {
+            "user": "U06JX4P3R",
+            "ts": "1772700420.000144"
+          },
+          {
+            "user": "U06JX4S8O",
+            "ts": "1772700780.000145"
+          },
+          {
+            "user": "U06JX4L5F",
+            "ts": "1772700900.000146"
+          },
+          {
+            "user": "U06JX4T9B",
+            "ts": "1772701200.000147"
+          },
+          {
+            "user": "U06JX4O6H",
+            "ts": "1772701380.000148"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "FEA rerun on 6061, landing today",
+        "ts": "1772700060.000142",
+        "thread_ts": "1772700000.000141",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "motor sizing wrap-up",
+        "ts": "1772700300.000143",
+        "thread_ts": "1772700000.000141",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "driver board postmortem, rev B",
+        "ts": "1772700420.000144",
+        "thread_ts": "1772700000.000141",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "power stage and thermal, both feeling the 22 Nm",
+        "ts": "1772700780.000145",
+        "thread_ts": "1772700000.000141",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "encoder prep, gripper fw cleanup",
+        "ts": "1772700900.000146",
+        "thread_ts": "1772700000.000141",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": "drive motor PO prep",
+        "ts": "1772701200.000147",
+        "thread_ts": "1772700000.000141",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": "Acme update after the FEA",
+        "ts": "1772701380.000148",
+        "thread_ts": "1772700000.000141",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": "Who's going to the robotics meetup next Wednesday? Thinking of getting a group ticket",
+        "ts": "1772726400.000176",
+        "thread_ts": "1772726400.000176",
+        "reply_count": 3,
+        "reply_users_count": 3,
+        "latest_reply": "1772726820.000179",
+        "reply_users": [
+          "U06JX4L5F",
+          "U06JX4D7A",
+          "U06JX4M2C"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4L5F",
+            "ts": "1772726460.000177"
+          },
+          {
+            "user": "U06JX4D7A",
+            "ts": "1772726700.000178"
+          },
+          {
+            "user": "U06JX4M2C",
+            "ts": "1772726820.000179"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "me!",
+        "ts": "1772726460.000177",
+        "thread_ts": "1772726400.000176",
+        "parent_user_id": "U06JX4O6H"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "maybe",
+        "ts": "1772726700.000178",
+        "thread_ts": "1772726400.000176",
+        "parent_user_id": "U06JX4O6H"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "yes if EVT doesn't eat me alive",
+        "ts": "1772726820.000179",
+        "thread_ts": "1772726400.000176",
+        "parent_user_id": "U06JX4O6H"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": "Coffee machine on 2 is fixed. Whoever taped the descaling instructions to it, thank you",
+        "ts": "1772785800.000182",
+        "thread_ts": "1772785800.000182",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1772786100.000184",
+        "reply_users": [
+          "U06JX4D7A",
+          "U06JX4R1K"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4D7A",
+            "ts": "1772785860.000183"
+          },
+          {
+            "user": "U06JX4R1K",
+            "ts": "1772786100.000184"
+          }
+        ],
+        "reactions": [
+          {
+            "name": "coffee",
+            "users": [
+              "U06JX4L5F",
+              "U06JX4S8O"
+            ],
+            "count": 2
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "it was me, I got tired of the noise",
+        "ts": "1772785860.000183",
+        "thread_ts": "1772785800.000182",
+        "parent_user_id": "U06JX4O6H"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "hero",
+        "ts": "1772786100.000184",
+        "thread_ts": "1772785800.000182",
+        "parent_user_id": "U06JX4O6H"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": "Happy Friday. Donut box in the kitchen, courtesy of the machine shop",
+        "ts": "1772814600.000211",
+        "thread_ts": "1772814600.000211",
+        "reply_count": 1,
+        "reply_users_count": 1,
+        "latest_reply": "1772814660.000212",
+        "reply_users": [
+          "U06JX4D7A"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4D7A",
+            "ts": "1772814660.000212"
+          }
+        ],
+        "reactions": [
+          {
+            "name": "doughnut",
+            "users": [
+              "U06JX4M2C",
+              "U06JX4L5F",
+              "U06JX4O6H",
+              "U06JX4S8O"
+            ],
+            "count": 4
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "the shop loves us now",
+        "ts": "1772814660.000212",
+        "thread_ts": "1772814600.000211",
+        "parent_user_id": "U06JX4T9B"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": "Parking lot B is closed Tue-Wed for repaving, use the overflow lot",
+        "ts": "1773048600.000220",
+        "reactions": [
+          {
+            "name": "car",
+            "users": [
+              "U06JX4D7A"
+            ],
+            "count": 1
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "EVT gate passed. RG-2 is officially in DVT. Thank you all, especially Maya and Priya for the sample push. DVT kickoff tomorrow at 10.",
+        "ts": "1773055800.000229"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "Cake in the big conference room! Photos from the gate :camera:",
+        "ts": "1773059400.000230",
+        "files": [
+          {
+            "name": "gate_team.jpg",
+            "title": "gate_team.jpg",
+            "mimetype": "image/jpeg"
+          },
+          {
+            "name": "gripper_demo.jpg",
+            "title": "gripper_demo.jpg",
+            "mimetype": "image/jpeg"
+          },
+          {
+            "name": "cake.jpg",
+            "title": "cake.jpg",
+            "mimetype": "image/jpeg"
+          }
+        ],
+        "thread_ts": "1773059400.000230",
+        "reply_count": 30,
+        "reply_users_count": 8,
+        "latest_reply": "1773061200.000260",
+        "reply_users": [
+          "U06JX4M2C",
+          "U06JX4D7A",
+          "U06JX4P3R",
+          "U06JX4S8O",
+          "U06JX4L5F",
+          "U06JX4T9B",
+          "U06JX4O6H",
+          "U06JX4R1K"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4M2C",
+            "ts": "1773059460.000231"
+          },
+          {
+            "user": "U06JX4D7A",
+            "ts": "1773059520.000232"
+          },
+          {
+            "user": "U06JX4P3R",
+            "ts": "1773059580.000233"
+          },
+          {
+            "user": "U06JX4S8O",
+            "ts": "1773059640.000234"
+          },
+          {
+            "user": "U06JX4L5F",
+            "ts": "1773059700.000235"
+          },
+          {
+            "user": "U06JX4T9B",
+            "ts": "1773059760.000236"
+          },
+          {
+            "user": "U06JX4O6H",
+            "ts": "1773059820.000237"
+          },
+          {
+            "user": "U06JX4D7A",
+            "ts": "1773059880.000238"
+          },
+          {
+            "user": "U06JX4R1K",
+            "ts": "1773059940.000239"
+          },
+          {
+            "user": "U06JX4P3R",
+            "ts": "1773060000.000240"
+          },
+          {
+            "user": "U06JX4S8O",
+            "ts": "1773060060.000241"
+          },
+          {
+            "user": "U06JX4T9B",
+            "ts": "1773060120.000242"
+          },
+          {
+            "user": "U06JX4L5F",
+            "ts": "1773060180.000243"
+          },
+          {
+            "user": "U06JX4R1K",
+            "ts": "1773060240.000244"
+          },
+          {
+            "user": "U06JX4O6H",
+            "ts": "1773060300.000245"
+          },
+          {
+            "user": "U06JX4M2C",
+            "ts": "1773060360.000246"
+          },
+          {
+            "user": "U06JX4D7A",
+            "ts": "1773060420.000247"
+          },
+          {
+            "user": "U06JX4P3R",
+            "ts": "1773060480.000248"
+          },
+          {
+            "user": "U06JX4S8O",
+            "ts": "1773060540.000249"
+          },
+          {
+            "user": "U06JX4L5F",
+            "ts": "1773060600.000250"
+          },
+          {
+            "user": "U06JX4T9B",
+            "ts": "1773060660.000251"
+          },
+          {
+            "user": "U06JX4O6H",
+            "ts": "1773060720.000252"
+          },
+          {
+            "user": "U06JX4M2C",
+            "ts": "1773060780.000253"
+          },
+          {
+            "user": "U06JX4D7A",
+            "ts": "1773060840.000254"
+          },
+          {
+            "user": "U06JX4R1K",
+            "ts": "1773060900.000255"
+          },
+          {
+            "user": "U06JX4P3R",
+            "ts": "1773060960.000256"
+          },
+          {
+            "user": "U06JX4S8O",
+            "ts": "1773061020.000257"
+          },
+          {
+            "user": "U06JX4L5F",
+            "ts": "1773061080.000258"
+          },
+          {
+            "user": "U06JX4T9B",
+            "ts": "1773061140.000259"
+          },
+          {
+            "user": "U06JX4R1K",
+            "ts": "1773061200.000260"
+          }
+        ],
+        "reactions": [
+          {
+            "name": "tada",
+            "users": [
+              "U06JX4M2C",
+              "U06JX4D7A",
+              "U06JX4P3R",
+              "U06JX4S8O",
+              "U06JX4L5F",
+              "U06JX4T9B",
+              "U06JX4O6H"
+            ],
+            "count": 7
+          },
+          {
+            "name": "cake",
+            "users": [
+              "U06JX4M2C",
+              "U06JX4L5F",
+              "U06JX4T9B"
+            ],
+            "count": 3
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": ":tada:",
+        "ts": "1773059460.000231",
+        "thread_ts": "1773059400.000230",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": ":cake:",
+        "ts": "1773059520.000232",
+        "thread_ts": "1773059400.000230",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": ":raised_hands:",
+        "ts": "1773059580.000233",
+        "thread_ts": "1773059400.000230",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "WOOOO",
+        "ts": "1773059640.000234",
+        "thread_ts": "1773059400.000230",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": ":confetti_ball:",
+        "ts": "1773059700.000235",
+        "thread_ts": "1773059400.000230",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": ":rocket:",
+        "ts": "1773059760.000236",
+        "thread_ts": "1773059400.000230",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": ":clap::clap::clap:",
+        "ts": "1773059820.000237",
+        "thread_ts": "1773059400.000230",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "that photo of maya holding the finger like a trophy :joy:",
+        "ts": "1773059880.000238",
+        "thread_ts": "1773059400.000230",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": ":heart:",
+        "ts": "1773059940.000239",
+        "thread_ts": "1773059400.000230",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "DVT here we come :muscle:",
+        "ts": "1773060000.000240",
+        "thread_ts": "1773059400.000230",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": ":partying_face:",
+        "ts": "1773060060.000241",
+        "thread_ts": "1773059400.000230",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": ":cake::cake:",
+        "ts": "1773060120.000242",
+        "thread_ts": "1773059400.000230",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "who made the cake?? it's incredible",
+        "ts": "1773060180.000243",
+        "thread_ts": "1773059400.000230",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "omar's partner!",
+        "ts": "1773060240.000244",
+        "thread_ts": "1773059400.000230",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": ":star-struck:",
+        "ts": "1773060300.000245",
+        "thread_ts": "1773059400.000230",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": ":tada::tada:",
+        "ts": "1773060360.000246",
+        "thread_ts": "1773059400.000230",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "best gate yet",
+        "ts": "1773060420.000247",
+        "thread_ts": "1773059400.000230",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": ":100:",
+        "ts": "1773060480.000248",
+        "thread_ts": "1773059400.000230",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": ":champagne:",
+        "ts": "1773060540.000249",
+        "thread_ts": "1773059400.000230",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "save me a corner piece",
+        "ts": "1773060600.000250",
+        "thread_ts": "1773059400.000230",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": ":confetti_ball:",
+        "ts": "1773060660.000251",
+        "thread_ts": "1773059400.000230",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": ":fire:",
+        "ts": "1773060720.000252",
+        "thread_ts": "1773059400.000230",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": ":robot_face::tada:",
+        "ts": "1773060780.000253",
+        "thread_ts": "1773059400.000230",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "the gripper photo should be the new slack icon",
+        "ts": "1773060840.000254",
+        "thread_ts": "1773059400.000230",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": ":+1:",
+        "ts": "1773060900.000255",
+        "thread_ts": "1773059400.000230",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": ":heart_eyes:",
+        "ts": "1773060960.000256",
+        "thread_ts": "1773059400.000230",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": ":sparkles:",
+        "ts": "1773061020.000257",
+        "thread_ts": "1773059400.000230",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": ":clap:",
+        "ts": "1773061080.000258",
+        "thread_ts": "1773059400.000230",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": ":cake:",
+        "ts": "1773061140.000259",
+        "thread_ts": "1773059400.000230",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "ok back to work :sweat_smile:",
+        "ts": "1773061200.000260",
+        "thread_ts": "1773059400.000230",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "DVT kickoff at 10 for gripper folks. Drive team, you're welcome but it's mostly gripper logistics.",
+        "ts": "1773131400.000272",
+        "reactions": [
+          {
+            "name": "+1",
+            "users": [
+              "U06JX4D7A",
+              "U06JX4M2C"
+            ],
+            "count": 2
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "Anyone know why the wifi in the firmware lab keeps dropping?",
+        "ts": "1773153000.000288",
+        "thread_ts": "1773153000.000288",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1773153300.000290",
+        "reply_users": [
+          "U06JX4D7A",
+          "U06JX4L5F"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4D7A",
+            "ts": "1773153060.000289"
+          },
+          {
+            "user": "U06JX4L5F",
+            "ts": "1773153300.000290"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "IT is swapping the access point Thursday, it's been flaky for everyone",
+        "ts": "1773153060.000289",
+        "thread_ts": "1773153000.000288",
+        "parent_user_id": "U06JX4L5F"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "ugh ok, ethernet it is",
+        "ts": "1773153300.000290",
+        "thread_ts": "1773153000.000288",
+        "parent_user_id": "U06JX4L5F"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "Async standup, Wednesday edition.",
+        "ts": "1773217800.000299",
+        "thread_ts": "1773217800.000299",
+        "reply_count": 7,
+        "reply_users_count": 7,
+        "latest_reply": "1773219180.000306",
+        "reply_users": [
+          "U06JX4M2C",
+          "U06JX4D7A",
+          "U06JX4P3R",
+          "U06JX4S8O",
+          "U06JX4L5F",
+          "U06JX4T9B",
+          "U06JX4O6H"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4M2C",
+            "ts": "1773217860.000300"
+          },
+          {
+            "user": "U06JX4D7A",
+            "ts": "1773218100.000301"
+          },
+          {
+            "user": "U06JX4P3R",
+            "ts": "1773218220.000302"
+          },
+          {
+            "user": "U06JX4S8O",
+            "ts": "1773218580.000303"
+          },
+          {
+            "user": "U06JX4L5F",
+            "ts": "1773218700.000304"
+          },
+          {
+            "user": "U06JX4T9B",
+            "ts": "1773219000.000305"
+          },
+          {
+            "user": "U06JX4O6H",
+            "ts": "1773219180.000306"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "freeze package",
+        "ts": "1773217860.000300",
+        "thread_ts": "1773217800.000299",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "wrist seal, catching up on Maya's sketches",
+        "ts": "1773218100.000301",
+        "thread_ts": "1773217800.000299",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "DVT validation plan",
+        "ts": "1773218220.000302",
+        "thread_ts": "1773217800.000299",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "power stage, heatsink",
+        "ts": "1773218580.000303",
+        "thread_ts": "1773217800.000299",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "torque loop prep",
+        "ts": "1773218700.000304",
+        "thread_ts": "1773217800.000299",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": "finger stock quote, gearbox chase",
+        "ts": "1773219000.000305",
+        "thread_ts": "1773217800.000299",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": "customer follow-ups",
+        "ts": "1773219180.000306",
+        "thread_ts": "1773217800.000299",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": "Robotics meetup tonight, meet in the lobby at 6 if you're coming",
+        "ts": "1773243000.000340",
+        "thread_ts": "1773243000.000340",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1773243300.000342",
+        "reply_users": [
+          "U06JX4L5F",
+          "U06JX4M2C"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4L5F",
+            "ts": "1773243060.000341"
+          },
+          {
+            "user": "U06JX4M2C",
+            "ts": "1773243300.000342"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "see you there",
+        "ts": "1773243060.000341",
+        "thread_ts": "1773243000.000340",
+        "parent_user_id": "U06JX4O6H"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "I'm out, freeze package :skull:",
+        "ts": "1773243300.000342",
+        "thread_ts": "1773243000.000340",
+        "parent_user_id": "U06JX4O6H"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": "IT is swapping the firmware lab access point at noon, expect 20 min of no wifi",
+        "ts": "1773304200.000346",
+        "reactions": [
+          {
+            "name": "pray",
+            "users": [
+              "U06JX4L5F"
+            ],
+            "count": 1
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "Reminder: no standup tomorrow, all-hands at 11 instead",
+        "ts": "1773334800.000370",
+        "reactions": [
+          {
+            "name": "+1",
+            "users": [
+              "U06JX4D7A",
+              "U06JX4P3R"
+            ],
+            "count": 2
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "All-hands at 11 in the big room. Agenda: gripper DVT plan, drive timeline, hiring.",
+        "ts": "1773392400.000371",
+        "reactions": [
+          {
+            "name": "+1",
+            "users": [
+              "U06JX4O6H"
+            ],
+            "count": 1
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": "Thanks for a great two weeks everyone. EVT done, DVT moving. Happy hour at 5 on the patio",
+        "ts": "1773417600.000394",
+        "thread_ts": "1773417600.000394",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1773417900.000396",
+        "reply_users": [
+          "U06JX4D7A",
+          "U06JX4M2C"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4D7A",
+            "ts": "1773417660.000395"
+          },
+          {
+            "user": "U06JX4M2C",
+            "ts": "1773417900.000396"
+          }
+        ],
+        "reactions": [
+          {
+            "name": "beers",
+            "users": [
+              "U06JX4L5F",
+              "U06JX4S8O",
+              "U06JX4R1K"
+            ],
+            "count": 3
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "in",
+        "ts": "1773417660.000395",
+        "thread_ts": "1773417600.000394",
+        "parent_user_id": "U06JX4O6H"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "in, finally",
+        "ts": "1773417900.000396",
+        "thread_ts": "1773417600.000394",
+        "parent_user_id": "U06JX4O6H"
+      }
+    ],
+    "gripper": [
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "Pushed jaw finger CAD rev C to PDM. Root fillet is still the old 1.5 mm, I'm looking at it today.",
+        "ts": "1772442900.000005",
+        "thread_ts": "1772442900.000005",
+        "reply_count": 3,
+        "reply_users_count": 2,
+        "latest_reply": "1772443320.000008",
+        "reply_users": [
+          "U06JX4P3R",
+          "U06JX4M2C"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4P3R",
+            "ts": "1772442960.000006"
+          },
+          {
+            "user": "U06JX4M2C",
+            "ts": "1772443200.000007"
+          },
+          {
+            "user": "U06JX4P3R",
+            "ts": "1772443320.000008"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "does rev C change the mounting hole pattern? my driver board bracket uses the same two M3s",
+        "ts": "1772442960.000006",
+        "thread_ts": "1772442900.000005",
+        "parent_user_id": "U06JX4M2C"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "nope, hole pattern is frozen, only the finger profile moved",
+        "ts": "1772443200.000007",
+        "thread_ts": "1772442900.000005",
+        "parent_user_id": "U06JX4M2C"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "great thanks",
+        "ts": "1772443320.000008",
+        "thread_ts": "1772442900.000005",
+        "parent_user_id": "U06JX4M2C"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": "Customer call recap (Acme Packaging): they're happy with the EVT timeline, mostly asked about cycle life. No spec changes from them.",
+        "ts": "1772458200.000034",
+        "thread_ts": "1772458200.000034",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1772458500.000036",
+        "reply_users": [
+          "U06JX4R1K",
+          "U06JX4O6H"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4R1K",
+            "ts": "1772458260.000035"
+          },
+          {
+            "user": "U06JX4O6H",
+            "ts": "1772458500.000036"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "Good. Did they mention the washdown line again?",
+        "ts": "1772458260.000035",
+        "thread_ts": "1772458200.000034",
+        "parent_user_id": "U06JX4O6H"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": "not this time, still on their 'maybe next year' list",
+        "ts": "1772458500.000036",
+        "thread_ts": "1772458200.000034",
+        "parent_user_id": "U06JX4O6H",
+        "reactions": [
+          {
+            "name": "+1",
+            "users": [
+              "U06JX4R1K"
+            ],
+            "count": 1
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": "Heads up on the finger stock: 7075 bar is eight weeks out from both distributors. 6061 is on the shelf, I can have it tomorrow.",
+        "ts": "1772528400.000058",
+        "thread_ts": "1772528400.000058",
+        "reply_count": 3,
+        "reply_users_count": 3,
+        "latest_reply": "1772528820.000061",
+        "reply_users": [
+          "U06JX4M2C",
+          "U06JX4T9B",
+          "U06JX4R1K"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4M2C",
+            "ts": "1772528460.000059"
+          },
+          {
+            "user": "U06JX4T9B",
+            "ts": "1772528700.000060"
+          },
+          {
+            "user": "U06JX4R1K",
+            "ts": "1772528820.000061"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "FEA margin is fine either way. 6061 has less headroom but we're well above a 1.5 safety factor at 40 N.",
+        "ts": "1772528460.000059",
+        "thread_ts": "1772528400.000058",
+        "parent_user_id": "U06JX4T9B"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": "the shop says 6061 machines nicer too, for what it's worth",
+        "ts": "1772528700.000060",
+        "thread_ts": "1772528400.000058",
+        "parent_user_id": "U06JX4T9B"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "ok, go with the 6061.",
+        "ts": "1772528820.000061",
+        "thread_ts": "1772528400.000058",
+        "parent_user_id": "U06JX4T9B"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "Lena, can I borrow the EVT unit this afternoon? Or are you still using it for the control loop?",
+        "ts": "1772533800.000065",
+        "thread_ts": "1772533800.000065",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1772534100.000067",
+        "reply_users": [
+          "U06JX4L5F",
+          "U06JX4M2C"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4L5F",
+            "ts": "1772533860.000066"
+          },
+          {
+            "user": "U06JX4M2C",
+            "ts": "1772534100.000067"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "the control loop's been done since last week, I'm on close-time characterization now. You can have the unit after 3",
+        "ts": "1772533860.000066",
+        "thread_ts": "1772533800.000065",
+        "parent_user_id": "U06JX4M2C"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "perfect, 3 it is",
+        "ts": "1772534100.000067",
+        "thread_ts": "1772533800.000065",
+        "parent_user_id": "U06JX4M2C"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "Finger CAD needs one more day. With the switch to 6061 I want to rework the root fillet before it goes out, 1.5 mm is too tight now.",
+        "ts": "1772535600.000068",
+        "thread_ts": "1772535600.000068",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1772535900.000070",
+        "reply_users": [
+          "U06JX4R1K",
+          "U06JX4M2C"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4R1K",
+            "ts": "1772535660.000069"
+          },
+          {
+            "user": "U06JX4M2C",
+            "ts": "1772535900.000070"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "ok. tomorrow EOD?",
+        "ts": "1772535660.000069",
+        "thread_ts": "1772535600.000068",
+        "parent_user_id": "U06JX4M2C"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "tomorrow EOD, yes",
+        "ts": "1772535900.000070",
+        "thread_ts": "1772535600.000068",
+        "parent_user_id": "U06JX4M2C",
+        "reactions": [
+          {
+            "name": "+1",
+            "users": [
+              "U06JX4R1K"
+            ],
+            "count": 1
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "Can we PLEASE agree on a file naming convention for CAD. I just found three files called finger_final_v2_REAL.sldprt",
+        "ts": "1772542800.000076",
+        "thread_ts": "1772542800.000076",
+        "reply_count": 20,
+        "reply_users_count": 3,
+        "latest_reply": "1772544000.000096",
+        "reply_users": [
+          "U06JX4D7A",
+          "U06JX4M2C",
+          "U06JX4P3R"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4D7A",
+            "ts": "1772542860.000077"
+          },
+          {
+            "user": "U06JX4M2C",
+            "ts": "1772542920.000078"
+          },
+          {
+            "user": "U06JX4P3R",
+            "ts": "1772542980.000079"
+          },
+          {
+            "user": "U06JX4D7A",
+            "ts": "1772543040.000080"
+          },
+          {
+            "user": "U06JX4M2C",
+            "ts": "1772543100.000081"
+          },
+          {
+            "user": "U06JX4D7A",
+            "ts": "1772543160.000082"
+          },
+          {
+            "user": "U06JX4P3R",
+            "ts": "1772543220.000083"
+          },
+          {
+            "user": "U06JX4M2C",
+            "ts": "1772543280.000084"
+          },
+          {
+            "user": "U06JX4D7A",
+            "ts": "1772543340.000085"
+          },
+          {
+            "user": "U06JX4M2C",
+            "ts": "1772543400.000086"
+          },
+          {
+            "user": "U06JX4D7A",
+            "ts": "1772543460.000087"
+          },
+          {
+            "user": "U06JX4P3R",
+            "ts": "1772543520.000088"
+          },
+          {
+            "user": "U06JX4M2C",
+            "ts": "1772543580.000089"
+          },
+          {
+            "user": "U06JX4D7A",
+            "ts": "1772543640.000090"
+          },
+          {
+            "user": "U06JX4M2C",
+            "ts": "1772543700.000091"
+          },
+          {
+            "user": "U06JX4P3R",
+            "ts": "1772543760.000092"
+          },
+          {
+            "user": "U06JX4D7A",
+            "ts": "1772543820.000093"
+          },
+          {
+            "user": "U06JX4M2C",
+            "ts": "1772543880.000094"
+          },
+          {
+            "user": "U06JX4P3R",
+            "ts": "1772543940.000095"
+          },
+          {
+            "user": "U06JX4D7A",
+            "ts": "1772544000.000096"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "the convention is in the wiki. part number, rev, description",
+        "ts": "1772542860.000077",
+        "thread_ts": "1772542800.000076",
+        "parent_user_id": "U06JX4M2C"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "nobody follows the wiki. the PDM auto-names half of them anyway",
+        "ts": "1772542920.000078",
+        "thread_ts": "1772542800.000076",
+        "parent_user_id": "U06JX4M2C"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "electrical exports from KiCad don't even fit that scheme, we use board name + rev letter",
+        "ts": "1772542980.000079",
+        "thread_ts": "1772542800.000076",
+        "parent_user_id": "U06JX4M2C"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "then the wiki should have a section for electrical",
+        "ts": "1772543040.000080",
+        "thread_ts": "1772542800.000076",
+        "parent_user_id": "U06JX4M2C"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "my point is the wiki is not the convention if nobody uses it",
+        "ts": "1772543100.000081",
+        "thread_ts": "1772542800.000076",
+        "parent_user_id": "U06JX4M2C"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "my point is we have one and people should use it",
+        "ts": "1772543160.000082",
+        "thread_ts": "1772542800.000076",
+        "parent_user_id": "U06JX4M2C"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "underscores or dashes? the PDM chokes on dashes in some fields",
+        "ts": "1772543220.000083",
+        "thread_ts": "1772542800.000076",
+        "parent_user_id": "U06JX4M2C"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "it chokes on spaces, dashes are fine",
+        "ts": "1772543280.000084",
+        "thread_ts": "1772542800.000076",
+        "parent_user_id": "U06JX4M2C"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "dashes broke the STEP export script last year",
+        "ts": "1772543340.000085",
+        "thread_ts": "1772542800.000076",
+        "parent_user_id": "U06JX4M2C"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "that was fixed in November",
+        "ts": "1772543400.000086",
+        "thread_ts": "1772542800.000076",
+        "parent_user_id": "U06JX4M2C"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "was it? I still rename by hand",
+        "ts": "1772543460.000087",
+        "thread_ts": "1772542800.000076",
+        "parent_user_id": "U06JX4M2C"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "this is why we need one page that says exactly what to do",
+        "ts": "1772543520.000088",
+        "thread_ts": "1772542800.000076",
+        "parent_user_id": "U06JX4M2C"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "OK proposal: <part number>_<rev>_<short-desc>, all lowercase, no spaces",
+        "ts": "1772543580.000089",
+        "thread_ts": "1772542800.000076",
+        "parent_user_id": "U06JX4M2C"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "part numbers have uppercase letters in them though",
+        "ts": "1772543640.000090",
+        "thread_ts": "1772542800.000076",
+        "parent_user_id": "U06JX4M2C"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "fine, part number as-is, rest lowercase",
+        "ts": "1772543700.000091",
+        "thread_ts": "1772542800.000076",
+        "parent_user_id": "U06JX4M2C"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "and boards? mdb_revA_gerbers.zip style?",
+        "ts": "1772543760.000092",
+        "thread_ts": "1772542800.000076",
+        "parent_user_id": "U06JX4M2C"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "I'd rather not invent a second scheme",
+        "ts": "1772543820.000093",
+        "thread_ts": "1772542800.000076",
+        "parent_user_id": "U06JX4M2C"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "it's the same scheme, mdb is the short desc",
+        "ts": "1772543880.000094",
+        "thread_ts": "1772542800.000076",
+        "parent_user_id": "U06JX4M2C"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "I feel like we're going in circles",
+        "ts": "1772543940.000095",
+        "thread_ts": "1772542800.000076",
+        "parent_user_id": "U06JX4M2C"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "let's talk Friday.",
+        "ts": "1772544000.000096",
+        "thread_ts": "1772542800.000076",
+        "parent_user_id": "U06JX4M2C"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "Jaw finger CAD is done. Rev D with the bigger root fillet is released in PDM.",
+        "ts": "1772615400.000111"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": "Is the FEA still on for today? I want to tell Acme we're on track",
+        "ts": "1772629200.000127",
+        "thread_ts": "1772629200.000127",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1772629500.000129",
+        "reply_users": [
+          "U06JX4M2C",
+          "U06JX4O6H"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4M2C",
+            "ts": "1772629260.000128"
+          },
+          {
+            "user": "U06JX4O6H",
+            "ts": "1772629500.000129"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "No, it has to be rerun for 6061, different yield and modulus. It'll land Thursday.",
+        "ts": "1772629260.000128",
+        "thread_ts": "1772629200.000127",
+        "parent_user_id": "U06JX4O6H"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": "ok, I'll hold the Acme update until then",
+        "ts": "1772629500.000129",
+        "thread_ts": "1772629200.000127",
+        "parent_user_id": "U06JX4O6H"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "photos of the EVT sample fixture, the clamp jaws came out nice",
+        "ts": "1772633400.000130",
+        "files": [
+          {
+            "name": "fixture_1.jpg",
+            "title": "fixture_1.jpg",
+            "mimetype": "image/jpeg"
+          },
+          {
+            "name": "fixture_2.jpg",
+            "title": "fixture_2.jpg",
+            "mimetype": "image/jpeg"
+          }
+        ],
+        "thread_ts": "1772633400.000130",
+        "reply_count": 1,
+        "reply_users_count": 1,
+        "latest_reply": "1772633460.000131",
+        "reply_users": [
+          "U06JX4M2C"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4M2C",
+            "ts": "1772633460.000131"
+          }
+        ],
+        "reactions": [
+          {
+            "name": "fire",
+            "users": [
+              "U06JX4O6H",
+              "U06JX4R1K"
+            ],
+            "count": 2
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "ooh the knurled pads are a good idea",
+        "ts": "1772633460.000131",
+        "thread_ts": "1772633400.000130",
+        "parent_user_id": "U06JX4P3R"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "Maya, what grip force is the FEA load case? I want to match it in sample validation",
+        "ts": "1772701200.000149",
+        "thread_ts": "1772701200.000149",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1772701500.000151",
+        "reply_users": [
+          "U06JX4M2C",
+          "U06JX4P3R"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4M2C",
+            "ts": "1772701260.000150"
+          },
+          {
+            "user": "U06JX4P3R",
+            "ts": "1772701500.000151"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "40 N rated, 60 N proof. Same as the requirement doc",
+        "ts": "1772701260.000150",
+        "thread_ts": "1772701200.000149",
+        "parent_user_id": "U06JX4P3R"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "perfect",
+        "ts": "1772701500.000151",
+        "thread_ts": "1772701200.000149",
+        "parent_user_id": "U06JX4P3R"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": "Packaging brief from last quarter's template is in the drive. Want input before I start the design after the gate",
+        "ts": "1772793000.000193",
+        "thread_ts": "1772793000.000193",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1772793300.000195",
+        "reply_users": [
+          "U06JX4M2C",
+          "U06JX4O6H"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4M2C",
+            "ts": "1772793060.000194"
+          },
+          {
+            "user": "U06JX4O6H",
+            "ts": "1772793300.000195"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "fingers should ship detached, the root fillet is the weak point if the box gets dropped",
+        "ts": "1772793060.000194",
+        "thread_ts": "1772793000.000193",
+        "parent_user_id": "U06JX4O6H"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": "good call, added",
+        "ts": "1772793300.000195",
+        "thread_ts": "1772793000.000193",
+        "parent_user_id": "U06JX4O6H"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "fingertips are back from the shop, all ten in tolerance. CMM report is in the EVT folder.",
+        "ts": "1772805600.000206",
+        "thread_ts": "1772805600.000206",
+        "reply_count": 1,
+        "reply_users_count": 1,
+        "latest_reply": "1772805660.000207",
+        "reply_users": [
+          "U06JX4P3R"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4P3R",
+            "ts": "1772805660.000207"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "sweet, I'll grab them for sample assembly",
+        "ts": "1772805660.000207",
+        "thread_ts": "1772805600.000206",
+        "parent_user_id": "U06JX4M2C"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "Gate review prep: Maya, Priya, can you each have 3 slides ready by Monday 9am? Template in the EVT folder",
+        "ts": "1772809200.000208",
+        "thread_ts": "1772809200.000208",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1772809500.000210",
+        "reply_users": [
+          "U06JX4M2C",
+          "U06JX4P3R"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4M2C",
+            "ts": "1772809260.000209"
+          },
+          {
+            "user": "U06JX4P3R",
+            "ts": "1772809500.000210"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "yes",
+        "ts": "1772809260.000209",
+        "thread_ts": "1772809200.000208",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "yes, I'll include the thermal sweep",
+        "ts": "1772809500.000210",
+        "thread_ts": "1772809200.000208",
+        "parent_user_id": "U06JX4R1K",
+        "reactions": [
+          {
+            "name": "+1",
+            "users": [
+              "U06JX4R1K"
+            ],
+            "count": 1
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "Gate review at 10, dial-in for remote folks is in the invite. Slides look great.",
+        "ts": "1773045000.000216",
+        "thread_ts": "1773045000.000216",
+        "reply_count": 1,
+        "reply_users_count": 1,
+        "latest_reply": "1773045060.000217",
+        "reply_users": [
+          "U06JX4M2C"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4M2C",
+            "ts": "1773045060.000217"
+          }
+        ],
+        "reactions": [
+          {
+            "name": "+1",
+            "users": [
+              "U06JX4O6H"
+            ],
+            "count": 1
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "see you there",
+        "ts": "1773045060.000217",
+        "thread_ts": "1773045000.000216",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "All ten EVT samples validated. Grip force, close time, cycle test all pass. Report is in the EVT folder for the gate.",
+        "ts": "1773046800.000218",
+        "thread_ts": "1773046800.000218",
+        "reply_count": 1,
+        "reply_users_count": 1,
+        "latest_reply": "1773046860.000219",
+        "reply_users": [
+          "U06JX4M2C"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4M2C",
+            "ts": "1773046860.000219"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "amazing, thank you for turning that around over the weekend",
+        "ts": "1773046860.000219",
+        "thread_ts": "1773046800.000218",
+        "parent_user_id": "U06JX4P3R"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "Starting the DVT freeze package tomorrow. Draft checklist: drawings, BOM, tolerance stack, FEA summary. Anything missing?",
+        "ts": "1773068400.000264",
+        "thread_ts": "1773068400.000264",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1773068700.000266",
+        "reply_users": [
+          "U06JX4O6H",
+          "U06JX4M2C"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4O6H",
+            "ts": "1773068460.000265"
+          },
+          {
+            "user": "U06JX4M2C",
+            "ts": "1773068700.000266"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": "packaging constraints, so I don't design a box the fingers don't fit in",
+        "ts": "1773068460.000265",
+        "thread_ts": "1773068400.000264",
+        "parent_user_id": "U06JX4M2C"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "added",
+        "ts": "1773068700.000266",
+        "thread_ts": "1773068400.000264",
+        "parent_user_id": "U06JX4M2C"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "Starting the DVT freeze package today. First pass at drawings goes up this week.",
+        "ts": "1773135000.000276"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "Reshuffle for DVT: Maya is on the freeze package full time now, so the wrist seal design moves to Diego. Diego, it's yours as of today.",
+        "ts": "1773138600.000279",
+        "thread_ts": "1773138600.000279",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1773138900.000281",
+        "reply_users": [
+          "U06JX4D7A",
+          "U06JX4M2C"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4D7A",
+            "ts": "1773138660.000280"
+          },
+          {
+            "user": "U06JX4M2C",
+            "ts": "1773138900.000281"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "got it. Maya, can you send me what you have?",
+        "ts": "1773138660.000280",
+        "thread_ts": "1773138600.000279",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "it's mostly sketches, I'll put them in the seal folder this afternoon",
+        "ts": "1773138900.000281",
+        "thread_ts": "1773138600.000279",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": "EVT customer feedback is in. Both pilot customers want more grip force, they're dropping parts at 40 N. The number they agreed to is 55 N.",
+        "ts": "1773147600.000283",
+        "thread_ts": "1773147600.000283",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1773147900.000285",
+        "reply_users": [
+          "U06JX4M2C",
+          "U06JX4O6H"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4M2C",
+            "ts": "1773147660.000284"
+          },
+          {
+            "user": "U06JX4O6H",
+            "ts": "1773147900.000285"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "55 is doable with the 6061 fingers if we thicken the root. I agree, let's make it 55 N.",
+        "ts": "1773147660.000284",
+        "thread_ts": "1773147600.000283",
+        "parent_user_id": "U06JX4O6H"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": "updating the requirement doc",
+        "ts": "1773147900.000285",
+        "thread_ts": "1773147600.000283",
+        "parent_user_id": "U06JX4O6H"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": "Pilot customer sent photos of the EVT units on their line, they love the finger shape",
+        "ts": "1773160200.000297",
+        "files": [
+          {
+            "name": "pilot_line_1.jpg",
+            "title": "pilot_line_1.jpg",
+            "mimetype": "image/jpeg"
+          }
+        ],
+        "thread_ts": "1773160200.000297",
+        "reply_count": 1,
+        "reply_users_count": 1,
+        "latest_reply": "1773160260.000298",
+        "reply_users": [
+          "U06JX4R1K"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4R1K",
+            "ts": "1773160260.000298"
+          }
+        ],
+        "reactions": [
+          {
+            "name": "heart",
+            "users": [
+              "U06JX4M2C",
+              "U06JX4R1K"
+            ],
+            "count": 2
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "framing this",
+        "ts": "1773160260.000298",
+        "thread_ts": "1773160200.000297",
+        "parent_user_id": "U06JX4O6H"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "Freeze package needs the 55 N rework, the root section and the FEA both change. Moving it to Friday.",
+        "ts": "1773221400.000310",
+        "thread_ts": "1773221400.000310",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1773221700.000312",
+        "reply_users": [
+          "U06JX4O6H",
+          "U06JX4M2C"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4O6H",
+            "ts": "1773221460.000311"
+          },
+          {
+            "user": "U06JX4M2C",
+            "ts": "1773221700.000312"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": "Friday the 13th, very reassuring",
+        "ts": "1773221460.000311",
+        "thread_ts": "1773221400.000310",
+        "parent_user_id": "U06JX4M2C"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "ha. Friday the 13th, final answer",
+        "ts": "1773221700.000312",
+        "thread_ts": "1773221400.000310",
+        "parent_user_id": "U06JX4M2C"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "Read through Maya's seal sketches. Going with a lip seal unless someone objects, an O-ring groove doesn't fit in the wrist.",
+        "ts": "1773223200.000313",
+        "thread_ts": "1773223200.000313",
+        "reply_count": 1,
+        "reply_users_count": 1,
+        "latest_reply": "1773223260.000314",
+        "reply_users": [
+          "U06JX4M2C"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4M2C",
+            "ts": "1773223260.000314"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "lip seal is what I was leaning toward too",
+        "ts": "1773223260.000314",
+        "thread_ts": "1773223200.000313",
+        "parent_user_id": "U06JX4D7A"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": "Acme's new site has a washdown line after all. They need IP65, not IP54, on the whole gripper.",
+        "ts": "1773311400.000351",
+        "thread_ts": "1773311400.000351",
+        "reply_count": 3,
+        "reply_users_count": 2,
+        "latest_reply": "1773311820.000354",
+        "reply_users": [
+          "U06JX4R1K",
+          "U06JX4O6H"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4R1K",
+            "ts": "1773311460.000352"
+          },
+          {
+            "user": "U06JX4O6H",
+            "ts": "1773311700.000353"
+          },
+          {
+            "user": "U06JX4R1K",
+            "ts": "1773311820.000354"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "Is that for DVT or a later variant?",
+        "ts": "1773311460.000352",
+        "thread_ts": "1773311400.000351",
+        "parent_user_id": "U06JX4O6H"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": "DVT. They won't take units without it.",
+        "ts": "1773311700.000353",
+        "thread_ts": "1773311400.000351",
+        "parent_user_id": "U06JX4O6H"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "Then it's IP65. Update the requirement.",
+        "ts": "1773311820.000354",
+        "thread_ts": "1773311400.000351",
+        "parent_user_id": "U06JX4O6H"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "Does the seal change the finger mounting at all? I'm writing fixture specs",
+        "ts": "1773322200.000363",
+        "thread_ts": "1773322200.000363",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1773322500.000365",
+        "reply_users": [
+          "U06JX4M2C",
+          "U06JX4P3R"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4M2C",
+            "ts": "1773322260.000364"
+          },
+          {
+            "user": "U06JX4P3R",
+            "ts": "1773322500.000365"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "Shouldn't. The seal design is due the 20th so you'll know for sure then, but it's all at the wrist.",
+        "ts": "1773322260.000364",
+        "thread_ts": "1773322200.000363",
+        "parent_user_id": "U06JX4P3R"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "ok, I'll leave the fixture as is",
+        "ts": "1773322500.000365",
+        "thread_ts": "1773322200.000363",
+        "parent_user_id": "U06JX4P3R"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "Started the gripper reliability test plan. Pulling cycle counts from the EVT data.",
+        "ts": "1773329400.000368"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "Tolerance stack for the freeze package: worst case is 0.08 mm at the fingertip, budget is 0.1",
+        "ts": "1773331200.000369",
+        "reactions": [
+          {
+            "name": "+1",
+            "users": [
+              "U06JX4O6H"
+            ],
+            "count": 1
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "Freeze package is in review, comments by Monday please",
+        "ts": "1773394200.000372",
+        "thread_ts": "1773394200.000372",
+        "reply_count": 1,
+        "reply_users_count": 1,
+        "latest_reply": "1773394260.000373",
+        "reply_users": [
+          "U06JX4O6H"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4O6H",
+            "ts": "1773394260.000373"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": "reviewing today",
+        "ts": "1773394260.000373",
+        "thread_ts": "1773394200.000372",
+        "parent_user_id": "U06JX4M2C"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": "Final packaging render attached. Fingers ship detached in the insert, per Maya's note.",
+        "ts": "1773401400.000382",
+        "files": [
+          {
+            "name": "rg2_packaging_final.png",
+            "title": "rg2_packaging_final.png",
+            "mimetype": "image/png"
+          }
+        ],
+        "thread_ts": "1773401400.000382",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1773401700.000384",
+        "reply_users": [
+          "U06JX4R1K",
+          "U06JX4O6H"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4R1K",
+            "ts": "1773401460.000383"
+          },
+          {
+            "user": "U06JX4O6H",
+            "ts": "1773401700.000384"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "looks right to me, send it to the vendor.",
+        "ts": "1773401460.000383",
+        "thread_ts": "1773401400.000382",
+        "parent_user_id": "U06JX4O6H"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": "sending",
+        "ts": "1773401700.000384",
+        "thread_ts": "1773401400.000382",
+        "parent_user_id": "U06JX4O6H"
+      }
+    ],
+    "drive-unit": [
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "Anyone know where the spare thermocouple reader went? It's not in the drive rig drawer",
+        "ts": "1772444400.000009",
+        "thread_ts": "1772444400.000009",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1772444700.000011",
+        "reply_users": [
+          "U06JX4D7A",
+          "U06JX4S8O"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4D7A",
+            "ts": "1772444460.000010"
+          },
+          {
+            "user": "U06JX4S8O",
+            "ts": "1772444700.000011"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "I took it for the gearbox oil temp test on Friday, it's on my desk",
+        "ts": "1772444460.000010",
+        "thread_ts": "1772444400.000009",
+        "parent_user_id": "U06JX4S8O"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "grabbing it, thanks",
+        "ts": "1772444700.000011",
+        "thread_ts": "1772444400.000009",
+        "parent_user_id": "U06JX4S8O"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "Kicking off the drive mass budget today. Pulling weights from the DVT BOM into the tracker.",
+        "ts": "1772445900.000012"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "Reading the encoder datasheet ahead of the integration work. Anyone used the BiSS-C mode before, or is SPI fine?",
+        "ts": "1772469900.000047",
+        "thread_ts": "1772469900.000047",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1772470200.000049",
+        "reply_users": [
+          "U06JX4S8O",
+          "U06JX4L5F"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4S8O",
+            "ts": "1772469960.000048"
+          },
+          {
+            "user": "U06JX4L5F",
+            "ts": "1772470200.000049"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "SPI is fine at our loop rate. BiSS only matters past a couple meters of cable",
+        "ts": "1772469960.000048",
+        "thread_ts": "1772469900.000047",
+        "parent_user_id": "U06JX4L5F"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "sounds good, I'll plan on SPI",
+        "ts": "1772470200.000049",
+        "thread_ts": "1772469900.000047",
+        "parent_user_id": "U06JX4L5F"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "Motor vendor sent updated torque-speed curves for the 70 and 90 mm frames, attached. 90 mm is overkill at 15 Nm but leaves room.",
+        "ts": "1772537400.000071",
+        "files": [
+          {
+            "name": "motor_curves_70_90.pdf",
+            "title": "motor_curves_70_90.pdf",
+            "mimetype": "application/octet-stream"
+          }
+        ],
+        "thread_ts": "1772537400.000071",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1772537700.000073",
+        "reply_users": [
+          "U06JX4S8O",
+          "U06JX4D7A"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4S8O",
+            "ts": "1772537460.000072"
+          },
+          {
+            "user": "U06JX4D7A",
+            "ts": "1772537700.000073"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "the 70 mm runs pretty hot at continuous, I'd want to see the thermal curve too",
+        "ts": "1772537460.000072",
+        "thread_ts": "1772537400.000071",
+        "parent_user_id": "U06JX4D7A"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "asked them for it",
+        "ts": "1772537700.000073",
+        "thread_ts": "1772537400.000071",
+        "parent_user_id": "U06JX4D7A"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "Is the DVT housing drawing the one with fins on the back or the flat one? Need to set up the thermal model",
+        "ts": "1772553600.000104",
+        "thread_ts": "1772553600.000104",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1772553900.000106",
+        "reply_users": [
+          "U06JX4D7A",
+          "U06JX4S8O"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4D7A",
+            "ts": "1772553660.000105"
+          },
+          {
+            "user": "U06JX4S8O",
+            "ts": "1772553900.000106"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "fins. the flat one was the EVT housing",
+        "ts": "1772553660.000105",
+        "thread_ts": "1772553600.000104",
+        "parent_user_id": "U06JX4S8O"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "thanks",
+        "ts": "1772553900.000106",
+        "thread_ts": "1772553600.000104",
+        "parent_user_id": "U06JX4S8O"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "Customer update from the Northbay call: they need 22 Nm continuous at the output, not 15. Their new arm payload is heavier. This is firm, it's going in the contract.",
+        "ts": "1772618400.000114",
+        "thread_ts": "1772618400.000114",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1772618700.000116",
+        "reply_users": [
+          "U06JX4D7A",
+          "U06JX4R1K"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4D7A",
+            "ts": "1772618460.000115"
+          },
+          {
+            "user": "U06JX4R1K",
+            "ts": "1772618700.000116"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "Confirmed on my side, I'll update the requirement. 22 Nm continuous rules out the 70 mm frame entirely.",
+        "ts": "1772618460.000115",
+        "thread_ts": "1772618400.000114",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "Expected. Let's look at what it does to the schedule tomorrow.",
+        "ts": "1772618700.000116",
+        "thread_ts": "1772618400.000114",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "22 Nm question: does the requirement apply at the motor shaft or after the gearbox?",
+        "ts": "1772625600.000124",
+        "thread_ts": "1772625600.000124",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1772625900.000126",
+        "reply_users": [
+          "U06JX4D7A",
+          "U06JX4S8O"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4D7A",
+            "ts": "1772625660.000125"
+          },
+          {
+            "user": "U06JX4S8O",
+            "ts": "1772625900.000126"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "output, after the gearbox. Section 3.2 of the customer doc",
+        "ts": "1772625660.000125",
+        "thread_ts": "1772625600.000124",
+        "parent_user_id": "U06JX4S8O"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "ok, that's the number I'll use",
+        "ts": "1772625900.000126",
+        "thread_ts": "1772625600.000124",
+        "parent_user_id": "U06JX4S8O"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "Motor sizing is done, it's the 90 mm frame. The 70 mm can't hold 22 Nm continuous without cooking. Spreadsheet and curves are in the drive folder.",
+        "ts": "1772703000.000152",
+        "thread_ts": "1772703000.000152",
+        "reply_count": 3,
+        "reply_users_count": 2,
+        "latest_reply": "1772703420.000155",
+        "reply_users": [
+          "U06JX4L5F",
+          "U06JX4D7A"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4L5F",
+            "ts": "1772703060.000153"
+          },
+          {
+            "user": "U06JX4D7A",
+            "ts": "1772703300.000154"
+          },
+          {
+            "user": "U06JX4L5F",
+            "ts": "1772703420.000155"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "nice. Same pole count as the 70? my commutation tables care",
+        "ts": "1772703060.000153",
+        "thread_ts": "1772703000.000152",
+        "parent_user_id": "U06JX4D7A"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "same, 8 poles. Encoder mount is identical too",
+        "ts": "1772703300.000154",
+        "thread_ts": "1772703000.000152",
+        "parent_user_id": "U06JX4D7A"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "great, no firmware change then",
+        "ts": "1772703420.000155",
+        "thread_ts": "1772703000.000152",
+        "parent_user_id": "U06JX4D7A"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "Thermal analysis has to be redone at 22 Nm. Winding losses roughly double, so the old housing model is useless. It'll slip to Tuesday.",
+        "ts": "1772715600.000165",
+        "thread_ts": "1772715600.000165",
+        "reply_count": 3,
+        "reply_users_count": 2,
+        "latest_reply": "1772716020.000168",
+        "reply_users": [
+          "U06JX4D7A",
+          "U06JX4S8O"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4D7A",
+            "ts": "1772715660.000166"
+          },
+          {
+            "user": "U06JX4S8O",
+            "ts": "1772715900.000167"
+          },
+          {
+            "user": "U06JX4D7A",
+            "ts": "1772716020.000168"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "need the 90 mm frame model? I can export it",
+        "ts": "1772715660.000166",
+        "thread_ts": "1772715600.000165",
+        "parent_user_id": "U06JX4S8O"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "please, STEP with the stator as a separate body",
+        "ts": "1772715900.000167",
+        "thread_ts": "1772715600.000165",
+        "parent_user_id": "U06JX4S8O"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "sent",
+        "ts": "1772716020.000168",
+        "thread_ts": "1772715600.000165",
+        "parent_user_id": "U06JX4S8O"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "Gearbox vendor visit is next Tuesday at 3, anyone want to join? They'll walk us through the DVT gearbox line",
+        "ts": "1772724600.000173",
+        "thread_ts": "1772724600.000173",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1772724900.000175",
+        "reply_users": [
+          "U06JX4S8O",
+          "U06JX4T9B"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4S8O",
+            "ts": "1772724660.000174"
+          },
+          {
+            "user": "U06JX4T9B",
+            "ts": "1772724900.000175"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "I'll come",
+        "ts": "1772724660.000174",
+        "thread_ts": "1772724600.000173",
+        "parent_user_id": "U06JX4D7A"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": "I'll be there too, want to talk lead times in person",
+        "ts": "1772724900.000175",
+        "thread_ts": "1772724600.000173",
+        "parent_user_id": "U06JX4D7A"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "Mass roll-up with the 90 mm motor: 4.05 kg, under the 4.2 kg budget with 150 g to spare. Heatsink is the big unknown.",
+        "ts": "1772788500.000185",
+        "thread_ts": "1772788500.000185",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1772788800.000187",
+        "reply_users": [
+          "U06JX4S8O",
+          "U06JX4D7A"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4S8O",
+            "ts": "1772788560.000186"
+          },
+          {
+            "user": "U06JX4D7A",
+            "ts": "1772788800.000187"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "the heatsink might grow after the thermal rerun, don't spend the margin yet",
+        "ts": "1772788560.000186",
+        "thread_ts": "1772788500.000185",
+        "parent_user_id": "U06JX4D7A"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "noted, holding it",
+        "ts": "1772788800.000187",
+        "thread_ts": "1772788500.000185",
+        "parent_user_id": "U06JX4D7A"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "Quick one before I head out: is the drive CAN bus at 500k or 1M on DVT?",
+        "ts": "1772804400.000203",
+        "thread_ts": "1772804400.000203",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1772804700.000205",
+        "reply_users": [
+          "U06JX4S8O",
+          "U06JX4L5F"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4S8O",
+            "ts": "1772804460.000204"
+          },
+          {
+            "user": "U06JX4L5F",
+            "ts": "1772804700.000205"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "1M, same as EVT",
+        "ts": "1772804460.000204",
+        "thread_ts": "1772804400.000203",
+        "parent_user_id": "U06JX4L5F"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "thanks, have a good weekend all",
+        "ts": "1772804700.000205",
+        "thread_ts": "1772804400.000203",
+        "parent_user_id": "U06JX4L5F",
+        "reactions": [
+          {
+            "name": "wave",
+            "users": [
+              "U06JX4D7A",
+              "U06JX4S8O"
+            ],
+            "count": 2
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "Encoder eval kit is up on the bench, reading positions over SPI. Haven't touched the real integration yet.",
+        "ts": "1773054000.000226",
+        "thread_ts": "1773054000.000226",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1773054300.000228",
+        "reply_users": [
+          "U06JX4S8O",
+          "U06JX4L5F"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4S8O",
+            "ts": "1773054060.000227"
+          },
+          {
+            "user": "U06JX4L5F",
+            "ts": "1773054300.000228"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "nice, what's the noise floor look like?",
+        "ts": "1773054060.000227",
+        "thread_ts": "1773054000.000226",
+        "parent_user_id": "U06JX4L5F"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "about 2 counts p-p at 17 bit, fine",
+        "ts": "1773054300.000228",
+        "thread_ts": "1773054000.000226",
+        "parent_user_id": "U06JX4L5F"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "Can't place the HD-20 order until finance signs off on the new price. Vendor says the 12% is real, not a tier thing.",
+        "ts": "1773064800.000261",
+        "thread_ts": "1773064800.000261",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1773065100.000263",
+        "reply_users": [
+          "U06JX4S8O",
+          "U06JX4D7A"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4S8O",
+            "ts": "1773064860.000262"
+          },
+          {
+            "user": "U06JX4D7A",
+            "ts": "1773065100.000263"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "how long does finance usually take?",
+        "ts": "1773064860.000262",
+        "thread_ts": "1773064800.000261",
+        "parent_user_id": "U06JX4D7A"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "last time about a week. I'll chase",
+        "ts": "1773065100.000263",
+        "thread_ts": "1773064800.000261",
+        "parent_user_id": "U06JX4D7A"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "Diego, does the heatsink have to stay inside the current envelope or can it grow toward the motor?",
+        "ts": "1773133200.000273",
+        "thread_ts": "1773133200.000273",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1773133500.000275",
+        "reply_users": [
+          "U06JX4D7A",
+          "U06JX4S8O"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4D7A",
+            "ts": "1773133260.000274"
+          },
+          {
+            "user": "U06JX4S8O",
+            "ts": "1773133500.000275"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "up to 8 mm toward the motor, nothing outward",
+        "ts": "1773133260.000274",
+        "thread_ts": "1773133200.000273",
+        "parent_user_id": "U06JX4S8O"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "ok, that helps",
+        "ts": "1773133500.000275",
+        "thread_ts": "1773133200.000273",
+        "parent_user_id": "U06JX4S8O"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "Gearbox vendor visit is at 3 today, meeting at the front desk",
+        "ts": "1773154800.000291",
+        "thread_ts": "1773154800.000291",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1773155100.000293",
+        "reply_users": [
+          "U06JX4S8O",
+          "U06JX4T9B"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4S8O",
+            "ts": "1773154860.000292"
+          },
+          {
+            "user": "U06JX4T9B",
+            "ts": "1773155100.000293"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "omw",
+        "ts": "1773154860.000292",
+        "thread_ts": "1773154800.000291",
+        "parent_user_id": "U06JX4D7A"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": "running 5 min late",
+        "ts": "1773155100.000293",
+        "thread_ts": "1773154800.000291",
+        "parent_user_id": "U06JX4D7A"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "Is anyone using the thermal chamber Thursday morning?",
+        "ts": "1773219600.000307",
+        "thread_ts": "1773219600.000307",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1773219900.000309",
+        "reply_users": [
+          "U06JX4D7A",
+          "U06JX4S8O"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4D7A",
+            "ts": "1773219660.000308"
+          },
+          {
+            "user": "U06JX4S8O",
+            "ts": "1773219900.000309"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "not me",
+        "ts": "1773219660.000308",
+        "thread_ts": "1773219600.000307",
+        "parent_user_id": "U06JX4S8O"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "booking it",
+        "ts": "1773219900.000309",
+        "thread_ts": "1773219600.000307",
+        "parent_user_id": "U06JX4S8O"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "Diego, who do I send the encoder mass to for the budget? It's 38 g with the bracket",
+        "ts": "1773228600.000320",
+        "thread_ts": "1773228600.000320",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1773228900.000322",
+        "reply_users": [
+          "U06JX4D7A",
+          "U06JX4L5F"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4D7A",
+            "ts": "1773228660.000321"
+          },
+          {
+            "user": "U06JX4L5F",
+            "ts": "1773228900.000322"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "mass budget is Sam's now, since the heatsink change. Send it to him.",
+        "ts": "1773228660.000321",
+        "thread_ts": "1773228600.000320",
+        "parent_user_id": "U06JX4L5F"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "ok",
+        "ts": "1773228900.000322",
+        "thread_ts": "1773228600.000320",
+        "parent_user_id": "U06JX4L5F"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "Does anyone have the old EVT drive housing? Want to check a boss height against the DVT one",
+        "ts": "1773244800.000343",
+        "thread_ts": "1773244800.000343",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1773245100.000345",
+        "reply_users": [
+          "U06JX4S8O",
+          "U06JX4D7A"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4S8O",
+            "ts": "1773244860.000344"
+          },
+          {
+            "user": "U06JX4D7A",
+            "ts": "1773245100.000345"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "shelf above the drive rig",
+        "ts": "1773244860.000344",
+        "thread_ts": "1773244800.000343",
+        "parent_user_id": "U06JX4D7A"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "found it",
+        "ts": "1773245100.000345",
+        "thread_ts": "1773244800.000343",
+        "parent_user_id": "U06JX4D7A"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "The encoder vendor's SDK has a CRC bug, every 256th frame fails the check and the driver drops it. I'm stuck on the drive encoder until they patch it.",
+        "ts": "1773307800.000347",
+        "thread_ts": "1773307800.000347",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1773308100.000349",
+        "reply_users": [
+          "U06JX4D7A",
+          "U06JX4L5F"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4D7A",
+            "ts": "1773307860.000348"
+          },
+          {
+            "user": "U06JX4L5F",
+            "ts": "1773308100.000349"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "did they give a date?",
+        "ts": "1773307860.000348",
+        "thread_ts": "1773307800.000347",
+        "parent_user_id": "U06JX4L5F"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "'next release'. so no",
+        "ts": "1773308100.000349",
+        "thread_ts": "1773307800.000347",
+        "parent_user_id": "U06JX4L5F"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "Motors land the 17th, so there's nothing to validate on the 13th. Sample validation can't hold its current date.",
+        "ts": "1773315000.000355",
+        "thread_ts": "1773315000.000355",
+        "reply_count": 1,
+        "reply_users_count": 1,
+        "latest_reply": "1773315060.000356",
+        "reply_users": [
+          "U06JX4R1K"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4R1K",
+            "ts": "1773315060.000356"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "fine, push sample validation to the 20th then.",
+        "ts": "1773315060.000356",
+        "thread_ts": "1773315000.000355",
+        "parent_user_id": "U06JX4D7A"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "Rough idea for the DVT drive test sequence: thermal soak, then torque ripple, then 48 h endurance. Thoughts?",
+        "ts": "1773320400.000360",
+        "thread_ts": "1773320400.000360",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1773320700.000362",
+        "reply_users": [
+          "U06JX4D7A",
+          "U06JX4S8O"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4D7A",
+            "ts": "1773320460.000361"
+          },
+          {
+            "user": "U06JX4S8O",
+            "ts": "1773320700.000362"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "add a backlash check before and after the endurance run",
+        "ts": "1773320460.000361",
+        "thread_ts": "1773320400.000360",
+        "parent_user_id": "U06JX4S8O"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "good one, added",
+        "ts": "1773320700.000362",
+        "thread_ts": "1773320400.000360",
+        "parent_user_id": "U06JX4S8O"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "Torque loop tuning waits on the motors too. Moving it to next Tuesday, the 17th. I'll tune the day they land.",
+        "ts": "1773325800.000366",
+        "thread_ts": "1773325800.000366",
+        "reply_count": 1,
+        "reply_users_count": 1,
+        "latest_reply": "1773325860.000367",
+        "reply_users": [
+          "U06JX4R1K"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4R1K",
+            "ts": "1773325860.000367"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "ok, makes sense",
+        "ts": "1773325860.000367",
+        "thread_ts": "1773325800.000366",
+        "parent_user_id": "U06JX4L5F"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "AksIM readings are clean now, Lena's workaround did it. Zero dropped frames over a 2 hour run.",
+        "ts": "1773396000.000374",
+        "thread_ts": "1773396000.000374",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1773396300.000376",
+        "reply_users": [
+          "U06JX4D7A",
+          "U06JX4S8O"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4D7A",
+            "ts": "1773396060.000375"
+          },
+          {
+            "user": "U06JX4S8O",
+            "ts": "1773396300.000376"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "so we don't need the vendor patch?",
+        "ts": "1773396060.000375",
+        "thread_ts": "1773396000.000374",
+        "parent_user_id": "U06JX4S8O"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "not for DVT",
+        "ts": "1773396300.000376",
+        "thread_ts": "1773396000.000374",
+        "parent_user_id": "U06JX4S8O"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "Lunch order for the drive team, Thai place, put your order in thread by 12:45",
+        "ts": "1773405000.000385",
+        "thread_ts": "1773405000.000385",
+        "reply_count": 3,
+        "reply_users_count": 3,
+        "latest_reply": "1773405420.000388",
+        "reply_users": [
+          "U06JX4S8O",
+          "U06JX4L5F",
+          "U06JX4D7A"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4S8O",
+            "ts": "1773405060.000386"
+          },
+          {
+            "user": "U06JX4L5F",
+            "ts": "1773405300.000387"
+          },
+          {
+            "user": "U06JX4D7A",
+            "ts": "1773405420.000388"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "pad see ew",
+        "ts": "1773405060.000386",
+        "thread_ts": "1773405000.000385",
+        "parent_user_id": "U06JX4D7A"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "green curry, medium",
+        "ts": "1773405300.000387",
+        "thread_ts": "1773405000.000385",
+        "parent_user_id": "U06JX4D7A"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "ordered",
+        "ts": "1773405420.000388",
+        "thread_ts": "1773405000.000385",
+        "parent_user_id": "U06JX4D7A"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "Merged the encoder workaround to main, it buffers and retries the bad frames. Notes in the PR.",
+        "ts": "1773419400.000397",
+        "reactions": [
+          {
+            "name": "+1",
+            "users": [
+              "U06JX4S8O"
+            ],
+            "count": 1
+          }
+        ]
+      }
+    ],
+    "hw-electrical": [
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "KiCad library question: are we standardizing on 0603 or 0402 for the passives on the next spin?",
+        "ts": "1772449800.000015",
+        "thread_ts": "1772449800.000015",
+        "reply_count": 3,
+        "reply_users_count": 2,
+        "latest_reply": "1772450220.000018",
+        "reply_users": [
+          "U06JX4S8O",
+          "U06JX4P3R"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4S8O",
+            "ts": "1772449860.000016"
+          },
+          {
+            "user": "U06JX4P3R",
+            "ts": "1772450100.000017"
+          },
+          {
+            "user": "U06JX4S8O",
+            "ts": "1772450220.000018"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "0402 everywhere except the gate driver bootstrap caps, those stay 0805 for the voltage rating",
+        "ts": "1772449860.000016",
+        "thread_ts": "1772449800.000015",
+        "parent_user_id": "U06JX4P3R"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "makes sense. Is that written down anywhere?",
+        "ts": "1772450100.000017",
+        "thread_ts": "1772449800.000015",
+        "parent_user_id": "U06JX4P3R"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "it is now :sweat_smile: added it to the layout guidelines page",
+        "ts": "1772450220.000018",
+        "thread_ts": "1772449800.000015",
+        "parent_user_id": "U06JX4P3R"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "Is the gripper driver board UART on J3 or J5? The silkscreen on my rev A is smudged",
+        "ts": "1772460900.000037",
+        "thread_ts": "1772460900.000037",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1772461200.000039",
+        "reply_users": [
+          "U06JX4P3R",
+          "U06JX4L5F"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4P3R",
+            "ts": "1772460960.000038"
+          },
+          {
+            "user": "U06JX4L5F",
+            "ts": "1772461200.000039"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "J5. J3 is the SWD header",
+        "ts": "1772460960.000038",
+        "thread_ts": "1772460900.000037",
+        "parent_user_id": "U06JX4L5F"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "thank you, I was about to flash it through the wrong port lol",
+        "ts": "1772461200.000039",
+        "thread_ts": "1772460900.000037",
+        "parent_user_id": "U06JX4L5F"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "Reflow oven is booked tomorrow 1-4 for the power stage test boards, shout if you need a slot",
+        "ts": "1772531400.000062",
+        "thread_ts": "1772531400.000062",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1772531700.000064",
+        "reply_users": [
+          "U06JX4P3R",
+          "U06JX4S8O"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4P3R",
+            "ts": "1772531460.000063"
+          },
+          {
+            "user": "U06JX4S8O",
+            "ts": "1772531700.000064"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "can I get 30 min at 4? just two small boards",
+        "ts": "1772531460.000063",
+        "thread_ts": "1772531400.000062",
+        "parent_user_id": "U06JX4S8O"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "yours",
+        "ts": "1772531700.000064",
+        "thread_ts": "1772531400.000062",
+        "parent_user_id": "U06JX4S8O"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "Question for EE: what's the max PWM frequency the gripper driver is happy with? I'm at 20 kHz and the motor whines",
+        "ts": "1772551200.000100",
+        "thread_ts": "1772551200.000100",
+        "reply_count": 3,
+        "reply_users_count": 2,
+        "latest_reply": "1772551620.000103",
+        "reply_users": [
+          "U06JX4P3R",
+          "U06JX4L5F"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4P3R",
+            "ts": "1772551260.000101"
+          },
+          {
+            "user": "U06JX4L5F",
+            "ts": "1772551500.000102"
+          },
+          {
+            "user": "U06JX4L5F",
+            "ts": "1772551620.000103"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "gate driver is rated to 100k but switching losses climb fast. 25-30k should get you out of the audible range",
+        "ts": "1772551260.000101",
+        "thread_ts": "1772551200.000100",
+        "parent_user_id": "U06JX4L5F"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "trying 28k",
+        "ts": "1772551500.000102",
+        "thread_ts": "1772551200.000100",
+        "parent_user_id": "U06JX4L5F"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "whine gone :ok_hand:",
+        "ts": "1772551620.000103",
+        "thread_ts": "1772551200.000100",
+        "parent_user_id": "U06JX4L5F"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "Has anyone characterized the current sense amp offset on the gripper board? I see 40 mA at zero current",
+        "ts": "1772620800.000117",
+        "thread_ts": "1772620800.000117",
+        "reply_count": 3,
+        "reply_users_count": 3,
+        "latest_reply": "1772621220.000120",
+        "reply_users": [
+          "U06JX4S8O",
+          "U06JX4P3R",
+          "U06JX4L5F"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4S8O",
+            "ts": "1772620860.000118"
+          },
+          {
+            "user": "U06JX4P3R",
+            "ts": "1772621100.000119"
+          },
+          {
+            "user": "U06JX4L5F",
+            "ts": "1772621220.000120"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "that's within the INA240 spec at that gain. Calibrate it out in firmware",
+        "ts": "1772620860.000118",
+        "thread_ts": "1772620800.000117",
+        "parent_user_id": "U06JX4P3R"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "<@U06JX4L5F> can you add a zero-offset cal at boot?",
+        "ts": "1772621100.000119",
+        "thread_ts": "1772620800.000117",
+        "parent_user_id": "U06JX4P3R"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "yep, easy. Will be in the next firmware drop",
+        "ts": "1772621220.000120",
+        "thread_ts": "1772620800.000117",
+        "parent_user_id": "U06JX4P3R"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "MDB rev A is shorting at the gate driver. The bootstrap trace runs under the high-side FET pad and the mask is too thin there. Priya's board is dead until rev B.",
+        "ts": "1772622900.000121",
+        "thread_ts": "1772622900.000121",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1772623200.000123",
+        "reply_users": [
+          "U06JX4P3R",
+          "U06JX4S8O"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4P3R",
+            "ts": "1772622960.000122"
+          },
+          {
+            "user": "U06JX4S8O",
+            "ts": "1772623200.000123"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "confirmed, same burn mark on both units. Starting the rev B fix today.",
+        "ts": "1772622960.000122",
+        "thread_ts": "1772622900.000121",
+        "parent_user_id": "U06JX4S8O"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "send me the layout when it's ready, happy to review",
+        "ts": "1772623200.000123",
+        "thread_ts": "1772622900.000121",
+        "parent_user_id": "U06JX4S8O"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "ESD reminder: the wrist straps at bench 3 failed the tester this morning, use bench 4 until new ones come",
+        "ts": "1772643000.000139",
+        "thread_ts": "1772643000.000139",
+        "reply_count": 1,
+        "reply_users_count": 1,
+        "latest_reply": "1772643060.000140",
+        "reply_users": [
+          "U06JX4L5F"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4L5F",
+            "ts": "1772643060.000140"
+          }
+        ],
+        "reactions": [
+          {
+            "name": "+1",
+            "users": [
+              "U06JX4P3R"
+            ],
+            "count": 1
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "noted",
+        "ts": "1772643060.000140",
+        "thread_ts": "1772643000.000139",
+        "parent_user_id": "U06JX4S8O"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "With the MDB dead I can't tune the current limit this week. Moving current-limit tuning to Monday, assuming rev B boards land Friday.",
+        "ts": "1772705700.000156",
+        "thread_ts": "1772705700.000156",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1772706000.000158",
+        "reply_users": [
+          "U06JX4S8O",
+          "U06JX4P3R"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4S8O",
+            "ts": "1772705760.000157"
+          },
+          {
+            "user": "U06JX4P3R",
+            "ts": "1772706000.000158"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "Friday is realistic if the fab holds the quick-turn",
+        "ts": "1772705760.000157",
+        "thread_ts": "1772705700.000156",
+        "parent_user_id": "U06JX4P3R"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "they confirmed this morning",
+        "ts": "1772706000.000158",
+        "thread_ts": "1772705700.000156",
+        "parent_user_id": "U06JX4P3R"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "Bad news on the drive power stage. The 22 Nm motor pulls enough current that I need the 48 V MOSFETs, and they're a different package. Layout gets redone. Power stage slips to the 11th.",
+        "ts": "1772708400.000159",
+        "thread_ts": "1772708400.000159",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1772708700.000161",
+        "reply_users": [
+          "U06JX4P3R",
+          "U06JX4S8O"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4P3R",
+            "ts": "1772708460.000160"
+          },
+          {
+            "user": "U06JX4S8O",
+            "ts": "1772708700.000161"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "ouch. The TO-LL ones?",
+        "ts": "1772708460.000160",
+        "thread_ts": "1772708400.000159",
+        "parent_user_id": "U06JX4S8O"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "yeah. Better thermals at least",
+        "ts": "1772708700.000161",
+        "thread_ts": "1772708400.000159",
+        "parent_user_id": "U06JX4S8O"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "URGENT: who has the 4-channel scope?? need it for a power stage capture in 10 min",
+        "ts": "1772721000.000169",
+        "thread_ts": "1772721000.000169",
+        "reply_count": 3,
+        "reply_users_count": 2,
+        "latest_reply": "1772721420.000172",
+        "reply_users": [
+          "U06JX4P3R",
+          "U06JX4L5F"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4P3R",
+            "ts": "1772721060.000170"
+          },
+          {
+            "user": "U06JX4L5F",
+            "ts": "1772721300.000171"
+          },
+          {
+            "user": "U06JX4L5F",
+            "ts": "1772721420.000172"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "not me, I have the 2-channel",
+        "ts": "1772721060.000170",
+        "thread_ts": "1772721000.000169",
+        "parent_user_id": "U06JX4S8O"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "I think it's in the firmware lab",
+        "ts": "1772721300.000171",
+        "thread_ts": "1772721000.000169",
+        "parent_user_id": "U06JX4S8O"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "yep, under my bench. bringing it over",
+        "ts": "1772721420.000172",
+        "thread_ts": "1772721000.000169",
+        "parent_user_id": "U06JX4S8O",
+        "reactions": [
+          {
+            "name": "pray",
+            "users": [
+              "U06JX4S8O"
+            ],
+            "count": 1
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "Pushed gripper fw with the current-sense zero cal at boot. Priya, flash it when the new boards are up",
+        "ts": "1772728200.000180",
+        "reactions": [
+          {
+            "name": "+1",
+            "users": [
+              "U06JX4P3R"
+            ],
+            "count": 1
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "Ran the gripper actuator thermal sweep. At 3.0 A peak the winding hits 96 C after 200 cycles, I'd like more headroom than that",
+        "ts": "1772791200.000188",
+        "thread_ts": "1772791200.000188",
+        "reply_count": 4,
+        "reply_users_count": 2,
+        "latest_reply": "1772791980.000192",
+        "reply_users": [
+          "U06JX4S8O",
+          "U06JX4P3R"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4S8O",
+            "ts": "1772791260.000189"
+          },
+          {
+            "user": "U06JX4P3R",
+            "ts": "1772791500.000190"
+          },
+          {
+            "user": "U06JX4S8O",
+            "ts": "1772791620.000191"
+          },
+          {
+            "user": "U06JX4P3R",
+            "ts": "1772791980.000192"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "what does 2.8 get you?",
+        "ts": "1772791260.000189",
+        "thread_ts": "1772791200.000188",
+        "parent_user_id": "U06JX4P3R"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "about 88 C. Close time goes up a bit, maybe 15 ms",
+        "ts": "1772791500.000190",
+        "thread_ts": "1772791200.000188",
+        "parent_user_id": "U06JX4P3R"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "I'd take the 8 degrees. You're the one who has to live with it though",
+        "ts": "1772791620.000191",
+        "thread_ts": "1772791200.000188",
+        "parent_user_id": "U06JX4P3R"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "fine, 2.8 it is.",
+        "ts": "1772791980.000192",
+        "thread_ts": "1772791200.000188",
+        "parent_user_id": "U06JX4P3R"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "Layout review for power stage rev 2 at 2pm if anyone wants to sit in",
+        "ts": "1772797500.000199",
+        "thread_ts": "1772797500.000199",
+        "reply_count": 1,
+        "reply_users_count": 1,
+        "latest_reply": "1772797560.000200",
+        "reply_users": [
+          "U06JX4P3R"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4P3R",
+            "ts": "1772797560.000200"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "I'll join for the first half",
+        "ts": "1772797560.000200",
+        "thread_ts": "1772797500.000199",
+        "parent_user_id": "U06JX4S8O"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "Power stage rev 2 layout is about 60% there, the TO-LL footprints are in",
+        "ts": "1773050400.000221",
+        "thread_ts": "1773050400.000221",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1773050700.000223",
+        "reply_users": [
+          "U06JX4P3R",
+          "U06JX4S8O"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4P3R",
+            "ts": "1773050460.000222"
+          },
+          {
+            "user": "U06JX4S8O",
+            "ts": "1773050700.000223"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "want me to look at the gate loop before you route the rest?",
+        "ts": "1773050460.000222",
+        "thread_ts": "1773050400.000221",
+        "parent_user_id": "U06JX4S8O"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "yes please, after lunch",
+        "ts": "1773050700.000223",
+        "thread_ts": "1773050400.000221",
+        "parent_user_id": "U06JX4S8O"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "Post-gate cleanup: I'm returning the EVT boards to the cage. Label your personal ones or they go in the bin",
+        "ts": "1773072000.000267",
+        "thread_ts": "1773072000.000267",
+        "reply_count": 1,
+        "reply_users_count": 1,
+        "latest_reply": "1773072060.000268",
+        "reply_users": [
+          "U06JX4L5F"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4L5F",
+            "ts": "1773072060.000268"
+          }
+        ],
+        "reactions": [
+          {
+            "name": "+1",
+            "users": [
+              "U06JX4S8O"
+            ],
+            "count": 1
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "mine has a sticker",
+        "ts": "1773072060.000268",
+        "thread_ts": "1773072000.000267",
+        "parent_user_id": "U06JX4P3R"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "Gate loop on power stage rev 2 looks clean, two small comments in the review",
+        "ts": "1773136800.000277",
+        "thread_ts": "1773136800.000277",
+        "reply_count": 1,
+        "reply_users_count": 1,
+        "latest_reply": "1773136860.000278",
+        "reply_users": [
+          "U06JX4S8O"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4S8O",
+            "ts": "1773136860.000278"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "fixed both, thanks",
+        "ts": "1773136860.000278",
+        "thread_ts": "1773136800.000277",
+        "parent_user_id": "U06JX4P3R"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "Anyone have a 48 V bench supply free? Need it Thursday for the power stage",
+        "ts": "1773158400.000294",
+        "thread_ts": "1773158400.000294",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1773158700.000296",
+        "reply_users": [
+          "U06JX4P3R",
+          "U06JX4S8O"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4P3R",
+            "ts": "1773158460.000295"
+          },
+          {
+            "user": "U06JX4S8O",
+            "ts": "1773158700.000296"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "the Keysight on bench 2 goes to 60 V, I'm off it by Wednesday",
+        "ts": "1773158460.000295",
+        "thread_ts": "1773158400.000294",
+        "parent_user_id": "U06JX4S8O"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "perfect",
+        "ts": "1773158700.000296",
+        "thread_ts": "1773158400.000294",
+        "parent_user_id": "U06JX4S8O"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "Sam, is the power stage pinout changing with rev 2? My torque loop config reads phase current from ADC1-3",
+        "ts": "1773226800.000317",
+        "thread_ts": "1773226800.000317",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1773227100.000319",
+        "reply_users": [
+          "U06JX4S8O",
+          "U06JX4L5F"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4S8O",
+            "ts": "1773226860.000318"
+          },
+          {
+            "user": "U06JX4L5F",
+            "ts": "1773227100.000319"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "same ADC channels, I kept the sense pinout",
+        "ts": "1773226860.000318",
+        "thread_ts": "1773226800.000317",
+        "parent_user_id": "U06JX4L5F"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "great",
+        "ts": "1773227100.000319",
+        "thread_ts": "1773226800.000317",
+        "parent_user_id": "U06JX4L5F"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "DVT validation plan needs 55 N test cases, new load cells and a longer cycle test. Moving it to next Wednesday.",
+        "ts": "1773234000.000324",
+        "thread_ts": "1773234000.000324",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1773234300.000326",
+        "reply_users": [
+          "U06JX4S8O",
+          "U06JX4P3R"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4S8O",
+            "ts": "1773234060.000325"
+          },
+          {
+            "user": "U06JX4P3R",
+            "ts": "1773234300.000326"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "the 18th?",
+        "ts": "1773234060.000325",
+        "thread_ts": "1773234000.000324",
+        "parent_user_id": "U06JX4P3R"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "yes, the 18th",
+        "ts": "1773234300.000326",
+        "thread_ts": "1773234000.000324",
+        "parent_user_id": "U06JX4P3R"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "Power stage rev 2 first power-up on the 48 V supply, no smoke. Running switching characterization this afternoon.",
+        "ts": "1773309600.000350",
+        "reactions": [
+          {
+            "name": "fire",
+            "users": [
+              "U06JX4P3R"
+            ],
+            "count": 1
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "Can someone sanity check my 55 N current estimate? I get 2.6 A peak with the new finger geometry",
+        "ts": "1773399600.000379",
+        "thread_ts": "1773399600.000379",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1773399900.000381",
+        "reply_users": [
+          "U06JX4S8O",
+          "U06JX4P3R"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4S8O",
+            "ts": "1773399660.000380"
+          },
+          {
+            "user": "U06JX4P3R",
+            "ts": "1773399900.000381"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "I get 2.65, close enough. Under your 2.8 cap",
+        "ts": "1773399660.000380",
+        "thread_ts": "1773399600.000379",
+        "parent_user_id": "U06JX4P3R"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "phew",
+        "ts": "1773399900.000381",
+        "thread_ts": "1773399600.000379",
+        "parent_user_id": "U06JX4P3R"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "BLOCKER? anyone seen the spare probe tips",
+        "ts": "1773410400.000389",
+        "thread_ts": "1773410400.000389",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1773410700.000391",
+        "reply_users": [
+          "U06JX4S8O",
+          "U06JX4P3R"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4S8O",
+            "ts": "1773410460.000390"
+          },
+          {
+            "user": "U06JX4P3R",
+            "ts": "1773410700.000391"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "not me",
+        "ts": "1773410460.000390",
+        "thread_ts": "1773410400.000389",
+        "parent_user_id": "U06JX4P3R"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "nvm, found them",
+        "ts": "1773410700.000391",
+        "thread_ts": "1773410400.000389",
+        "parent_user_id": "U06JX4P3R"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "Power stage rev 2 is done. Switching characterization passed, layout released to fab.",
+        "ts": "1773414000.000392"
+      }
+    ],
+    "supply-chain": [
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": "Weekly lead-time check: gearbox vendor still quoting 3 weeks, encoder vendor 2 weeks. Nothing moved since last Monday.",
+        "ts": "1772447400.000013",
+        "thread_ts": "1772447400.000013",
+        "reply_count": 1,
+        "reply_users_count": 1,
+        "latest_reply": "1772447460.000014",
+        "reply_users": [
+          "U06JX4R1K"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4R1K",
+            "ts": "1772447460.000014"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "thanks Tom",
+        "ts": "1772447460.000014",
+        "thread_ts": "1772447400.000013",
+        "parent_user_id": "U06JX4T9B"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "Tom, can you get 20 more of the M4 thermal inserts? We're burning through them on the housing prototypes",
+        "ts": "1772463600.000040",
+        "thread_ts": "1772463600.000040",
+        "reply_count": 3,
+        "reply_users_count": 2,
+        "latest_reply": "1772464020.000043",
+        "reply_users": [
+          "U06JX4T9B",
+          "U06JX4D7A"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4T9B",
+            "ts": "1772463660.000041"
+          },
+          {
+            "user": "U06JX4D7A",
+            "ts": "1772463900.000042"
+          },
+          {
+            "user": "U06JX4T9B",
+            "ts": "1772464020.000043"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": "sure, same McMaster part as last time?",
+        "ts": "1772463660.000041",
+        "thread_ts": "1772463600.000040",
+        "parent_user_id": "U06JX4D7A"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "yes, 94180A353",
+        "ts": "1772463900.000042",
+        "thread_ts": "1772463600.000040",
+        "parent_user_id": "U06JX4D7A"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": "ordered, should be here Wednesday",
+        "ts": "1772464020.000043",
+        "thread_ts": "1772463600.000040",
+        "parent_user_id": "U06JX4D7A"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": "FYI the customs hold on the encoder eval kits cleared this morning, they should be here Thursday",
+        "ts": "1772539800.000074",
+        "thread_ts": "1772539800.000074",
+        "reply_count": 1,
+        "reply_users_count": 1,
+        "latest_reply": "1772539860.000075",
+        "reply_users": [
+          "U06JX4L5F"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4L5F",
+            "ts": "1772539860.000075"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": ":tada: thank you",
+        "ts": "1772539860.000075",
+        "thread_ts": "1772539800.000074",
+        "parent_user_id": "U06JX4T9B"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "Tom, can you send me the open PO list before Thursday's finance sync?",
+        "ts": "1772556000.000107",
+        "thread_ts": "1772556000.000107",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1772556300.000109",
+        "reply_users": [
+          "U06JX4T9B",
+          "U06JX4R1K"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4T9B",
+            "ts": "1772556060.000108"
+          },
+          {
+            "user": "U06JX4R1K",
+            "ts": "1772556300.000109"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": "will do, by tomorrow morning",
+        "ts": "1772556060.000108",
+        "thread_ts": "1772556000.000107",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "thanks",
+        "ts": "1772556300.000109",
+        "thread_ts": "1772556000.000107",
+        "parent_user_id": "U06JX4R1K"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": "Open PO list for Rachel attached. Biggest open item is the drive motor PO, waiting on final sizing from Diego.",
+        "ts": "1772616600.000112",
+        "files": [
+          {
+            "name": "open_POs_2026-03-04.xlsx",
+            "title": "open_POs_2026-03-04.xlsx",
+            "mimetype": "application/octet-stream"
+          }
+        ],
+        "thread_ts": "1772616600.000112",
+        "reply_count": 1,
+        "reply_users_count": 1,
+        "latest_reply": "1772616660.000113",
+        "reply_users": [
+          "U06JX4R1K"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4R1K",
+            "ts": "1772616660.000113"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "thanks",
+        "ts": "1772616660.000113",
+        "thread_ts": "1772616600.000112",
+        "parent_user_id": "U06JX4T9B"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "Tom, does the shop need a drawing PDF or will they take the STEP?",
+        "ts": "1772640000.000136",
+        "thread_ts": "1772640000.000136",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1772640300.000138",
+        "reply_users": [
+          "U06JX4T9B",
+          "U06JX4M2C"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4T9B",
+            "ts": "1772640060.000137"
+          },
+          {
+            "user": "U06JX4M2C",
+            "ts": "1772640300.000138"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": "both ideally. PDF for tolerances, STEP for programming",
+        "ts": "1772640060.000137",
+        "thread_ts": "1772640000.000136",
+        "parent_user_id": "U06JX4M2C"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "sending both now",
+        "ts": "1772640300.000138",
+        "thread_ts": "1772640000.000136",
+        "parent_user_id": "U06JX4M2C"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": "Machine shop asked whether the finger edge break is 0.2 or 0.5, the drawing says both in different views",
+        "ts": "1772712000.000162",
+        "thread_ts": "1772712000.000162",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1772712300.000164",
+        "reply_users": [
+          "U06JX4M2C",
+          "U06JX4T9B"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4M2C",
+            "ts": "1772712060.000163"
+          },
+          {
+            "user": "U06JX4T9B",
+            "ts": "1772712300.000164"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "0.2, I'll fix the drawing note. Sorry about that",
+        "ts": "1772712060.000163",
+        "thread_ts": "1772712000.000162",
+        "parent_user_id": "U06JX4T9B"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": "relayed",
+        "ts": "1772712300.000164",
+        "thread_ts": "1772712000.000162",
+        "parent_user_id": "U06JX4T9B"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "Finance sync went fine, no PO holds this week",
+        "ts": "1772730000.000181",
+        "reactions": [
+          {
+            "name": "+1",
+            "users": [
+              "U06JX4T9B"
+            ],
+            "count": 1
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "When do the DVT drive motors land? I want to plan the power stage bring-up",
+        "ts": "1772794800.000196",
+        "thread_ts": "1772794800.000196",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1772795100.000198",
+        "reply_users": [
+          "U06JX4T9B",
+          "U06JX4S8O"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4T9B",
+            "ts": "1772794860.000197"
+          },
+          {
+            "user": "U06JX4S8O",
+            "ts": "1772795100.000198"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": "drive motors land on the 17th, as planned.",
+        "ts": "1772794860.000197",
+        "thread_ts": "1772794800.000196",
+        "parent_user_id": "U06JX4S8O"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4S8O",
+        "text": "ok, 17th",
+        "ts": "1772795100.000198",
+        "thread_ts": "1772794800.000196",
+        "parent_user_id": "U06JX4S8O"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": "The encoder eval kits came in late yesterday, they're at the front desk",
+        "ts": "1772802000.000201",
+        "thread_ts": "1772802000.000201",
+        "reply_count": 1,
+        "reply_users_count": 1,
+        "latest_reply": "1772802060.000202",
+        "reply_users": [
+          "U06JX4L5F"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4L5F",
+            "ts": "1772802060.000202"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4L5F",
+        "text": "grabbing them before I leave",
+        "ts": "1772802060.000202",
+        "thread_ts": "1772802000.000201",
+        "parent_user_id": "U06JX4T9B"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "Tom, the gearbox quote for the DVT units came back higher than budget",
+        "ts": "1772816400.000213",
+        "thread_ts": "1772816400.000213",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1772816700.000215",
+        "reply_users": [
+          "U06JX4T9B",
+          "U06JX4D7A"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4T9B",
+            "ts": "1772816460.000214"
+          },
+          {
+            "user": "U06JX4D7A",
+            "ts": "1772816700.000215"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": "saw it, about 12% over. I'll ask the vendor if that's a volume tier thing",
+        "ts": "1772816460.000214",
+        "thread_ts": "1772816400.000213",
+        "parent_user_id": "U06JX4D7A"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "thanks",
+        "ts": "1772816700.000215",
+        "thread_ts": "1772816400.000213",
+        "parent_user_id": "U06JX4D7A"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": "Motor vendor confirmed the 90 mm frame is a catalog part, no special order needed",
+        "ts": "1773052200.000224",
+        "thread_ts": "1773052200.000224",
+        "reply_count": 1,
+        "reply_users_count": 1,
+        "latest_reply": "1773052260.000225",
+        "reply_users": [
+          "U06JX4D7A"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4D7A",
+            "ts": "1773052260.000225"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "good",
+        "ts": "1773052260.000225",
+        "thread_ts": "1773052200.000224",
+        "parent_user_id": "U06JX4T9B"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": "Tom, do you have a rough unit cost for the DVT gripper yet? A customer is asking",
+        "ts": "1773073800.000269",
+        "thread_ts": "1773073800.000269",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1773074100.000271",
+        "reply_users": [
+          "U06JX4T9B",
+          "U06JX4O6H"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4T9B",
+            "ts": "1773073860.000270"
+          },
+          {
+            "user": "U06JX4O6H",
+            "ts": "1773074100.000271"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": "rough: $410 at 50 units. I'll have a real number after the finger stock quote",
+        "ts": "1773073860.000270",
+        "thread_ts": "1773073800.000269",
+        "parent_user_id": "U06JX4O6H"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": "rough is fine for now",
+        "ts": "1773074100.000271",
+        "thread_ts": "1773073800.000269",
+        "parent_user_id": "U06JX4O6H"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": "PO for the DVT drive motors is placed. 90 mm frame, 12 units.",
+        "ts": "1773140400.000282"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4M2C",
+        "text": "Tom, DVT finger stock: same 6061-T6 bar, 25 mm square, 40 pieces. Quote only for now, the freeze isn't done.",
+        "ts": "1773149400.000286",
+        "thread_ts": "1773149400.000286",
+        "reply_count": 1,
+        "reply_users_count": 1,
+        "latest_reply": "1773149460.000287",
+        "reply_users": [
+          "U06JX4T9B"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4T9B",
+            "ts": "1773149460.000287"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": "on it, numbers tomorrow",
+        "ts": "1773149460.000287",
+        "thread_ts": "1773149400.000286",
+        "parent_user_id": "U06JX4M2C"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": "Second-source gripper motor test data is in, attached. Torque constant within 2%, winding resistance within 4%, backlash a touch higher.",
+        "ts": "1773225000.000315",
+        "files": [
+          {
+            "name": "second_source_motor_test.xlsx",
+            "title": "second_source_motor_test.xlsx",
+            "mimetype": "application/octet-stream"
+          }
+        ],
+        "thread_ts": "1773225000.000315",
+        "reply_count": 1,
+        "reply_users_count": 1,
+        "latest_reply": "1773225060.000316",
+        "reply_users": [
+          "U06JX4P3R"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4P3R",
+            "ts": "1773225060.000316"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4P3R",
+        "text": "numbers look good to me, let's run with it.",
+        "ts": "1773225060.000316",
+        "thread_ts": "1773225000.000315",
+        "parent_user_id": "U06JX4T9B",
+        "reactions": [
+          {
+            "name": "+1",
+            "users": [
+              "U06JX4T9B"
+            ],
+            "count": 1
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": "Finger stock quote: $18/bar for 40 bars, 2 day lead. Holding the order until the freeze.",
+        "ts": "1773230400.000323",
+        "reactions": [
+          {
+            "name": "+1",
+            "users": [
+              "U06JX4R1K"
+            ],
+            "count": 1
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": "Can I just say the connector vendor's account manager sent the RUDEST email I have ever received. 'Per my last three emails' in bold. Over a missing tax form.",
+        "ts": "1773239400.000327",
+        "thread_ts": "1773239400.000327",
+        "reply_count": 12,
+        "reply_users_count": 3,
+        "latest_reply": "1773240120.000339",
+        "reply_users": [
+          "U06JX4D7A",
+          "U06JX4R1K",
+          "U06JX4T9B"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4D7A",
+            "ts": "1773239460.000328"
+          },
+          {
+            "user": "U06JX4R1K",
+            "ts": "1773239520.000329"
+          },
+          {
+            "user": "U06JX4T9B",
+            "ts": "1773239580.000330"
+          },
+          {
+            "user": "U06JX4D7A",
+            "ts": "1773239640.000331"
+          },
+          {
+            "user": "U06JX4T9B",
+            "ts": "1773239700.000332"
+          },
+          {
+            "user": "U06JX4D7A",
+            "ts": "1773239760.000333"
+          },
+          {
+            "user": "U06JX4R1K",
+            "ts": "1773239820.000334"
+          },
+          {
+            "user": "U06JX4T9B",
+            "ts": "1773239880.000335"
+          },
+          {
+            "user": "U06JX4D7A",
+            "ts": "1773239940.000336"
+          },
+          {
+            "user": "U06JX4T9B",
+            "ts": "1773240000.000337"
+          },
+          {
+            "user": "U06JX4R1K",
+            "ts": "1773240060.000338"
+          },
+          {
+            "user": "U06JX4T9B",
+            "ts": "1773240120.000339"
+          }
+        ],
+        "reactions": [
+          {
+            "name": "rage",
+            "users": [
+              "U06JX4D7A",
+              "U06JX4R1K"
+            ],
+            "count": 2
+          },
+          {
+            "name": "popcorn",
+            "users": [
+              "U06JX4D7A"
+            ],
+            "count": 1
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "lmao the bold",
+        "ts": "1773239460.000328",
+        "thread_ts": "1773239400.000327",
+        "parent_user_id": "U06JX4T9B"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "do you want me to reply?",
+        "ts": "1773239520.000329",
+        "thread_ts": "1773239400.000327",
+        "parent_user_id": "U06JX4T9B"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": "no no, I sent the form. Just needed to tell someone",
+        "ts": "1773239580.000330",
+        "thread_ts": "1773239400.000327",
+        "parent_user_id": "U06JX4T9B"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "forward it, I collect these",
+        "ts": "1773239640.000331",
+        "thread_ts": "1773239400.000327",
+        "parent_user_id": "U06JX4T9B"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": "forwarded. Read the last paragraph",
+        "ts": "1773239700.000332",
+        "thread_ts": "1773239400.000327",
+        "parent_user_id": "U06JX4T9B"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "'we trust this will not happen again' WOW",
+        "ts": "1773239760.000333",
+        "thread_ts": "1773239400.000327",
+        "parent_user_id": "U06JX4T9B"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "ok that's a bit much",
+        "ts": "1773239820.000334",
+        "thread_ts": "1773239400.000327",
+        "parent_user_id": "U06JX4T9B"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": "they also cc'd my manager from two jobs ago somehow",
+        "ts": "1773239880.000335",
+        "thread_ts": "1773239400.000327",
+        "parent_user_id": "U06JX4T9B"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4D7A",
+        "text": "how",
+        "ts": "1773239940.000336",
+        "thread_ts": "1773239400.000327",
+        "parent_user_id": "U06JX4T9B"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": "no idea. LinkedIn scraping?",
+        "ts": "1773240000.000337",
+        "thread_ts": "1773239400.000327",
+        "parent_user_id": "U06JX4T9B"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "Tom, is this going to hold anything up?",
+        "ts": "1773240060.000338",
+        "thread_ts": "1773239400.000327",
+        "parent_user_id": "U06JX4T9B"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": "No. Form is in, order is released. Dates unaffected.",
+        "ts": "1773240120.000339",
+        "thread_ts": "1773239400.000327",
+        "parent_user_id": "U06JX4T9B"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": "Any update on the gearbox finance approval? Vendor is asking",
+        "ts": "1773316800.000357",
+        "thread_ts": "1773316800.000357",
+        "reply_count": 2,
+        "reply_users_count": 2,
+        "latest_reply": "1773317100.000359",
+        "reply_users": [
+          "U06JX4R1K",
+          "U06JX4T9B"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4R1K",
+            "ts": "1773316860.000358"
+          },
+          {
+            "user": "U06JX4T9B",
+            "ts": "1773317100.000359"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "still in review, should hear Monday",
+        "ts": "1773316860.000358",
+        "thread_ts": "1773316800.000357",
+        "parent_user_id": "U06JX4T9B"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": "ok, I'll tell them Monday",
+        "ts": "1773317100.000359",
+        "thread_ts": "1773316800.000357",
+        "parent_user_id": "U06JX4T9B"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4T9B",
+        "text": "Supply chain recap for the week: drive motors on track for the 17th, gearbox still waiting on finance, finger stock quote ready to go.",
+        "ts": "1773397800.000377",
+        "thread_ts": "1773397800.000377",
+        "reply_count": 1,
+        "reply_users_count": 1,
+        "latest_reply": "1773397860.000378",
+        "reply_users": [
+          "U06JX4R1K"
+        ],
+        "replies": [
+          {
+            "user": "U06JX4R1K",
+            "ts": "1773397860.000378"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "user": "U06JX4R1K",
+        "text": "thanks Tom",
+        "ts": "1773397860.000378",
+        "thread_ts": "1773397800.000377",
+        "parent_user_id": "U06JX4T9B"
+      },
+      {
+        "type": "message",
+        "user": "U06JX4O6H",
+        "text": "Packaging vendor confirmed they got the render, samples in two weeks",
+        "ts": "1773415800.000393",
+        "reactions": [
+          {
+            "name": "+1",
+            "users": [
+              "U06JX4T9B"
+            ],
+            "count": 1
+          }
+        ]
+      }
+    ]
+  }
+}

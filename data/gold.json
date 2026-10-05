@@ -1,0 +1,1461 @@
+{
+  "description": "Gold labels for data/slack.json. One entry per thread. A thread ID is '<channel>:<root ts>'. Case IDs follow data/SCENARIO.md; B1-B8 are the background changes and threads with case null are ordinary noise. 'affected' is the core fan-out on the graph at that point, minus thread participants.",
+  "threads": [
+    {
+      "thread": "general:1772440800.000001",
+      "channel": "general",
+      "date": "2026-03-02",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "gripper:1772442900.000005",
+      "channel": "gripper",
+      "date": "2026-03-02",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "drive-unit:1772444400.000009",
+      "channel": "drive-unit",
+      "date": "2026-03-02",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "drive-unit:1772445900.000012",
+      "channel": "drive-unit",
+      "date": "2026-03-02",
+      "case": "B1",
+      "kind": "background",
+      "deltas": [
+        {
+          "id": "gold-B1",
+          "type": "status_change",
+          "target_kind": "task",
+          "target_id": "T19",
+          "old_value": "open",
+          "new_value": "in_progress",
+          "contradicts": false,
+          "ts": "1772445900.000012",
+          "affected": [
+            "tom"
+          ]
+        }
+      ]
+    },
+    {
+      "thread": "supply-chain:1772447400.000013",
+      "channel": "supply-chain",
+      "date": "2026-03-02",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "hw-electrical:1772449800.000015",
+      "channel": "hw-electrical",
+      "date": "2026-03-02",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "general:1772452800.000019",
+      "channel": "general",
+      "date": "2026-03-02",
+      "case": "L1",
+      "kind": "loud_noise",
+      "deltas": []
+    },
+    {
+      "thread": "gripper:1772458200.000034",
+      "channel": "gripper",
+      "date": "2026-03-02",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "hw-electrical:1772460900.000037",
+      "channel": "hw-electrical",
+      "date": "2026-03-02",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "supply-chain:1772463600.000040",
+      "channel": "supply-chain",
+      "date": "2026-03-02",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "general:1772468400.000044",
+      "channel": "general",
+      "date": "2026-03-02",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "drive-unit:1772469900.000047",
+      "channel": "drive-unit",
+      "date": "2026-03-02",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "general:1772527500.000050",
+      "channel": "general",
+      "date": "2026-03-03",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "gripper:1772528400.000058",
+      "channel": "gripper",
+      "date": "2026-03-03",
+      "case": "I1",
+      "kind": "implicit_decision",
+      "deltas": [
+        {
+          "id": "gold-I1",
+          "type": "value_change",
+          "target_kind": "requirement",
+          "target_id": "REQ-G03",
+          "old_value": "Al 7075-T6",
+          "new_value": "Al 6061-T6",
+          "contradicts": false,
+          "ts": "1772528820.000061",
+          "affected": [
+            "omar"
+          ]
+        }
+      ]
+    },
+    {
+      "thread": "hw-electrical:1772531400.000062",
+      "channel": "hw-electrical",
+      "date": "2026-03-03",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "gripper:1772533800.000065",
+      "channel": "gripper",
+      "date": "2026-03-03",
+      "case": "K2",
+      "kind": "contradiction",
+      "deltas": [
+        {
+          "id": "gold-K2",
+          "type": "status_change",
+          "target_kind": "task",
+          "target_id": "T06",
+          "old_value": "in_progress",
+          "new_value": "done",
+          "contradicts": true,
+          "ts": "1772533860.000066",
+          "affected": [
+            "rachel"
+          ]
+        }
+      ]
+    },
+    {
+      "thread": "gripper:1772535600.000068",
+      "channel": "gripper",
+      "date": "2026-03-03",
+      "case": "X1",
+      "kind": "cross_team",
+      "deltas": [
+        {
+          "id": "gold-X1",
+          "type": "deadline_change",
+          "target_kind": "task",
+          "target_id": "T01",
+          "old_value": "2026-03-03",
+          "new_value": "2026-03-04",
+          "contradicts": false,
+          "ts": "1772535900.000070",
+          "affected": [
+            "priya",
+            "tom"
+          ]
+        }
+      ]
+    },
+    {
+      "thread": "drive-unit:1772537400.000071",
+      "channel": "drive-unit",
+      "date": "2026-03-03",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "supply-chain:1772539800.000074",
+      "channel": "supply-chain",
+      "date": "2026-03-03",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "gripper:1772542800.000076",
+      "channel": "gripper",
+      "date": "2026-03-03",
+      "case": "L2",
+      "kind": "loud_noise",
+      "deltas": []
+    },
+    {
+      "thread": "general:1772546400.000097",
+      "channel": "general",
+      "date": "2026-03-03",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "hw-electrical:1772551200.000100",
+      "channel": "hw-electrical",
+      "date": "2026-03-03",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "drive-unit:1772553600.000104",
+      "channel": "drive-unit",
+      "date": "2026-03-03",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "supply-chain:1772556000.000107",
+      "channel": "supply-chain",
+      "date": "2026-03-03",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "general:1772613000.000110",
+      "channel": "general",
+      "date": "2026-03-04",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "gripper:1772615400.000111",
+      "channel": "gripper",
+      "date": "2026-03-04",
+      "case": "B2",
+      "kind": "background",
+      "deltas": [
+        {
+          "id": "gold-B2",
+          "type": "status_change",
+          "target_kind": "task",
+          "target_id": "T01",
+          "old_value": "in_progress",
+          "new_value": "done",
+          "contradicts": false,
+          "ts": "1772615400.000111",
+          "affected": [
+            "priya",
+            "tom"
+          ]
+        }
+      ]
+    },
+    {
+      "thread": "supply-chain:1772616600.000112",
+      "channel": "supply-chain",
+      "date": "2026-03-04",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "drive-unit:1772618400.000114",
+      "channel": "drive-unit",
+      "date": "2026-03-04",
+      "case": "R1",
+      "kind": "requirement_change",
+      "deltas": [
+        {
+          "id": "gold-R1",
+          "type": "value_change",
+          "target_kind": "requirement",
+          "target_id": "REQ-D01",
+          "old_value": "15 Nm",
+          "new_value": "22 Nm",
+          "contradicts": false,
+          "ts": "1772618460.000115",
+          "affected": [
+            "sam"
+          ]
+        }
+      ]
+    },
+    {
+      "thread": "hw-electrical:1772620800.000117",
+      "channel": "hw-electrical",
+      "date": "2026-03-04",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "hw-electrical:1772622900.000121",
+      "channel": "hw-electrical",
+      "date": "2026-03-04",
+      "case": "A1",
+      "kind": "alias",
+      "deltas": [
+        {
+          "id": "gold-A1",
+          "type": "status_change",
+          "target_kind": "task",
+          "target_id": "T04",
+          "old_value": "in_progress",
+          "new_value": "blocked",
+          "contradicts": false,
+          "ts": "1772622900.000121",
+          "affected": [
+            "lena"
+          ]
+        }
+      ]
+    },
+    {
+      "thread": "drive-unit:1772625600.000124",
+      "channel": "drive-unit",
+      "date": "2026-03-04",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "gripper:1772629200.000127",
+      "channel": "gripper",
+      "date": "2026-03-04",
+      "case": "X8",
+      "kind": "cross_team",
+      "deltas": [
+        {
+          "id": "gold-X8",
+          "type": "deadline_change",
+          "target_kind": "task",
+          "target_id": "T02",
+          "old_value": "2026-03-04",
+          "new_value": "2026-03-05",
+          "contradicts": false,
+          "ts": "1772629260.000128",
+          "affected": [
+            "priya"
+          ]
+        }
+      ]
+    },
+    {
+      "thread": "gripper:1772633400.000130",
+      "channel": "gripper",
+      "date": "2026-03-04",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "general:1772636400.000132",
+      "channel": "general",
+      "date": "2026-03-04",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "supply-chain:1772640000.000136",
+      "channel": "supply-chain",
+      "date": "2026-03-04",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "hw-electrical:1772643000.000139",
+      "channel": "hw-electrical",
+      "date": "2026-03-04",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "general:1772700000.000141",
+      "channel": "general",
+      "date": "2026-03-05",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "gripper:1772701200.000149",
+      "channel": "gripper",
+      "date": "2026-03-05",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "drive-unit:1772703000.000152",
+      "channel": "drive-unit",
+      "date": "2026-03-05",
+      "case": "X2",
+      "kind": "cross_team",
+      "deltas": [
+        {
+          "id": "gold-X2",
+          "type": "status_change",
+          "target_kind": "task",
+          "target_id": "T17",
+          "old_value": "in_progress",
+          "new_value": "done",
+          "contradicts": false,
+          "ts": "1772703000.000152",
+          "affected": [
+            "sam",
+            "tom"
+          ]
+        }
+      ]
+    },
+    {
+      "thread": "hw-electrical:1772705700.000156",
+      "channel": "hw-electrical",
+      "date": "2026-03-05",
+      "case": "X3",
+      "kind": "cross_team",
+      "deltas": [
+        {
+          "id": "gold-X3",
+          "type": "deadline_change",
+          "target_kind": "task",
+          "target_id": "T05",
+          "old_value": "2026-03-05",
+          "new_value": "2026-03-09",
+          "contradicts": false,
+          "ts": "1772705700.000156",
+          "affected": [
+            "lena"
+          ]
+        }
+      ]
+    },
+    {
+      "thread": "hw-electrical:1772708400.000159",
+      "channel": "hw-electrical",
+      "date": "2026-03-05",
+      "case": "X4",
+      "kind": "cross_team",
+      "deltas": [
+        {
+          "id": "gold-X4",
+          "type": "deadline_change",
+          "target_kind": "task",
+          "target_id": "T20",
+          "old_value": "2026-03-06",
+          "new_value": "2026-03-11",
+          "contradicts": false,
+          "ts": "1772708400.000159",
+          "affected": [
+            "lena",
+            "tom"
+          ]
+        }
+      ]
+    },
+    {
+      "thread": "supply-chain:1772712000.000162",
+      "channel": "supply-chain",
+      "date": "2026-03-05",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "drive-unit:1772715600.000165",
+      "channel": "drive-unit",
+      "date": "2026-03-05",
+      "case": "N1",
+      "kind": "next_stage",
+      "deltas": [
+        {
+          "id": "gold-N1",
+          "type": "deadline_change",
+          "target_kind": "task",
+          "target_id": "T18",
+          "old_value": "2026-03-06",
+          "new_value": "2026-03-10",
+          "contradicts": false,
+          "ts": "1772715600.000165",
+          "affected": [
+            "tom"
+          ]
+        }
+      ]
+    },
+    {
+      "thread": "hw-electrical:1772721000.000169",
+      "channel": "hw-electrical",
+      "date": "2026-03-05",
+      "case": "L3",
+      "kind": "loud_noise",
+      "deltas": []
+    },
+    {
+      "thread": "drive-unit:1772724600.000173",
+      "channel": "drive-unit",
+      "date": "2026-03-05",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "general:1772726400.000176",
+      "channel": "general",
+      "date": "2026-03-05",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "hw-electrical:1772728200.000180",
+      "channel": "hw-electrical",
+      "date": "2026-03-05",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "supply-chain:1772730000.000181",
+      "channel": "supply-chain",
+      "date": "2026-03-05",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "general:1772785800.000182",
+      "channel": "general",
+      "date": "2026-03-06",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "drive-unit:1772788500.000185",
+      "channel": "drive-unit",
+      "date": "2026-03-06",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "hw-electrical:1772791200.000188",
+      "channel": "hw-electrical",
+      "date": "2026-03-06",
+      "case": "I2",
+      "kind": "implicit_decision",
+      "deltas": [
+        {
+          "id": "gold-I2",
+          "type": "value_change",
+          "target_kind": "requirement",
+          "target_id": "REQ-G04",
+          "old_value": "<= 3.0 A",
+          "new_value": "<= 2.8 A",
+          "contradicts": false,
+          "ts": "1772791980.000192",
+          "affected": [
+            "lena"
+          ]
+        }
+      ]
+    },
+    {
+      "thread": "gripper:1772793000.000193",
+      "channel": "gripper",
+      "date": "2026-03-06",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "supply-chain:1772794800.000196",
+      "channel": "supply-chain",
+      "date": "2026-03-06",
+      "case": "K1",
+      "kind": "contradiction",
+      "deltas": [
+        {
+          "id": "gold-K1",
+          "type": "deadline_change",
+          "target_kind": "task",
+          "target_id": "T21",
+          "old_value": "2026-03-10",
+          "new_value": "2026-03-17",
+          "contradicts": true,
+          "ts": "1772794860.000197",
+          "affected": [
+            "lena"
+          ]
+        }
+      ]
+    },
+    {
+      "thread": "hw-electrical:1772797500.000199",
+      "channel": "hw-electrical",
+      "date": "2026-03-06",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "supply-chain:1772802000.000201",
+      "channel": "supply-chain",
+      "date": "2026-03-06",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "drive-unit:1772804400.000203",
+      "channel": "drive-unit",
+      "date": "2026-03-06",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "gripper:1772805600.000206",
+      "channel": "gripper",
+      "date": "2026-03-06",
+      "case": "A3",
+      "kind": "alias",
+      "deltas": [
+        {
+          "id": "gold-A3",
+          "type": "status_change",
+          "target_kind": "task",
+          "target_id": "T03",
+          "old_value": "open",
+          "new_value": "done",
+          "contradicts": false,
+          "ts": "1772805600.000206",
+          "affected": [
+            "tom"
+          ]
+        }
+      ]
+    },
+    {
+      "thread": "gripper:1772809200.000208",
+      "channel": "gripper",
+      "date": "2026-03-06",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "general:1772814600.000211",
+      "channel": "general",
+      "date": "2026-03-06",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "supply-chain:1772816400.000213",
+      "channel": "supply-chain",
+      "date": "2026-03-06",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "gripper:1773045000.000216",
+      "channel": "gripper",
+      "date": "2026-03-09",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "gripper:1773046800.000218",
+      "channel": "gripper",
+      "date": "2026-03-09",
+      "case": "B3",
+      "kind": "background",
+      "deltas": [
+        {
+          "id": "gold-B3",
+          "type": "status_change",
+          "target_kind": "task",
+          "target_id": "T08",
+          "old_value": "open",
+          "new_value": "done",
+          "contradicts": false,
+          "ts": "1773046800.000218",
+          "affected": [
+            "rachel"
+          ]
+        }
+      ]
+    },
+    {
+      "thread": "general:1773048600.000220",
+      "channel": "general",
+      "date": "2026-03-09",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "hw-electrical:1773050400.000221",
+      "channel": "hw-electrical",
+      "date": "2026-03-09",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "supply-chain:1773052200.000224",
+      "channel": "supply-chain",
+      "date": "2026-03-09",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "drive-unit:1773054000.000226",
+      "channel": "drive-unit",
+      "date": "2026-03-09",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "general:1773055800.000229",
+      "channel": "general",
+      "date": "2026-03-09",
+      "case": "B4",
+      "kind": "background",
+      "deltas": [
+        {
+          "id": "gold-B4",
+          "type": "status_change",
+          "target_kind": "task",
+          "target_id": "T09",
+          "old_value": "open",
+          "new_value": "done",
+          "contradicts": false,
+          "ts": "1773055800.000229",
+          "affected": []
+        }
+      ]
+    },
+    {
+      "thread": "general:1773059400.000230",
+      "channel": "general",
+      "date": "2026-03-09",
+      "case": "L4",
+      "kind": "loud_noise",
+      "deltas": []
+    },
+    {
+      "thread": "drive-unit:1773064800.000261",
+      "channel": "drive-unit",
+      "date": "2026-03-09",
+      "case": "A2",
+      "kind": "alias",
+      "deltas": [
+        {
+          "id": "gold-A2",
+          "type": "status_change",
+          "target_kind": "task",
+          "target_id": "T22",
+          "old_value": "open",
+          "new_value": "blocked",
+          "contradicts": false,
+          "ts": "1773064800.000261",
+          "affected": [
+            "lena",
+            "tom"
+          ]
+        }
+      ]
+    },
+    {
+      "thread": "gripper:1773068400.000264",
+      "channel": "gripper",
+      "date": "2026-03-09",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "hw-electrical:1773072000.000267",
+      "channel": "hw-electrical",
+      "date": "2026-03-09",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "supply-chain:1773073800.000269",
+      "channel": "supply-chain",
+      "date": "2026-03-09",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "general:1773131400.000272",
+      "channel": "general",
+      "date": "2026-03-10",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "drive-unit:1773133200.000273",
+      "channel": "drive-unit",
+      "date": "2026-03-10",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "gripper:1773135000.000276",
+      "channel": "gripper",
+      "date": "2026-03-10",
+      "case": "B5",
+      "kind": "background",
+      "deltas": [
+        {
+          "id": "gold-B5",
+          "type": "status_change",
+          "target_kind": "task",
+          "target_id": "T10",
+          "old_value": "open",
+          "new_value": "in_progress",
+          "contradicts": false,
+          "ts": "1773135000.000276",
+          "affected": [
+            "tom"
+          ]
+        }
+      ]
+    },
+    {
+      "thread": "hw-electrical:1773136800.000277",
+      "channel": "hw-electrical",
+      "date": "2026-03-10",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "gripper:1773138600.000279",
+      "channel": "gripper",
+      "date": "2026-03-10",
+      "case": "X5",
+      "kind": "cross_team",
+      "deltas": [
+        {
+          "id": "gold-X5",
+          "type": "owner_change",
+          "target_kind": "task",
+          "target_id": "T15",
+          "old_value": "maya",
+          "new_value": "diego",
+          "contradicts": false,
+          "ts": "1773138600.000279",
+          "affected": [
+            "omar",
+            "tom"
+          ]
+        }
+      ]
+    },
+    {
+      "thread": "supply-chain:1773140400.000282",
+      "channel": "supply-chain",
+      "date": "2026-03-10",
+      "case": "B6",
+      "kind": "background",
+      "deltas": [
+        {
+          "id": "gold-B6",
+          "type": "status_change",
+          "target_kind": "task",
+          "target_id": "T21",
+          "old_value": "open",
+          "new_value": "in_progress",
+          "contradicts": false,
+          "ts": "1773140400.000282",
+          "affected": [
+            "lena"
+          ]
+        }
+      ]
+    },
+    {
+      "thread": "gripper:1773147600.000283",
+      "channel": "gripper",
+      "date": "2026-03-10",
+      "case": "R2",
+      "kind": "requirement_change",
+      "deltas": [
+        {
+          "id": "gold-R2",
+          "type": "value_change",
+          "target_kind": "requirement",
+          "target_id": "REQ-G01",
+          "old_value": "40 N",
+          "new_value": "55 N",
+          "contradicts": false,
+          "ts": "1773147660.000284",
+          "affected": [
+            "priya"
+          ]
+        }
+      ]
+    },
+    {
+      "thread": "supply-chain:1773149400.000286",
+      "channel": "supply-chain",
+      "date": "2026-03-10",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "general:1773153000.000288",
+      "channel": "general",
+      "date": "2026-03-10",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "drive-unit:1773154800.000291",
+      "channel": "drive-unit",
+      "date": "2026-03-10",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "hw-electrical:1773158400.000294",
+      "channel": "hw-electrical",
+      "date": "2026-03-10",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "gripper:1773160200.000297",
+      "channel": "gripper",
+      "date": "2026-03-10",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "general:1773217800.000299",
+      "channel": "general",
+      "date": "2026-03-11",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "drive-unit:1773219600.000307",
+      "channel": "drive-unit",
+      "date": "2026-03-11",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "gripper:1773221400.000310",
+      "channel": "gripper",
+      "date": "2026-03-11",
+      "case": "X6",
+      "kind": "cross_team",
+      "deltas": [
+        {
+          "id": "gold-X6",
+          "type": "deadline_change",
+          "target_kind": "task",
+          "target_id": "T10",
+          "old_value": "2026-03-11",
+          "new_value": "2026-03-13",
+          "contradicts": false,
+          "ts": "1773221400.000310",
+          "affected": [
+            "tom"
+          ]
+        }
+      ]
+    },
+    {
+      "thread": "gripper:1773223200.000313",
+      "channel": "gripper",
+      "date": "2026-03-11",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "supply-chain:1773225000.000315",
+      "channel": "supply-chain",
+      "date": "2026-03-11",
+      "case": "I3",
+      "kind": "implicit_decision",
+      "deltas": [
+        {
+          "id": "gold-I3",
+          "type": "status_change",
+          "target_kind": "task",
+          "target_id": "T12",
+          "old_value": "open",
+          "new_value": "done",
+          "contradicts": false,
+          "ts": "1773225060.000316",
+          "affected": [
+            "omar"
+          ]
+        }
+      ]
+    },
+    {
+      "thread": "hw-electrical:1773226800.000317",
+      "channel": "hw-electrical",
+      "date": "2026-03-11",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "drive-unit:1773228600.000320",
+      "channel": "drive-unit",
+      "date": "2026-03-11",
+      "case": "K3",
+      "kind": "contradiction",
+      "deltas": [
+        {
+          "id": "gold-K3",
+          "type": "owner_change",
+          "target_kind": "task",
+          "target_id": "T19",
+          "old_value": "diego",
+          "new_value": "sam",
+          "contradicts": true,
+          "ts": "1773228660.000321",
+          "affected": [
+            "sam",
+            "tom"
+          ]
+        }
+      ]
+    },
+    {
+      "thread": "supply-chain:1773230400.000323",
+      "channel": "supply-chain",
+      "date": "2026-03-11",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "hw-electrical:1773234000.000324",
+      "channel": "hw-electrical",
+      "date": "2026-03-11",
+      "case": "N2",
+      "kind": "next_stage",
+      "deltas": [
+        {
+          "id": "gold-N2",
+          "type": "deadline_change",
+          "target_kind": "task",
+          "target_id": "T14",
+          "old_value": "2026-03-13",
+          "new_value": "2026-03-18",
+          "contradicts": false,
+          "ts": "1773234000.000324",
+          "affected": [
+            "rachel"
+          ]
+        }
+      ]
+    },
+    {
+      "thread": "supply-chain:1773239400.000327",
+      "channel": "supply-chain",
+      "date": "2026-03-11",
+      "case": "L5",
+      "kind": "loud_noise",
+      "deltas": []
+    },
+    {
+      "thread": "general:1773243000.000340",
+      "channel": "general",
+      "date": "2026-03-11",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "drive-unit:1773244800.000343",
+      "channel": "drive-unit",
+      "date": "2026-03-11",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "general:1773304200.000346",
+      "channel": "general",
+      "date": "2026-03-12",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "drive-unit:1773307800.000347",
+      "channel": "drive-unit",
+      "date": "2026-03-12",
+      "case": "X7",
+      "kind": "cross_team",
+      "deltas": [
+        {
+          "id": "gold-X7",
+          "type": "status_change",
+          "target_kind": "task",
+          "target_id": "T23",
+          "old_value": "open",
+          "new_value": "blocked",
+          "contradicts": false,
+          "ts": "1773307800.000347",
+          "affected": [
+            "sam"
+          ]
+        }
+      ]
+    },
+    {
+      "thread": "hw-electrical:1773309600.000350",
+      "channel": "hw-electrical",
+      "date": "2026-03-12",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "gripper:1773311400.000351",
+      "channel": "gripper",
+      "date": "2026-03-12",
+      "case": "R3",
+      "kind": "requirement_change",
+      "deltas": [
+        {
+          "id": "gold-R3",
+          "type": "value_change",
+          "target_kind": "requirement",
+          "target_id": "REQ-G06",
+          "old_value": "IP54",
+          "new_value": "IP65",
+          "contradicts": false,
+          "ts": "1773311820.000354",
+          "affected": [
+            "maya"
+          ]
+        }
+      ]
+    },
+    {
+      "thread": "drive-unit:1773315000.000355",
+      "channel": "drive-unit",
+      "date": "2026-03-12",
+      "case": "I4",
+      "kind": "implicit_decision",
+      "deltas": [
+        {
+          "id": "gold-I4",
+          "type": "deadline_change",
+          "target_kind": "task",
+          "target_id": "T25",
+          "old_value": "2026-03-13",
+          "new_value": "2026-03-20",
+          "contradicts": false,
+          "ts": "1773315060.000356",
+          "affected": [
+            "sam"
+          ]
+        }
+      ]
+    },
+    {
+      "thread": "supply-chain:1773316800.000357",
+      "channel": "supply-chain",
+      "date": "2026-03-12",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "drive-unit:1773320400.000360",
+      "channel": "drive-unit",
+      "date": "2026-03-12",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "gripper:1773322200.000363",
+      "channel": "gripper",
+      "date": "2026-03-12",
+      "case": "K4",
+      "kind": "contradiction",
+      "deltas": [
+        {
+          "id": "gold-K4",
+          "type": "deadline_change",
+          "target_kind": "task",
+          "target_id": "T15",
+          "old_value": "2026-03-12",
+          "new_value": "2026-03-20",
+          "contradicts": true,
+          "ts": "1773322260.000364",
+          "affected": [
+            "diego",
+            "omar",
+            "tom"
+          ]
+        }
+      ]
+    },
+    {
+      "thread": "drive-unit:1773325800.000366",
+      "channel": "drive-unit",
+      "date": "2026-03-12",
+      "case": "N3",
+      "kind": "next_stage",
+      "deltas": [
+        {
+          "id": "gold-N3",
+          "type": "deadline_change",
+          "target_kind": "task",
+          "target_id": "T24",
+          "old_value": "2026-03-12",
+          "new_value": "2026-03-17",
+          "contradicts": false,
+          "ts": "1773325800.000366",
+          "affected": [
+            "sam"
+          ]
+        }
+      ]
+    },
+    {
+      "thread": "gripper:1773329400.000368",
+      "channel": "gripper",
+      "date": "2026-03-12",
+      "case": "B7",
+      "kind": "background",
+      "deltas": [
+        {
+          "id": "gold-B7",
+          "type": "status_change",
+          "target_kind": "task",
+          "target_id": "T16",
+          "old_value": "open",
+          "new_value": "in_progress",
+          "contradicts": false,
+          "ts": "1773329400.000368",
+          "affected": []
+        }
+      ]
+    },
+    {
+      "thread": "gripper:1773331200.000369",
+      "channel": "gripper",
+      "date": "2026-03-12",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "general:1773334800.000370",
+      "channel": "general",
+      "date": "2026-03-12",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "general:1773392400.000371",
+      "channel": "general",
+      "date": "2026-03-13",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "gripper:1773394200.000372",
+      "channel": "gripper",
+      "date": "2026-03-13",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "drive-unit:1773396000.000374",
+      "channel": "drive-unit",
+      "date": "2026-03-13",
+      "case": "A4",
+      "kind": "alias",
+      "deltas": [
+        {
+          "id": "gold-A4",
+          "type": "status_change",
+          "target_kind": "task",
+          "target_id": "T23",
+          "old_value": "blocked",
+          "new_value": "done",
+          "contradicts": false,
+          "ts": "1773396000.000374",
+          "affected": [
+            "lena"
+          ]
+        }
+      ]
+    },
+    {
+      "thread": "supply-chain:1773397800.000377",
+      "channel": "supply-chain",
+      "date": "2026-03-13",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "hw-electrical:1773399600.000379",
+      "channel": "hw-electrical",
+      "date": "2026-03-13",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "gripper:1773401400.000382",
+      "channel": "gripper",
+      "date": "2026-03-13",
+      "case": "I5",
+      "kind": "implicit_decision",
+      "deltas": [
+        {
+          "id": "gold-I5",
+          "type": "status_change",
+          "target_kind": "task",
+          "target_id": "T13",
+          "old_value": "open",
+          "new_value": "done",
+          "contradicts": false,
+          "ts": "1773401460.000383",
+          "affected": [
+            "priya"
+          ]
+        }
+      ]
+    },
+    {
+      "thread": "drive-unit:1773405000.000385",
+      "channel": "drive-unit",
+      "date": "2026-03-13",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "hw-electrical:1773410400.000389",
+      "channel": "hw-electrical",
+      "date": "2026-03-13",
+      "case": "L6",
+      "kind": "loud_noise",
+      "deltas": []
+    },
+    {
+      "thread": "hw-electrical:1773414000.000392",
+      "channel": "hw-electrical",
+      "date": "2026-03-13",
+      "case": "B8",
+      "kind": "background",
+      "deltas": [
+        {
+          "id": "gold-B8",
+          "type": "status_change",
+          "target_kind": "task",
+          "target_id": "T20",
+          "old_value": "in_progress",
+          "new_value": "done",
+          "contradicts": false,
+          "ts": "1773414000.000392",
+          "affected": [
+            "lena",
+            "tom"
+          ]
+        }
+      ]
+    },
+    {
+      "thread": "supply-chain:1773415800.000393",
+      "channel": "supply-chain",
+      "date": "2026-03-13",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "general:1773417600.000394",
+      "channel": "general",
+      "date": "2026-03-13",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    },
+    {
+      "thread": "drive-unit:1773419400.000397",
+      "channel": "drive-unit",
+      "date": "2026-03-13",
+      "case": null,
+      "kind": "noise",
+      "deltas": []
+    }
+  ]
+}

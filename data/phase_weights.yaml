@@ -1,0 +1,39 @@
+# A3 role-by-phase tiebreaker (SPEC A3). Written by hand; shown in the writeup.
+#
+# When two items tie on stage distance and gate proximity, the item whose product
+# sits in the phase this role cares most about wins. Weights are in 0 to 1 and
+# only ever compared, never multiplied into the score.
+#
+# The hand-set opinion: design roles peak in EVT while the design is still open,
+# supply chain peaks in DVT when sourcing starts, and the manager and PM lean
+# later, toward gates and launch.
+
+mechanical_engineer:
+  EVT: 1.0
+  DVT: 0.7
+  PVT: 0.4
+
+electrical_engineer:
+  EVT: 0.9
+  DVT: 0.8
+  PVT: 0.5
+
+firmware_engineer:
+  EVT: 0.8
+  DVT: 0.9
+  PVT: 0.6
+
+supply_chain_lead:
+  EVT: 0.5
+  DVT: 1.0
+  PVT: 0.8
+
+engineering_manager:
+  EVT: 0.8
+  DVT: 0.9
+  PVT: 1.0
+
+product_manager:
+  EVT: 0.6
+  DVT: 0.8
+  PVT: 1.0
