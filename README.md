@@ -3,7 +3,8 @@
 This is a prototype of one question: which state changes in a hardware team's Slack
 should reach which person each day, and why. A small core over SQLite turns a Slack
 export plus a seeded project graph into per-person digests, running fully offline in
-replay mode, and five attachments each add one opinionated capability behind a flag.
+replay mode (gold labels stand in for model calls), and five attachments each add
+one opinionated capability behind a flag.
 This file covers running it, the measured results, and the limits — rationale for
 decisions made along the way is in [DESIGN.md](DESIGN.md) and
 [EXPERIMENTS.md](EXPERIMENTS.md).
@@ -45,12 +46,17 @@ A5 the renderer) and removing it leaves the core path untouched.
 uv run digest demo
 ```
 
-From a fresh clone, with no API keys, this prints a guided walkthrough: one planted
-cross-team thread, the digests of the two affected owners who never appear in that
-thread, the `--phase` section (one user's digests on day 5 and day 7 either side of
-the EVT gate, the live count of digests `--phase` reorders, and one day rendered by
-the core ranker and by `--phase` side by side), an `explain` trace from digest item
-back to decider routing, and the results table.
+From a fresh clone, with no API keys, this prints a guided walkthrough:
+
+- a planted cross-team thread, and the digests of the two affected owners who
+  never appear in that thread;
+- one user's stage-aware (`--phase`) digests on day 5 and day 7, either side of a
+  phase gate — plus the same day ranked with and without `--phase`, and a live
+  count of how many digests `--phase` reorders;
+- an `explain` trace from one digest item back to the decider call that let its
+  thread through;
+- the results table.
+
 It runs on an in-memory database and writes nothing. `uv run digest --help` lists
 the other commands (`ingest`, `run`, `explain`, `eval`); `uv run pytest` runs the
 tests.
@@ -60,7 +66,10 @@ tests.
 Condensed from [results.md](results.md), written by `digest eval` against
 `data/gold.json` (live jev and OpenAI calls on Oct 5; the full file has every
 metric, definitions, and reliability plots under `calibration/`). Values are
-hits/total; `–` means the metric does not apply to that configuration.
+hits/total; `–` means the metric does not apply to that configuration. The two
+headline metrics: **silo recall** is the share of planted cross-team changes that
+reach the affected person's digest, and **digest precision** is the share of
+digest items that match a gold label for that person.
 
 | Configuration | Silo recall | Digest precision | Extractor accuracy | Gate accuracy | Escalation rate | Median decide | Cost per digest |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -87,10 +96,10 @@ model spend.
 
 ## Enabling the attachments
 
-Each attachment encodes one opinion behind one core seam (A1 the decider, A2/A3
-the ranker, A4 `apply`, A5 the renderer); these are the switches. Replay ingest (`digest ingest data/slack.json --replay`) needs no keys;
-the live extractor drops `--replay` and needs `DIGEST_EXTRACTOR_MODEL` and
-`OPENAI_API_KEY`.
+Each attachment encodes one opinion behind one core seam (A1 the decider, A2 and
+A3 the ranker, A4 `apply`, A5 the renderer); these are the switches. Replay ingest
+(`digest ingest data/slack.json --replay`) needs no keys; the live extractor drops
+`--replay` and needs `DIGEST_EXTRACTOR_MODEL` and `OPENAI_API_KEY`.
 
 | # | Attachment | Enable with | Needs |
 | --- | --- | --- | --- |
@@ -116,8 +125,8 @@ rather than failing the eval.
   holding 12/12 silo recall at 39/41 precision.
 - **A3's measured effect here is ordering, not membership.** With replay
   confidences at 1.0 and no inbox deeper than three items, the top-five cut never
-  binds; `--phase` reorders 2 of 33 real digests, `digest demo` shows one such day
-  under both rankers side by side, and the gate flip is pinned in
+  drops anything; `--phase` reorders 2 of 33 real digests, `digest demo` shows one
+  such day under both rankers side by side, and the gate flip is pinned in
   `tests/test_phase.py`. Deeper live inboxes are where stage-aware focus pays off.
 - **Dollar figures are derived from billed spend on both backends** — jev backed
   out from TypeSafe's dashboard, llm fitted exactly to OpenAI's two billed days
