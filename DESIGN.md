@@ -130,32 +130,6 @@ why-plus-source), keeping the template's heading, product grouping and order.
 - **`--render` mirrors `--ranker`**: a `RENDERERS` registry with `build_renderer`,
   failing fast before the database is touched when the environment is missing.
 
-## A6: Feedback loop — cut, and what it would have been
-
-A6 was first in the spec's cut order and it was cut. That has a consequence worth
-stating plainly: with no feedback loop, the "focus changes over time" half of the
-prompt rests on exactly two mechanisms — the project graph changing under `apply`
-day to day (new deltas, new conflicts, new handoff states), and A3 moving the
-active process when a gate passes. Nothing in the shipped system learns from use.
-
-The design it would have had, since it is the "learns from use" half of the story
-(seam: the Ranker, like A2, whose cost-ratio thresholds it would adjust):
-
-    # digest feedback --user maya --item 3 --down
-    #   resolves item 3 through display_order, exactly like explain, then:
-    #   INSERT OR REPLACE vote(user_id, delta_id, direction)   -- idempotent
-
-    # at rank time, per user and per digest section:
-    net = sum(votes in this user's section, trailing 10 working days)
-    threshold[section] = clamp(base[section] * (1 - STEP * net),
-                               base[section] / 2, base[section] * 2)
-
-A bounded step over a bounded window, anchored to the A2 base threshold, so a
-grumpy week moves a section gradually and never zeroes it, and silence decays back
-to the calibrated default. The eval hook would replay gold votes and measure
-precision at fixed recall before and after — the same "measured gain or cut" bar
-every other attachment faced.
-
 ## `digest explain` and `digest demo` (added Oct 5)
 
 `digest explain --user <id> --date <date> --item <n>` prints one digest item's chain -

@@ -4,9 +4,9 @@ This file records the design changes made from measurement rather than from the 
 the largest being the two-stage escalation added to the A1 cascade on Oct 4, 2026.
 The working spec carries the dated amendments; this is the longer story — what the code looked
 like, what the numbers said, the tradeoffs weighed, and what was done. It ends with
-the cut ledger: what the spec's "measured gain or cut" rule removed or downgraded,
-and why. Metric definitions and the full table live in results.md (regenerate with
-`digest eval`).
+the spec's "measured gain or cut" rule applied to A3, and why the claim was
+downgraded rather than the attachment cut. Metric definitions and the full table
+live in results.md (regenerate with `digest eval`).
 
 ## The original design
 
@@ -205,21 +205,20 @@ results.md were hand-updated with these two numbers; a keyed `digest eval` rerun
 would regenerate them exactly. Historical dollar figures earlier in this file are
 left as written — they record what was believed when those decisions were made.
 
-## The cut ledger: what "measured gain or cut" removed (Oct 4–5)
+The OpenAI side is real at a coarser grain: its cost dashboard reports daily org
+dollars — $2.32 on Oct 4 and $4.09 on Oct 5, $6.41 in all — covering every
+decider, extractor and renderer call across all three eval rounds, with no
+per-component or per-token split. That bounds the whole experiment (about $6.44
+with TypeSafe included) but cannot validate the llm decider's per-Mtok constants
+the way the jev dashboard did, so those stay estimates and the llm-bearing cost
+cells stay directional.
+
+## "Measured gain or cut", applied to A3 (Oct 5)
 
 Spec rule 3 says every attachment must show a measured gain in the table or be cut.
-Applied honestly, the rule produced one cut and one downgrade — recorded here so
-the reasoning survives the deadline:
+Applied honestly, the rule produced one downgrade — recorded here so the reasoning
+survives the deadline:
 
-- **A6 feedback loop — cut (Oct 5, time).** First in the spec's cut order, and the
-  Monday list reached it last. The consequence is stated rather than hidden: with
-  no loop, "focus changes over time" rests entirely on the project graph changing
-  under `apply` and on A3 shifting the active process when a gate passes — nothing
-  shipped learns from use. The design it would have been (votes nudging A2's
-  per-section cost thresholds by a bounded step over a bounded window, decaying
-  back to the calibrated base) is recorded as pseudocode in DESIGN.md, together
-  with the eval it would have had to pass: precision at fixed recall, before and
-  after replaying gold votes — the same bar every other attachment faced.
 - **A3 — kept, but the claim downgraded (Oct 5, honesty).** Strictly read, rule 3
   would cut A3 too: it shows no gain in the membership table, and measuring its
   ordering effect directly found 2 of 33 real digests reordered. It stays for two

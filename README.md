@@ -100,7 +100,6 @@ the live extractor drops `--replay` and needs `DIGEST_EXTRACTOR_MODEL` and
 | A3 | Stage-aware focus | `digest run … --phase` | `data/phase_weights.yaml` (in the repo) |
 | A4 | Entity aliases | `digest ingest … --aliases` | alias rows in `data/graph_seed.json`; only does real work under the live extractor, since replay already emits canonical IDs |
 | A5 | Phrased digest | `digest run … --render llm` | `DIGEST_RENDERER_MODEL` + `OPENAI_API_KEY`; falls back to the template on any failure |
-| A6 | Feedback loop | not built — first in the spec's cut order, and it was cut | |
 
 `digest eval` runs every configuration above against the gold labels and rewrites
 `results.md`; configurations whose keys are missing are reported as "not run"
@@ -127,7 +126,12 @@ rather than failing the eval.
   backed out from it ($0.0056 per 120-thread pass; the dashboard reports token
   totals only, so the 1:4 input:output split is assumed). The llm prices remain
   placeholder estimates for a mid-tier model, so cross-backend dollar comparisons
-  are directionally right but not exact.
+  are directionally right but not exact. For scale: OpenAI's cost dashboard puts
+  the project's entire model spend — every decider, extractor and renderer call
+  across all eval rounds — at $6.41 over Oct 4–5, which with TypeSafe's $0.03
+  makes the whole evaluation program about $6.44 end to end; that dashboard
+  reports org-level dollars with no per-component split, which is why per-call
+  llm attribution stays an estimate.
 - **A3 barely matters on this dataset, and the table cannot show what it does.**
   Replay confidences are all 1.0 and no inbox holds more than three items, so the
   top-five cut never drops anything and a3-phase matches core on every membership
@@ -144,8 +148,8 @@ rather than failing the eval.
   post-scaling ECE is worse (jev 10.4% → 13.0%, llm 2.8% → 3.8%, jev→llm
   3.1% → 7.4%) on the 80 evaluation threads.
 - **The risk question is unscored**: gold carries no risk labels.
-- **A6 (feedback loop) does not exist**, per the cut line above. With it cut, the
-  "focus changes over time" half of the prompt rests on two mechanisms only: the
-  project graph changing under `apply` day to day, and A3 shifting the active
-  process when a gate passes. The loop that would learn from use is sketched in
-  pseudocode in DESIGN.md.
+- **Nothing in the system learns from use.** "Focus changes over time" rests on
+  two mechanisms: the project graph changing under `apply` day to day, and A3
+  shifting the active process when a gate passes. Per-user thresholds adjusted
+  from digest feedback would be the natural next attachment behind the ranker
+  seam.
