@@ -9,36 +9,29 @@ This file covers running it, the measured results, and the limits — rationale 
 decisions made along the way is in [DESIGN.md](DESIGN.md) and
 [EXPERIMENTS.md](EXPERIMENTS.md).
 
-## The system
+## How it works
 
 ```mermaid
 flowchart LR
-    slack[/"slack.json<br>Slack export"/] --> assemble
-    seed[/"graph_seed.json<br>seeded project graph"/] --> pgraph
-
-    subgraph ingest ["digest ingest"]
-        assemble["assemble<br>threads to signals"] --> decide["decide<br>core: passthrough<br>A1: jev / llm cascade"]
-        decide -->|"changes_state &ge; 0.8,<br>or escalated"| extract["extract<br>replay or LLM"]
-        decide -->|"&le; 0.2"| dropped["dropped"]
-        extract --> apply["apply<br>A4 --aliases resolves<br>surface names first"]
-    end
-
-    apply -->|"writes old and new values"| pgraph[("project graph in SQLite<br>tasks, requirements, stages,<br>handoffs, requirement links")]
-    pgraph -.->|"open tasks and requirements<br>for the product"| extract
-    pgraph -->|"owner, next stage, one handoff<br>downstream, linked requirements"| fanout
-    apply --> fanout["fan_out"] --> inbox[("inbox<br>reason + score<br>per person")]
-
-    subgraph run ["digest run --user ... --date ..."]
-        inbox --> rank["rank<br>core: fixed weights<br>A2 --ranker calibrated<br>A3 --phase"]
-        rank --> render["render<br>core: template<br>A5 --render llm,<br>template fallback"]
-    end
+    slack[/"Slack export"/] --> assemble["group messages<br>into threads"]
+    assemble --> decide{"does it change<br>project state?"}
+    decide -- no --> dropped(["dropped"])
+    decide -- yes --> extract["extract<br>the change"]
+    extract --> apply["apply it to the<br>project graph"]
+    apply --> graphdb[("project graph:<br>tasks, requirements,<br>stages, handoffs")]
+    graphdb --> fanout
+    apply --> fanout["find the people<br>the change affects"]
+    fanout --> rank["rank each<br>person's items"]
+    rank --> render["write the digest"]
     render --> out[/"one person's digest<br>for one day"/]
 ```
 
-`apply` writes the project graph and `fan_out` reads it, which is how a change in one
-team's thread reaches an owner who never saw the thread. Each attachment replaces or
-wraps exactly one box behind a flag (A1 the decider, A2/A3 the ranker, A4 `apply`,
-A5 the renderer) and removing it leaves the core path untouched.
+The left half is `digest ingest`; the right half is `digest run` for one person and
+date. The project graph is written by apply and read by fan-out — that is how a
+change in one team's thread reaches an owner who never saw the thread. Each
+attachment swaps exactly one step behind a flag: A1 the yes/no decision, A2 and A3
+the ranking, A4 name resolution inside apply, A5 the rendering. Remove any of them
+and the core path is untouched.
 
 ## Quickstart
 
@@ -83,16 +76,12 @@ digest items that match a gold label for that person.
 | a3-phase | 12/12 | 43/43 | 120/120 | – | – | – | – |
 | a4-aliases | 12/12 | 41/43 | 115/120 | – | – | – | – |
 
-What the table supports: all 12 planted cross-team changes reach the affected
-person in every core-path configuration. The core row at full marks validates the
-deterministic pipeline end to end, and the `llm` row carries the claim through a
-live extractor — 12/12 silo recall at 39/41 digest precision. The jev cascade
-gates threads roughly 18× faster and, at billed prices on both backends, about
-70× cheaper per digest than the LLM decider ($0.0002 against $0.0149), at the
-cost of one missed silo case and a 30/120 escalation band; the two-stage jev→llm
-cascade keeps jev's speed and resolves the band at roughly a third of the LLM
-decider's cost. The entire three-round evaluation program cost about $6.44 in
-model spend.
+All 12 planted cross-team changes reach the affected person in every core-path
+configuration, and recall holds through a live extractor: the `llm` row is 12/12
+at 39/41 precision. The jev gate is ~18× faster and ~70× cheaper per digest than
+the LLM decider (billed prices on both sides), at the cost of one missed case and
+a 30/120 unsure band; the two-stage jev→llm cascade resolves that band at a third
+of the LLM decider's cost. The whole evaluation cost about $6.44 in model spend.
 
 ## Enabling the attachments
 
@@ -115,27 +104,20 @@ rather than failing the eval.
 
 ## Scope and limits
 
-- **The dataset is synthetic**: ~120 threads over ten working days, model-generated
-  from a scenario and hand-edited, with replay reading gold labels. Counts sit
-  beside percentages throughout, and single-count gaps are treated as noise — only
-  the large gaps above are claimed.
-- **What each row proves**: gold's affected lists are produced by the fan-out rules
-  on a correct graph, so the core row validates the deterministic pipeline end to
-  end, and the live `llm` row is the test of the idea itself — a real extractor
-  holding 12/12 silo recall at 39/41 precision.
-- **A3's measured effect here is ordering, not membership.** With replay
-  confidences at 1.0 and no inbox deeper than three items, the top-five cut never
-  drops anything; `--phase` reorders 2 of 33 real digests, `digest demo` shows one
-  such day under both rankers side by side, and the gate flip is pinned in
-  `tests/test_phase.py`. Deeper live inboxes are where stage-aware focus pays off.
-- **Dollar figures are derived from billed spend on both backends** — jev backed
-  out from TypeSafe's dashboard, llm fitted exactly to OpenAI's two billed days
-  (effective rates with the cache discount folded in; derivations in
-  EXPERIMENTS.md).
-- **Temperature scaling helped only the uncalibrated baseline** (passthrough
-  73.8% → 40.4% ECE); jev and the LLM decider arrived near-calibrated, so scaling
-  moved them within noise on the 80 evaluation threads.
-- **The digest covers task and requirement changes on the product's existing
-  project graph**; the decider's risk question is asked but unscored (gold carries
-  no risk labels), and per-user thresholds adjusted from digest feedback are the
-  natural next attachment behind the ranker seam.
+- The dataset is synthetic: ~120 threads over ten working days, model-generated
+  from a scenario and hand-edited. Counts sit beside percentages, and single-count
+  gaps are treated as noise.
+- Gold's affected lists come from the fan-out rules themselves, so the core row
+  proves the pipeline; the live `llm` row is the real test of the idea (12/12 at
+  39/41).
+- A3's measurable effect here is ordering: no inbox holds more than three items,
+  so membership metrics can't move, and `--phase` reorders 2 of 33 digests. The
+  demo shows one day under both rankers; the gate flip is pinned in
+  `tests/test_phase.py`. Deeper live inboxes are where it would pay off.
+- Dollar figures are derived from billed spend on both backends (EXPERIMENTS.md
+  has the derivations).
+- Temperature scaling helped only the uncalibrated baseline; jev and the LLM
+  decider were already close to calibrated.
+- The digest covers task and requirement changes on an existing project graph.
+  The risk question is asked but unscored, and nothing yet learns from use —
+  per-user feedback thresholds are the natural next attachment.
