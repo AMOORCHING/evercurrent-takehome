@@ -127,6 +127,23 @@ class UnresolvedName(Record):
     signal_id: str
 
 
+class SignalDecision(Record):
+    """What the decider answered for one signal and how it routed (A1), as `digest explain`
+    reads it back. `backend` is the first-stage decider; the stored probabilities are the
+    answer that settled the thread, so for an escalated thread with a second-stage decider
+    they are the escalation's. `settled` is that second stage's final action, present only
+    when one re-decided the thread."""
+
+    signal_id: str
+    backend: str
+    changes_state: Probability
+    change_type: dict[str, Probability]
+    contradicts: Probability
+    risk: Probability
+    route: Literal["extract", "escalate", "drop"]
+    settled: Literal["extract", "drop"] | None = None
+
+
 class InboxRow(Record):
     """`score` is the delta's confidence at fan-out time; rankers weight it."""
 
@@ -225,6 +242,7 @@ TABLE_MODELS: dict[str, type[Record]] = {
     "aliases": Alias,
     "signals": Signal,
     "deltas": Delta,
+    "decisions": SignalDecision,
     "unresolved": UnresolvedName,
     "inbox": InboxRow,
     "digests": Digest,

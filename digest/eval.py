@@ -48,6 +48,7 @@ class GoldThread(BaseModel):
     thread: str
     kind: str
     deltas: list[GoldDelta]
+    case: str | None = None
 
 
 class Gold(BaseModel):

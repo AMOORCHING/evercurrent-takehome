@@ -103,6 +103,17 @@ CREATE TABLE IF NOT EXISTS deltas (
     ts           TEXT NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS decisions (
+    signal_id      TEXT PRIMARY KEY REFERENCES signals(id),
+    backend        TEXT NOT NULL,
+    changes_state  REAL NOT NULL CHECK (changes_state BETWEEN 0.0 AND 1.0),
+    change_type    TEXT NOT NULL,
+    contradicts    REAL NOT NULL CHECK (contradicts BETWEEN 0.0 AND 1.0),
+    risk           REAL NOT NULL CHECK (risk BETWEEN 0.0 AND 1.0),
+    route          TEXT NOT NULL CHECK (route IN ('extract', 'escalate', 'drop')),
+    settled        TEXT CHECK (settled IN ('extract', 'drop'))
+);
+
 CREATE TABLE IF NOT EXISTS unresolved (
     surface      TEXT NOT NULL,
     target_kind  TEXT NOT NULL CHECK (target_kind IN ('task', 'requirement')),

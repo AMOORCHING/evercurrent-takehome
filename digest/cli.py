@@ -22,6 +22,7 @@ from digest.attach.deciders import (
     Cascade,
     DeciderUnavailable,
     build_decider,
+    save_decisions,
 )
 from digest.core.assemble import SlackExport
 from digest.core.extract import (
@@ -43,6 +44,8 @@ from digest.eval import (
     unresolved_names,
     write_reliability_plots,
 )
+from digest.demo import demo as build_demo
+from digest.explain import ExplainError, explain as explain_chain
 from digest.models import Digest, Extractor, Ranker, Renderer, User
 from digest.pipeline import core_apply, ingest as ingest_export
 
@@ -100,6 +103,7 @@ def ingest(
         create_schema(conn)
         load_graph_seed(conn, path.parent / "graph_seed.json")
         result = ingest_export(conn, export, cascade, apply_fn=resolving_apply if aliases else core_apply)
+        save_decisions(conn, cascade, decider)
     finally:
         conn.close()
     typer.echo(
@@ -186,6 +190,80 @@ def run(
         body = _run(conn, User.model_validate(dict(row)), day, chosen, renderer)
     finally:
         conn.close()
+    typer.echo(body, nl=False)
+
+
+@app.command()
+def explain(
+    user: Annotated[str, typer.Option(help="User ID.")],
+    date: Annotated[str, typer.Option(help="Digest date, YYYY-MM-DD.")],
+    item: Annotated[int, typer.Option(help="Item number as the printed digest counts cards, from 1.")],
+    db: Annotated[Path, typer.Option(help="SQLite database file.")] = DEFAULT_DB_PATH,
+    ranker: Annotated[
+        str,
+        typer.Option(help=f"Ranker the digest was run with: {', '.join(RANKERS)}. Item numbers "
+                     "match `digest run` under the same ranker flags and the template renderer."),
+    ] = "fixed",
+    phase: Annotated[
+        bool,
+        typer.Option("--phase", help="The digest was run with the A3 stage-aware ranker. "
+                     "Replaces --ranker."),
+    ] = False,
+) -> None:
+    """Print one digest item's chain: item, delta, signal, decider probabilities and routing."""
+    try:
+        day = dt.date.fromisoformat(date)
+    except ValueError:
+        typer.echo(f"digest explain: --date must be YYYY-MM-DD, got {date!r}", err=True)
+        raise typer.Exit(code=1)
+    if phase and ranker != "fixed":
+        typer.echo("digest explain: --phase replaces the ranker; drop --ranker", err=True)
+        raise typer.Exit(code=1)
+    try:
+        chosen: Ranker = build_ranker(ranker)
+    except RankerUnavailable as e:
+        typer.echo(f"digest explain: {e}", err=True)
+        raise typer.Exit(code=1)
+
+    conn = connect(db)
+    try:
+        create_schema(conn)
+        row = conn.execute("SELECT * FROM users WHERE id = ?", (user,)).fetchone()
+        if row is None:
+            typer.echo(f"digest explain: unknown user {user!r}; has `digest ingest` run?", err=True)
+            raise typer.Exit(code=1)
+        if phase:
+            try:
+                chosen = PhaseRanker(load_phase_graph(conn), load_phase_weights())
+            except (OSError, ValueError) as e:
+                typer.echo(f"digest explain: cannot load {DEFAULT_WEIGHTS_PATH}: {e}", err=True)
+                raise typer.Exit(code=1)
+        try:
+            trace = explain_chain(conn, User.model_validate(dict(row)), day, item, chosen)
+        except ExplainError as e:
+            typer.echo(f"digest explain: {e}", err=True)
+            raise typer.Exit(code=1)
+    finally:
+        conn.close()
+    typer.echo(trace, nl=False)
+
+
+@app.command()
+def demo(
+    data: Annotated[Path, typer.Option(help="Directory with slack.json, graph_seed.json, "
+                                       "gold.json and phase_weights.yaml.")] = Path("data"),
+    results: Annotated[Path, typer.Option(help="results.md to print at the end.")] = Path("results.md"),
+) -> None:
+    """Walk the pipeline in replay mode with no API keys: a planted silo case, the digests it
+    reaches, --phase digests either side of the EVT gate, an explain trace, and results.md.
+
+    Runs on an in-memory database and writes nothing, so it works from a fresh clone.
+    """
+    try:
+        body = build_demo(data, results)
+    except (OSError, ValueError) as e:
+        typer.echo(f"digest demo: {e}", err=True)
+        raise typer.Exit(code=1)
     typer.echo(body, nl=False)
 
 

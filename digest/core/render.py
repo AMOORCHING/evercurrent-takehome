@@ -20,17 +20,24 @@ class TemplateRenderer(Renderer):
             lines.append("No changes reached you.")
             return "\n".join(lines) + "\n"
 
-        by_product: dict[str, list[InboxItem]] = {}
-        for scored in items:
-            by_product.setdefault(scored.item.product_id, []).append(scored.item)
-
-        number = 0
-        for product_items in by_product.values():
-            lines += [f"## {product_items[0].product_name}", ""]
-            for item in product_items:
-                number += 1
-                lines += _card(number, item) + [""]
+        last_product = None
+        for number, scored in enumerate(display_order(items), start=1):
+            item = scored.item
+            if item.product_id != last_product:
+                lines += [f"## {item.product_name}", ""]
+                last_product = item.product_id
+            lines += _card(number, item) + [""]
         return "\n".join(lines).rstrip("\n") + "\n"
+
+
+def display_order(items: list[Scored]) -> list[Scored]:
+    """Scored items in the order the template numbers their cards: grouped by product in
+    the order of each product's best-ranked item, rank order within a product. `digest
+    explain` counts items the same way, so its numbers match the printed digest."""
+    by_product: dict[str, list[Scored]] = {}
+    for scored in items:
+        by_product.setdefault(scored.item.product_id, []).append(scored)
+    return [scored for group in by_product.values() for scored in group]
 
 
 def save_digest(conn: sqlite3.Connection, digest: Digest) -> None:

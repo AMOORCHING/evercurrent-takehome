@@ -26,6 +26,7 @@ import json
 import logging
 import math
 import os
+import sqlite3
 import time
 import urllib.request
 from collections.abc import Callable
@@ -35,7 +36,7 @@ from pydantic import BaseModel, ConfigDict
 
 from digest.core.assemble import SlackExport, SlackMessage, threads
 from digest.core.extract import API_KEY_ENV
-from digest.models import Decider, Decision, Delta, Extractor, GraphSlice, Signal
+from digest.models import Decider, Decision, Delta, Extractor, GraphSlice, Signal, SignalDecision
 
 log = logging.getLogger(__name__)
 
@@ -425,6 +426,42 @@ class Cascade(Extractor):
             signal.id, first.changes_state, second.changes_state, final,
         )
         return second, final
+
+
+def save_decisions(conn: sqlite3.Connection, cascade: Cascade, backend: str) -> None:
+    """Persist what the cascade decided this run, one row per decided signal, for
+    `digest explain` to read back.
+
+    A changed signal is re-decided, so its row is overwritten; a skipped thread's signal
+    is not in `signals` and is retried next ingest, so its decision is not stored. When
+    an escalation decider failed on a thread, the stored probabilities are the first
+    stage's (the answer that stood), though `settled` still records the forced extract.
+    """
+    rows = [
+        SignalDecision(
+            signal_id=signal_id,
+            backend=backend,
+            changes_state=decision.changes_state,
+            change_type=decision.change_type,
+            contradicts=decision.contradicts,
+            risk=decision.risk,
+            route=cascade.routes[signal_id],
+            settled=cascade.escalations.get(signal_id),
+        )
+        for signal_id, decision in sorted(cascade.decisions.items())
+        if conn.execute("SELECT 1 FROM signals WHERE id = ?", (signal_id,)).fetchone()
+    ]
+    with conn:
+        for record in rows:
+            row = record.model_dump() | {"change_type": json.dumps(record.change_type)}
+            columns = ", ".join(row)
+            placeholders = ", ".join(f":{key}" for key in row)
+            updates = ", ".join(f"{key} = excluded.{key}" for key in row if key != "signal_id")
+            conn.execute(
+                f"INSERT INTO decisions ({columns}) VALUES ({placeholders}) "
+                f"ON CONFLICT (signal_id) DO UPDATE SET {updates}",
+                row,
+            )
 
 
 DECIDERS: dict[str, Callable[[SlackExport], Decider]] = {
