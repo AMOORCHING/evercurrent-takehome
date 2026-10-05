@@ -12,9 +12,11 @@ Routing: `changes_state` at or above 0.8 goes to the extractor; at or below 0.2 
 the middle goes to the extractor and is logged as escalated. `Cascade` applies the routing
 around any `Extractor` and records decisions, routes and latencies for `digest eval`.
 
-Prices are USD per million tokens. TypeSafe had not published jev pricing when this was
-written (Oct 2026); that constant is a placeholder estimate, and the llm price assumes a
-mid-tier model. Revisit before quoting dollars in the writeup.
+Prices are USD per million tokens. The jev prices are backed out from the TypeSafe usage
+dashboard's billed spend (Oct 5, 2026: $0.0056 per 120-thread pass of ~134k input and
+~13k output tokens; the dashboard reports totals only, so the 1:4 input:output split is
+assumed). The llm price still assumes a mid-tier model — revisit it before quoting
+cross-backend dollars in the writeup.
 """
 
 from __future__ import annotations
@@ -173,7 +175,7 @@ class JevDecider(_ModelDecider):
 
     URL = "https://api.typesafe.ai/v1/systemone"
     MODEL = "jev-latest"
-    PRICE_IN, PRICE_OUT = 0.30, 1.20  # placeholder estimate, see module docstring
+    PRICE_IN, PRICE_OUT = 0.03, 0.12  # backed out from dashboard spend, see module docstring
 
     @classmethod
     def from_env(cls, export: SlackExport) -> JevDecider:

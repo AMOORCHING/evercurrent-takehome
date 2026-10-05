@@ -68,9 +68,9 @@ hits/total; `–` means the metric does not apply to that configuration.
 | core | 12/12 | 43/43 | 120/120 | – | – | – | – |
 | llm | 12/12 | 39/41 | 114/120 | – | – | – | – |
 | a1-passthrough | 12/12 | 43/43 | 120/120 | 35/120 | 0/120 | 0 ms | $0.0000 |
-| a1-jev | 11/12 | 31/31 | 110/120 | 106/120 | 30/120 | 174 ms | $0.0022 |
+| a1-jev | 11/12 | 31/31 | 110/120 | 106/120 | 30/120 | 174 ms | $0.0002 |
 | a1-llm | 12/12 | 38/38 | 116/120 | 114/120 | 3/120 | 3070 ms | $0.0149 |
-| a1-jev-llm | 11/12 | 29/29 | 108/120 | 108/120 | 29/120 | 184 ms | $0.0075 |
+| a1-jev-llm | 11/12 | 29/29 | 108/120 | 108/120 | 29/120 | 184 ms | $0.0055 |
 | a2-calibrated | 12/12 | 43/43 | 120/120 | – | – | – | – |
 | a3-phase | 12/12 | 43/43 | 120/120 | – | – | – | – |
 | a4-aliases | 12/12 | 41/43 | 115/120 | – | – | – | – |
@@ -80,11 +80,12 @@ cross-team changes reach the affected person. The core row's 12/12 at 43/43
 precision shows the deterministic plumbing is sound but is partly true by
 construction (see Known limitations); the load-bearing version is the `llm` row,
 where a real extractor holds 12/12 silo recall at 39/41 digest precision. The jev
-cascade gates threads roughly 18× faster and ~7× cheaper
-per digest than the LLM decider (at the placeholder token prices noted in
-results.md), at the cost of one missed silo case and a 30/120 escalation band; the
-two-stage jev→llm cascade keeps jev's speed and resolves the band for about half
-the LLM decider's cost per digest, but inherits jev's missed case.
+cascade gates threads roughly 18× faster and, at TypeSafe's billed prices, nearly
+two orders of magnitude cheaper per digest than the LLM decider ($0.0002 against
+$0.0149 at the still-placeholder llm rates), at the cost of one missed silo case
+and a 30/120 escalation band; the two-stage jev→llm cascade keeps jev's speed and
+resolves the band at roughly a third of the LLM decider's cost per digest, but
+inherits jev's missed case.
 
 ## Enabling the attachments
 
@@ -122,9 +123,12 @@ rather than failing the eval.
   is assumed to exist.** EverCurrent's product already captures tasks, stages,
   handoffs and requirement links; this prototype consumes that graph and keeps it
   current from Slack — it does not build it from scratch.
-- **Dollar figures are not real prices.** TypeSafe had not published jev pricing
-  when this was written; cost per digest uses the placeholder estimates in
-  `digest/attach/deciders.py`.
+- **jev dollars are measured; llm dollars are not.** TypeSafe's usage dashboard
+  reports billed spend, and the jev prices in `digest/attach/deciders.py` are
+  backed out from it ($0.0056 per 120-thread pass; the dashboard reports token
+  totals only, so the 1:4 input:output split is assumed). The llm prices remain
+  placeholder estimates for a mid-tier model, so cross-backend dollar comparisons
+  are directionally right but not exact.
 - **A3 barely matters on this dataset, and the table cannot show what it does.**
   Replay confidences are all 1.0 and no inbox holds more than three items, so the
   top-five cut never drops anything and a3-phase matches core on every membership

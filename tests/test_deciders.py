@@ -143,7 +143,7 @@ def test_jev_asks_all_four_questions_in_one_call():
     assert decision.change_type == JEV_RESPONSE["answers"]["change_type"]["probabilities"]
     assert decision.contradicts == 0.12
     assert decision.risk == 0.41
-    assert decider.spent_usd == pytest.approx((1000 * 0.30 + 20 * 1.20) / 1e6)
+    assert decider.spent_usd == pytest.approx((1000 * 0.03 + 20 * 0.12) / 1e6)
 
 
 def test_llm_decider_parses_structured_output():

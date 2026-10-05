@@ -181,6 +181,30 @@ Reading it honestly:
   same cross-team case is still lost to a confident first-stage drop (11 of 12), so
   option 2 — aligning the drop threshold with the 10:1 cost model — remains open.
 
+## Jev pricing became real (Oct 5)
+
+TypeSafe's usage dashboard turned out to report billed spend, not just tokens:
+$0.0339 for the week's 720 jev requests (884,983 tokens), and $0.0056 per
+120-thread pass (~134k input + ~13k output tokens, six passes over Oct 4–5). That
+is exactly one tenth of what the placeholder constants predicted ($0.0560 per
+pass), so the constants in `digest/attach/deciders.py` moved from $0.30/$1.20 to
+**$0.03 in / $0.12 out per Mtok** — spend-matched rather than guessed. One honest
+caveat: the dashboard reports token totals, not an input/output price split, so
+the 1:4 ratio is carried over from the placeholder; any split consistent with
+$0.0056 per pass fits the data equally well, and every pass has the same token
+mix, so more passes cannot disambiguate it.
+
+Costs re-derived from the Oct 5 table: a1-jev $0.0022 → **$0.0002** per digest
+(exact — that configuration's spend is pure jev, and all jev spend scales by 0.1);
+a1-jev-llm $0.0075 → **~$0.0055** (the jev share drops to noise and the LLM
+escalation share, still at placeholder llm rates, dominates). a1-llm is unchanged.
+The cascade's cost argument strengthens accordingly: the gate now costs ~1/70th of
+LLM-everywhere per digest rather than ~1/7th, and the dollar case for gating at
+real Slack volume gets harder to argue against, not easier. The cost cells in
+results.md were hand-updated with these two numbers; a keyed `digest eval` rerun
+would regenerate them exactly. Historical dollar figures earlier in this file are
+left as written — they record what was believed when those decisions were made.
+
 ## The cut ledger: what "measured gain or cut" removed (Oct 4–5)
 
 Spec rule 3 says every attachment must show a measured gain in the table or be cut.

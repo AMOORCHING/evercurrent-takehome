@@ -99,9 +99,9 @@ few points are noise.
 | Cost per digest | core | not run: no decider |
 | Cost per digest | llm | not run: no decider |
 | Cost per digest | a1-passthrough | $0.0000 |
-| Cost per digest | a1-jev | $0.0022 |
+| Cost per digest | a1-jev | $0.0002 |
 | Cost per digest | a1-llm | $0.0149 |
-| Cost per digest | a1-jev-llm | $0.0075 |
+| Cost per digest | a1-jev-llm | $0.0055 |
 | Cost per digest | a2-calibrated | not run: no decider |
 | Cost per digest | a3-phase | not run: no decider |
 | Cost per digest | a4-aliases | not run: no decider |
@@ -118,7 +118,7 @@ few points are noise.
 - **Calibration error**: Expected calibration error (10 bins) of changes_state against whether gold has a delta for the thread, measured on the two thirds of threads not used for fitting; before and after temperature scaling fit on the fixed seeded third (digest/attach/calibrate.py). Reliability plots sit beside results.md under calibration/.
 - **Escalation rate**: Of decided threads, the share with changes_state between 0.2 and 0.8. Without an escalation decider they go to the extractor and are logged; with one, the second opinion settles them, so this is the share paying for the second call.
 - **Decider latency (median)**: Median wall-clock time of one decide call across all decided threads.
-- **Cost per digest**: Decider spend for the full run divided by digests with at least one item. The replay extractor is free; token prices are the placeholder estimates in digest/attach/deciders.py.
+- **Cost per digest**: Decider spend for the full run divided by digests with at least one item. The replay extractor is free. The jev token prices are backed out from TypeSafe's billed spend; the llm prices remain the placeholder estimates in digest/attach/deciders.py. The jev cost cells were re-derived on Oct 5 when the dashboard's spend numbers landed, after this table's live run (derivation in EXPERIMENTS.md); rerun `digest eval` to regenerate them exactly.
 
 ## Configurations
 
