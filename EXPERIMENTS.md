@@ -1,10 +1,12 @@
 # Experiments: what the eval changed about the design
 
-This file records the one design change made from measurement rather than from the spec:
-the two-stage escalation added to the A1 cascade on Oct 4, 2026. SPEC.md carries the
-dated amendment; this is the longer story — what the code looked like, what the numbers
-said, the tradeoffs weighed, and what was done. Metric definitions and the full table
-live in results.md (regenerate with `digest eval`).
+This file records the design changes made from measurement rather than from the spec —
+the largest being the two-stage escalation added to the A1 cascade on Oct 4, 2026.
+SPEC.md carries the dated amendments; this is the longer story — what the code looked
+like, what the numbers said, the tradeoffs weighed, and what was done. It ends with
+the cut ledger: what the spec's "measured gain or cut" rule removed or downgraded,
+and why. Metric definitions and the full table live in results.md (regenerate with
+`digest eval`).
 
 ## The original design
 
@@ -161,12 +163,54 @@ Reading it honestly:
   threads re-run under their surface names in tests/test_aliases.py), not a
   percentage swing; llm already sits at 100% silo recall, leaving no headroom.
 - **A3 matches core on every membership metric by construction**: replay confidences
-  are 1.0 and no inbox overflows the top five, so the phase ranker can only reorder.
-  Its measured effect is ordering and day-to-day focus (the day 5 / day 7 gate demo);
-  an ordering-sensitive metric such as rank-of-gold-item is the open item if the
-  table alone must justify it (DESIGN.md).
+  are 1.0 and no inbox overflows the top five (none holds more than three items), so
+  the phase ranker can only reorder within a day. The ordering effect was then
+  measured directly (Oct 5, later the same day): ranking every real (user, day)
+  inbox under both rankers, **A3 changes the order in 2 of 33 digests** — tom on
+  2026-03-05 and 2026-03-11, the one user owning stages in both products' processes —
+  and neither sits at the EVT gate, since no real inbox mixes items from both phases.
+  That measurement forced a demo fix: the day 5 / day 7 pair differs under *any*
+  ranker (different days hold different changes), so showing it as A3's effect
+  overclaimed. `digest demo` now states that caveat, prints the live 2-of-33 count,
+  shows one reordered day under both rankers side by side, and credits the gate flip
+  to the constructed-item unit test (`test_evt_gate_passing_flips_the_ranking`).
+  On this dataset A3 is a mechanism demonstration, not a measured gain.
 - **The decider story reproduced round two within a thread or two**: jev 88.3% gate
   accuracy at $0.0022 and 174 ms; the jev→llm cascade 90.0% with ECE 3.1% before
   scaling at $0.0075 and 184 ms; LLM-everywhere 95.0% at $0.0149 and 3,070 ms. The
   same cross-team case is still lost to a confident first-stage drop (11 of 12), so
   option 2 — aligning the drop threshold with the 10:1 cost model — remains open.
+
+## The cut ledger: what "measured gain or cut" removed (Oct 4–5)
+
+Spec rule 3 says every attachment must show a measured gain in the table or be cut.
+Applied honestly, the rule produced one cut for scope, one cut for time, and one
+downgrade — recorded here so the reasoning survives the deadline:
+
+- **Tev live run — cut (Oct 4, scope).** A third API account would have bought a
+  comparison the jev and LLM backends already make between them: a cheap
+  letter-only classifier against a structured-output model. `TevDecider` stays
+  implemented behind the Decider seam with recorded-response tests (both the
+  log-probability and hard-0/1 paths), so the cut cost a results row, not code,
+  and the two-backend minimum in the spec still holds.
+- **A6 feedback loop — cut (Oct 5, time).** First in the spec's cut order, and the
+  Monday list reached it last. The consequence is stated rather than hidden: with
+  no loop, "focus changes over time" rests entirely on the project graph changing
+  under `apply` and on A3 shifting the active process when a gate passes — nothing
+  shipped learns from use. The design it would have been (votes nudging A2's
+  per-section cost thresholds by a bounded step over a bounded window, decaying
+  back to the calibrated base) is recorded as pseudocode in DESIGN.md, together
+  with the eval it would have had to pass: precision at fixed recall, before and
+  after replaying gold votes — the same bar every other attachment faced.
+- **A3 — kept, but the claim downgraded (Oct 5, honesty).** Strictly read, rule 3
+  would cut A3 too: it shows no gain in the membership table, and measuring its
+  ordering effect directly found 2 of 33 real digests reordered. It stays for two
+  reasons. The spec's own build order names A1+A2+A3 as the minimum for the
+  submission, and the mechanism is real and pinned — the gate flip test, the
+  stage-distance scores. The price of keeping it is the claim: writeup, README and
+  demo now present A3 as a mechanism demonstration on a dataset too shallow to
+  reward it (no inbox exceeds three items), not as a measured win. The original
+  day 5 / day 7 framing — which implied the ranker caused a difference the
+  calendar caused — was the overclaim this downgrade removes. What would change
+  the verdict: deeper inboxes (more than five candidate items a day) and an
+  ordering-sensitive metric such as rank-of-gold-item in the eval table.
