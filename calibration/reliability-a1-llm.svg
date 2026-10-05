@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="460" viewBox="0 0 640 460" font-family="system-ui, sans-serif">
+<rect width="640" height="460" fill="#fcfcfb"/>
+<text x="64" y="26" font-size="15" font-weight="600" fill="#0b0b0b">Reliability — a1-llm</text>
+<text x="64" y="46" font-size="12" fill="#898781">ECE 2.8% before, 3.8% after temperature scaling (T=1.27, 80 held-out threads, fit on 40)</text>
+<line x1="64.0" y1="404.0" x2="64.0" y2="72.0" stroke="#e1e0d9" stroke-width="1"/>
+<line x1="64.0" y1="404.0" x2="616.0" y2="404.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="64.0" y="422" font-size="11" fill="#898781" text-anchor="middle">0</text>
+<text x="54" y="408.0" font-size="11" fill="#898781" text-anchor="end">0</text>
+<line x1="202.0" y1="404.0" x2="202.0" y2="72.0" stroke="#e1e0d9" stroke-width="1"/>
+<line x1="64.0" y1="321.0" x2="616.0" y2="321.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="202.0" y="422" font-size="11" fill="#898781" text-anchor="middle">0.25</text>
+<text x="54" y="325.0" font-size="11" fill="#898781" text-anchor="end">0.25</text>
+<line x1="340.0" y1="404.0" x2="340.0" y2="72.0" stroke="#e1e0d9" stroke-width="1"/>
+<line x1="64.0" y1="238.0" x2="616.0" y2="238.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="340.0" y="422" font-size="11" fill="#898781" text-anchor="middle">0.5</text>
+<text x="54" y="242.0" font-size="11" fill="#898781" text-anchor="end">0.5</text>
+<line x1="478.0" y1="404.0" x2="478.0" y2="72.0" stroke="#e1e0d9" stroke-width="1"/>
+<line x1="64.0" y1="155.0" x2="616.0" y2="155.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="478.0" y="422" font-size="11" fill="#898781" text-anchor="middle">0.75</text>
+<text x="54" y="159.0" font-size="11" fill="#898781" text-anchor="end">0.75</text>
+<line x1="616.0" y1="404.0" x2="616.0" y2="72.0" stroke="#e1e0d9" stroke-width="1"/>
+<line x1="64.0" y1="72.0" x2="616.0" y2="72.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="616.0" y="422" font-size="11" fill="#898781" text-anchor="middle">1</text>
+<text x="54" y="76.0" font-size="11" fill="#898781" text-anchor="end">1</text>
+<line x1="64.0" y1="404.0" x2="616.0" y2="404.0" stroke="#c3c2b7" stroke-width="1"/>
+<line x1="64.0" y1="404.0" x2="64.0" y2="72.0" stroke="#c3c2b7" stroke-width="1"/>
+<line x1="64.0" y1="404.0" x2="616.0" y2="72.0" stroke="#898781" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="340.0" y="446" font-size="12" fill="#52514e" text-anchor="middle">Mean predicted probability</text>
+<text x="18" y="238.0" font-size="12" fill="#52514e" text-anchor="middle" transform="rotate(-90 18 238.0)">Observed frequency</text>
+<polyline points="75.3,398.4 130.2,72.0 516.6,72.0 603.3,91.5" fill="none" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="75.3" cy="398.4" r="4" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"><title>before scaling: predicted 0.02, observed 0.02 (n=59)</title></circle>
+<circle cx="130.2" cy="72.0" r="4" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"><title>before scaling: predicted 0.12, observed 1.00 (n=1)</title></circle>
+<circle cx="516.6" cy="72.0" r="4" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"><title>before scaling: predicted 0.82, observed 1.00 (n=3)</title></circle>
+<circle cx="603.3" cy="91.5" r="4" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"><title>before scaling: predicted 0.98, observed 0.94 (n=17)</title></circle>
+<polyline points="86.1,398.2 142.6,293.3 487.7,72.0 539.2,72.0 593.5,92.8" fill="none" stroke="#eb6834" stroke-width="2"/>
+<circle cx="86.1" cy="398.2" r="4" fill="#eb6834" stroke="#fcfcfb" stroke-width="2"><title>after scaling: predicted 0.04, observed 0.02 (n=57)</title></circle>
+<circle cx="142.6" cy="293.3" r="4" fill="#eb6834" stroke="#fcfcfb" stroke-width="2"><title>after scaling: predicted 0.14, observed 0.33 (n=3)</title></circle>
+<circle cx="487.7" cy="72.0" r="4" fill="#eb6834" stroke="#fcfcfb" stroke-width="2"><title>after scaling: predicted 0.77, observed 1.00 (n=3)</title></circle>
+<circle cx="539.2" cy="72.0" r="4" fill="#eb6834" stroke="#fcfcfb" stroke-width="2"><title>after scaling: predicted 0.86, observed 1.00 (n=1)</title></circle>
+<circle cx="593.5" cy="92.8" r="4" fill="#eb6834" stroke="#fcfcfb" stroke-width="2"><title>after scaling: predicted 0.96, observed 0.94 (n=16)</title></circle>
+<rect x="76.0" y="71" width="10" height="10" rx="2" fill="#2a78d6"/>
+<text x="92.0" y="80" font-size="12" fill="#52514e">before scaling</text>
+<rect x="76.0" y="89" width="10" height="10" rx="2" fill="#eb6834"/>
+<text x="92.0" y="98" font-size="12" fill="#52514e">after scaling</text>
+</svg>
